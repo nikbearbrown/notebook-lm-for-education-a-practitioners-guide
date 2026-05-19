@@ -1,216 +1,179 @@
 # Chapter 9 — Higher Education: Research, Literature, and the Synthesis Problem
 
-> *For graduate students and faculty, NotebookLM is most valuable when the reading load is high, the sources are curated, and the goal is synthesis across sources — not generation from thin air.*
+*For graduate students and faculty, NotebookLM is most valuable when the reading load is high, the sources are curated, and the goal is synthesis across sources — not generation from thin air.*
 
 ---
 
-## Problem this chapter solves
+Here is a problem that every graduate student recognizes and no one has a satisfying solution for. You have forty papers to master before a comprehensive exam. The papers do not form a neat stack — they cluster around three theoretical frameworks, the cluster boundaries are blurry, and the relationships *among* the frameworks are precisely what the exam will test. You have two weeks.
 
-University researchers and graduate students face high volumes of dense scholarly literature. NotebookLM can accelerate synthesis without displacing the analytical work — if the workflow is designed correctly. This chapter shows the workflow.
+In the standard approach, you read each paper carefully, take notes, and build your own synthesis by hand. Two weeks is tight. You arrive at the exam with the synthesis still partial — not because you read carelessly, but because holding forty papers' methodologies, findings, and contradictions in working memory simultaneously is not something human working memory was designed to do.
 
-## Learning outcomes
-
-1. *(Apply)* Build a research notebook for a literature review: upload 15+ sources, generate a synthesis query, verify the output.
-2. *(Create)* Use the Note-to-Source loop to build a research outline grounded in uploaded papers.
-3. *(Evaluate)* Identify where a given research workflow requires human analytical judgment that the tool cannot supply.
-
-## Prerequisites
-
-- Chapters 1–3 (the design principle and operational fluency).
-- A current research task: literature review, comprehensive-exam preparation, manuscript drafting, or course preparation that requires reading-across-sources.
+This is not a reading problem. It is an architecture problem. And it has a specific solution.
 
 ---
 
-## Opening case — The comprehensive-exam preparation
+## What the tool is actually for
 
-A graduate student in education research is preparing for her comprehensive exams. She has 40 papers to master in two weeks. The papers cluster around three theoretical frameworks she is responsible for; the cluster boundaries are fuzzy and the relationships among the frameworks are part of what the exam will test.
+Most people who open NotebookLM for the first time try it on a single paper. They upload one article, ask for a summary, get a reasonable summary. The acceleration is modest — maybe they saved fifteen minutes. They conclude the tool is a convenient shortcut for busy days and do not think further about it.
 
-In the pre-NotebookLM version, she would have read each paper carefully, taken notes, and built her own synthesis matrix by hand. Two weeks would have been tight; she would have arrived at the exam with the synthesis still partial.
+This is the least leveraged use case. It is like testing a freight train by carrying one suitcase.
 
-In her actual workflow, she uploads all 40 to a single notebook. She queries: *"Across these 40 papers, what are the three most cited theoretical frameworks, and which papers use each? Where do the frameworks contradict each other in their predictions?"* The notebook returns a structured response with citations. She verifies the framework attributions against each paper — two attributions are wrong, she corrects them — and then has a verified synthesis matrix in an afternoon. She still reads each paper closely. The synthesis layer is what NotebookLM added.
+The leverage appears at the *corpus* level — when fifteen to forty or more sources are loaded and you query across all of them simultaneously. The query that is impossible to execute by reading papers one at a time becomes tractable when the corpus is loaded as a whole.
 
-The afternoon-instead-of-a-week is the high-leverage acceleration. The careful reading is still hers. So is the judgment about what matters.
+A typical cross-corpus query:
 
----
+> *"Analyze the methodology sections of the five uploaded papers on behavioral economics. Synthesize their sample sizes, variables, and experimental limitations into a markdown table. Identify where these authors contradict one another regarding the role of cognitive bias."*
 
-## Core concept 1 — Cross-corpus synthesis as the high-leverage use case
+What this query requires: holding five papers' methodology sections in working memory at the same time, comparing them on the same dimensions, and noticing where the divergences are. That is precisely what human working memory cannot do across five papers simultaneously and what the tool can. The model does the holding; you do the noticing-and-judging that follows.
 
-In single-source mode (one paper at a time), NotebookLM offers modest acceleration over careful reading. The leverage appears at the *corpus* level — when 15–40+ sources are loaded and the researcher queries across all of them simultaneously.
+The distinction matters for understanding what you are buying with the tool. You are not buying a judgment machine. You are buying working memory extension — a way to operate on a corpus at the level of the whole rather than paper by paper. The judgment is still yours. The synthesis question, the verification, the interpretation of what the contradictions mean — those are still yours. What the tool supplies is the scaffold on which your judgment can operate at a scale that would otherwise be intractable.
 
-A typical cross-corpus query, drawn from the pantry research file:
-
-> *"Analyze the methodology section of the five uploaded papers on behavioral economics. Synthesize their sample sizes, variables, and experimental limitations into a markdown table. Identify where these authors contradict one another regarding the role of cognitive bias."*
-
-This kind of query is *impossible to execute via single-paper reading* — it requires you to hold all five papers' methodologies in working memory simultaneously and notice the divergences. NotebookLM does the holding; the researcher does the noticing-and-judging step that follows.
-
-The chapter's emphasis: cross-corpus synthesis is where the bounded-tool framework genuinely accelerates research. Single-source summarization is what most users try first; it is the *least* leveraged use of the tool.
+<!-- → [TABLE: Single-source use vs. cross-corpus use — Row 1: what the query asks, Row 2: what the model holds in memory, Row 3: what the researcher supplies, Row 4: approximate time savings. Two columns: Single source / Cross-corpus. Caption: "The leverage is not in any single operation. It is in operating on the corpus as a whole."] -->
 
 ---
 
-## Core concept 2 — The Note-to-Source loop for research outline development
+## The graduate student and her forty papers
 
-The Note-to-Source loop (introduced in Chapter 3) takes a research-specific form for graduate students:
+Let me make the opening case concrete with how it actually played out for one researcher.
 
-1. Upload 15–30 papers as sources.
-2. Generate a synthesis query in chat.
-3. Pin the model's response as a Note.
-4. *Promote the Note to a source.*
-5. Generate a research outline grounded against the Note + the original papers.
+A doctoral student in education research, preparing for comprehensive exams, uploads all forty papers to a single notebook. She queries: *"Across these forty papers, what are the three most cited theoretical frameworks, and which papers use each? Where do the frameworks contradict each other in their predictions?"*
 
-This produces an outline structured around the *student's interpretive synthesis* — not just the original papers' framings. The Note becomes the student's contribution; the outline shows how the original papers support or complicate that contribution.
+The notebook returns a structured response with citations. She verifies the framework attributions against each paper — two attributions are wrong, she corrects them — and then has a verified synthesis matrix in an afternoon. She still reads each paper closely. The synthesis layer is what NotebookLM added.
 
-A worked example. A doctoral candidate uploads 25 papers on retrieval-practice interventions in adult learners. Reading them, she notices the papers split into two camps on whether spaced practice retains its advantage. She writes a Note: *"There is a tension between Group A (Karpicke et al.) and Group B (Cepeda et al.) on whether spaced practice retains its advantage in adult-learner contexts. My thesis argues this tension is resolved by attending to the working-memory load variable across studies."*
+The afternoon-instead-of-a-week is the high-leverage acceleration. Notice what it is not: it is not the model doing her reading. She still reads every paper. It is not the model doing her synthesis. She still interprets the frameworks and their relationships. What the model contributed is the extraction layer — pulling the framework attributions from forty papers simultaneously so that she can verify them, correct them, and work with them, rather than constructing them from scratch by hand.
 
-She promotes the Note to source. Generates an outline. The outline surfaces which papers support the working-memory-load synthesis, which contradict it, and where additional reading is required. She now has a research outline grounded in her interpretive synthesis, not in the papers' separate framings.
+Two attributions were wrong. This is the crucial detail, and not because two errors out of forty is an alarming rate. It is crucial because it tells you the correct posture toward the output. The model's extraction is *auditable*, not *reliable without audit*. The audit is the verification step; it takes far less time than building the matrix from scratch, but it is not optional. A researcher who skips verification and publishes the model's extraction is not accelerating their work — they are delegating their credibility to a process that makes errors at a non-trivial rate.
 
-The Note is what the AI cannot produce. It captures the synthesis that requires having read the papers carefully and noticed the contradiction. The outline is what the AI *can* produce against that synthesis — structure, coverage, citation tracking. The loop is the labor split made into a workflow.
+Source-grounded means errors are *findable*, not that they do not exist.
+
+<!-- → [CHART: Simple two-bar comparison — "Hand-built synthesis matrix: 15–20 hours" vs. "NotebookLM extraction + verification: 3–4 hours." Annotate the difference with "Time saved is in extraction. Verification and interpretation remain." Caption: "The acceleration is real and bounded. The verification step is not optional — it is what makes the acceleration trustworthy."] -->
 
 ---
 
-## Core concept 3 — Where the tool fails (the irreducibly human research moves)
+## The Note-to-Source loop as a research workflow
 
-The chapter must be explicit about what NotebookLM cannot supply in research contexts:
+There is a feature in NotebookLM that takes on a specific and powerful form in research contexts. Chapter 3 introduced it as the Note-to-Source loop. Here it becomes the mechanism for a particular kind of scholarly contribution.
 
-**Domain judgment.** Whether a finding *matters* requires knowing the field's evolving questions, methodological debates, and institutional politics. The model has access to text, not to the field's current center of gravity.
+The sequence: upload fifteen to thirty papers. Generate a synthesis query in chat. Pin the model's response as a Note. Promote the Note to a source. Then generate a research outline grounded against the Note and the original papers together.
 
-**Significance assessment.** A correlation can be statistically significant and substantively trivial, or non-significant but theoretically important. Distinguishing requires the theoretical framework the work sits in.
+What this produces is an outline structured around *your* interpretive synthesis — not the original papers' separate framings. The Note becomes the contribution; the outline shows how the papers support or complicate it.
 
-**Methodological critique.** Identifying that a paper's sample is non-representative, that its design has a confounder, that its conclusion overreaches — these require methodological expertise the tool can echo but not perform.
+A specific example. A doctoral candidate uploads twenty-five papers on retrieval-practice interventions in adult learners. Reading them, she notices the papers split into two camps on whether spaced practice retains its advantage in adult-learner contexts. She writes a Note: *"There is a tension between Group A (Karpicke et al.) and Group B (Cepeda et al.) on whether spaced practice retains its advantage in adult-learner contexts. My thesis argues this tension is resolved by attending to the working-memory load variable across studies."*
 
-**Citation context.** Whether a paper is *foundational, contested, or superseded* depends on the field's narrative arc. The model can tell you the paper was cited 1,200 times; it cannot reliably tell you whether it *should be*.
+She promotes the Note to source. Generates an outline. The outline surfaces which papers support the working-memory-load synthesis, which contradict it, and where additional reading is required.
 
-These map directly onto Tier 4 (metacognitive supervision), Tier 5 (causal reasoning), and Tier 6 (collective/institutional intelligence) in the fundamental themes appendix. The chapter's argument: the tool's value scales with how clearly the researcher has internalized which work is theirs and which work the tool is doing.
+Now here is the point worth dwelling on. The Note is what the model cannot produce. It captures the interpretive synthesis that requires having read the papers carefully, noticed the contradiction, and formed a theoretical argument about what resolves it. That is the scholar's work. The outline — the structure, the coverage mapping, the citation tracking — is what the model *can* produce against that synthesis.
 
----
+<!-- → [DIAGRAM: The Note-to-Source loop as a research workflow — four stages in a cycle: (1) Upload sources, (2) Generate synthesis query in chat, (3) Pin response as Note, then write your own interpretive synthesis and pin it, (4) Promote Note to source → Generate outline grounded against Note + sources. Annotate stage 3 with "This is where the researcher's contribution enters." Caption: "The loop is a labor split made into a workflow: the model holds the corpus; the researcher supplies the interpretation."] -->
 
-## Core concept 4 — The privacy constraint
-
-For research contexts, the privacy considerations differ from K-12. Researchers may have:
-
-- IRB-restricted interview transcripts
-- Pre-publication manuscripts under embargo
-- Confidential institutional documents
-- Patient or client records (HIPAA / clinical research)
-- Proprietary or contractually-restricted materials
-
-The pantry research file flags UIC's explicit guidance: do not upload these unless HIPAA, FERPA, IRB, and institutional terms are satisfied. The Workspace for Education account provides FERPA/COPPA compliance for student data; research data is governed by different frameworks.
-
-The chapter's operational rule: *before uploading any source, identify the data sensitivity class and confirm institutional clearance applies*. This is a workflow step, not a footnote.
+The loop makes the labor split explicit. It forces you to articulate what is yours — your synthesis, your theoretical argument, your interpretive claim — and inserts it into the corpus so that subsequent outputs are grounded against it. Researchers who skip this step and use the model's synthesis as their own are not just committing a kind of academic-integrity error. They are giving away the work that cannot be delegated and delegating only the work that can. They have the ratio backwards.
 
 ---
 
-## Mid-chapter checkpoint
+## What the tool cannot do
 
-Before continuing:
-- Can you state the difference between single-source summarization and cross-corpus synthesis in operational terms?
-- Can you describe the Note-to-Source loop as a research workflow (not just a feature)?
-- Can you name three categories of research work the tool cannot perform?
+The chapter needs to be explicit about this, because the fluency of the model's outputs makes it easy to mistake echo for judgment.
 
----
+**Domain judgment.** Whether a finding matters requires knowing the field's evolving questions, methodological debates, and what the current center of gravity is. The model has access to text. It does not have access to which questions are live, which methods are contested, or which results the field considers important. A model trained on a corpus of papers knows what the papers say. It does not know what the field is *doing*.
 
-## Worked workflow — Building a literature review notebook
+**Significance assessment.** A correlation can be statistically significant and theoretically trivial, or statistically modest and theoretically central. Distinguishing requires the theoretical framework the work lives in. The model can extract effect sizes; it cannot tell you whether an effect size is large enough to matter for your question.
 
-A literature review on intervention effects across five studies.
+**Methodological critique.** Identifying that a paper's sample is non-representative, that its design has a confounder, that its conclusion overreaches its data — these require methodological expertise the tool can echo but not perform. The model can describe a paper's design accurately. It cannot evaluate whether the design is adequate.
 
-**Step 1 — Curate.** Identify 15 high-relevance papers. The curation is the highest-leverage step; output quality is capped by source quality.
+**Citation context.** Whether a paper is foundational, actively contested, or quietly superseded depends on the field's narrative arc, which is not recoverable from citation counts alone. A paper cited twelve hundred times may be cited because everyone must cite it before arguing against it. The model can tell you the paper was cited twelve hundred times. It cannot reliably tell you what the field thinks of it now.
 
-**Step 2 — Upload.** Verify each source ingested by asking a specific question about its content.
+<!-- → [TABLE: Research tasks by whether the tool can perform them — Column 1: Task. Column 2: Tool can perform? Column 3: What the researcher must supply. Rows: Extracting sample sizes across 20 papers (Yes / Verification); Identifying contradictions in methodology (Partially / Domain judgment about whether the contradiction is real or terminological); Assessing whether a finding is significant (No / Theoretical framework); Critiquing study design (No / Methodological expertise); Determining a paper's current standing in the field (No / Citation context and field knowledge). Caption: "The tool accelerates extraction and scaffold-building. It cannot perform the judgment that makes those outputs meaningful."] -->
 
-**Step 3 — Generate the synthesis matrix.** Prompt:
-> *"For each of the 15 papers, extract: sample size, intervention type, primary outcome measure, effect size, methodological design. Return as a markdown table. Identify rows where the studies' findings disagree."*
-
-**Step 4 — Verify every cell.** The model's extraction will have errors. Each cell needs to be checked against the source. For 15 papers × 5 columns = 75 cells, expect 5-10 to need correction. This is the verification work.
-
-**Step 5 — Build the synthesis Note.** Based on the verified matrix, write the synthesis interpretation in chat. Pin it. Promote it to source.
-
-**Step 6 — Generate the outline.** Prompt against the matrix + the synthesis Note for the outline structure.
-
-**Step 7 — Iterate.** Re-read the highest-leverage papers (the contested ones, the methodologically strongest). Refine the synthesis Note. Regenerate the outline.
-
-Output: a literature-review outline grounded in verified evidence and the researcher's interpretive synthesis, ready to draft against. Time: roughly one focused afternoon for 15 papers, vs. one focused week for the hand-version.
+These limitations are not arguments against using the tool. They are arguments for knowing precisely where your work begins. The researcher who has internalized this boundary uses the tool well. The researcher who has not will mistake fluent extraction for expert judgment and will be wrong in ways that are hard to detect from the output alone.
 
 ---
 
-## What can go wrong
+## A worked workflow for a literature review
 
-- **Source ingestion fails silently on a critical paper.** The synthesis is built on 14 papers, not 15, and the missing one was the contested-finding paper that motivated the whole review. Verify each source's content before relying on the synthesis.
+Here is what the cross-corpus synthesis workflow looks like when it is working correctly.
 
-- **The model conflates two adjacent studies.** A methodological claim is attributed to a study that did not make it. Verification against the source catches this. Publication without verification embarrasses the author and the journal.
+You are reviewing intervention-effect literature across fifteen studies. You begin with curation — identifying the fifteen papers. This step cannot be delegated to the tool, and it is the highest-leverage step in the entire workflow. The quality of the synthesis is capped by the quality of the corpus. Garbage sources produce garbage synthesis quickly and plausibly.
 
-- **The researcher mistakes the model's synthesis for their own.** The model's output is fluent; the researcher revises it slightly and treats it as their interpretation. The Note-to-Source loop helps with this — promoting *your* synthesis to source forces you to articulate what is yours.
+Once the sources are uploaded, you verify that each one was ingested correctly by asking a specific factual question about its content — not "did you receive this?" but "what sample size does this paper report?" A paper that was not properly ingested will fail that question; you catch it before building anything on it.
+
+Then the synthesis query:
+
+> *"For each of the fifteen papers, extract: sample size, intervention type, primary outcome measure, effect size, methodological design. Return as a markdown table. Identify rows where the studies' findings disagree."*
+
+The model returns a table. You verify every cell against the source papers. For fifteen papers and five columns, that is seventy-five cells; expect five to ten corrections. This is the verification work, and it is not optional. A synthesis matrix with uncorrected errors is worse than no synthesis matrix — it gives you false confidence about what the literature says.
+
+Once the matrix is verified, you write the synthesis interpretation in chat: what the pattern is, where the disagreement is, what you think it means. Pin it. Promote it to source. Generate the outline against the matrix plus your synthesis Note.
+
+Then iterate. Re-read the highest-leverage papers — the ones where the disagreement concentrates, the methodologically strongest ones, the ones whose claims your synthesis rests on. Refine the Note. Regenerate the outline.
+
+What you end up with is a literature-review outline grounded in verified evidence and your own interpretive synthesis, ready to draft against. The time: roughly one focused afternoon for fifteen papers, compared to one focused week for the hand-built version. The acceleration is in the extraction and the scaffold. The reading, the judgment, and the interpretation are still yours.
+
+<!-- → [INFOGRAPHIC: Seven-step literature review workflow as a numbered visual sequence — (1) Curate 15+ sources, (2) Upload and verify ingestion, (3) Generate synthesis matrix query, (4) Verify every cell, (5) Write synthesis Note and pin it, (6) Promote Note to source and generate outline, (7) Re-read contested papers, refine Note, regenerate outline. Annotate steps 1 and 4–5 as "researcher-owned." Caption: "The acceleration is in steps 2–3 and 6. The judgment is in steps 1, 4, 5, and 7."] -->
 
 ---
 
-## Common misconceptions
+## The privacy constraint is a workflow step
 
-> **"NotebookLM does literature reviews."**
-> No. NotebookLM accelerates the synthesis-extraction step. The literature review still requires the researcher's curation (which papers belong), judgment (which findings matter), and interpretation (what the synthesis means).
+Research contexts introduce data-sensitivity problems that K–12 deployment does not. A researcher may have IRB-restricted interview transcripts, pre-publication manuscripts under embargo, confidential institutional documents, patient records governed by HIPAA, or proprietary materials under contractual restriction.
 
-> **"Source-grounded means I don't need to verify."**
-> Source-grounded means *errors are auditable*, not *errors don't exist*. The verification step is the same; the audit trail makes it tractable.
+The institutional guidance at this writing — including explicit guidance from UIC — is clear: do not upload materials in these categories unless you have confirmed that HIPAA, FERPA, IRB, and institutional terms are satisfied for the processing involved. The Workspace for Education account provides compliance for student educational records; research data is governed by different frameworks, and the researcher is responsible for knowing which framework applies to each source before uploading it.
 
-> **"Deep Research mode replaces the bounded-tool workflow."**
-> Deep Research (Nov 2025) breaches the boundary intentionally — it can search the web for material not in your sources. Useful for *finding* sources to add; risky for *synthesizing*, because the web-retrieved material is not in your verified corpus.
+This is not a footnote. It is a workflow step. Before uploading any source to a research notebook, identify its data-sensitivity class. Published papers with no restrictions: upload. IRB-restricted interview transcripts: check with your IRB and your institution's research computing office before uploading. Pre-publication manuscripts: check the embargo terms. Patient records: the answer is almost certainly no without specific institutional clearance.
+
+The failure mode is uploading first and asking later. By the time you ask, the data has already been processed. The correct sequence is the reverse.
+
+---
+
+## Deep Research and the boundary problem
+
+A feature note that requires careful framing. In November 2025, Google added Deep Research mode to NotebookLM. Deep Research can search the web for material not in your uploaded sources and incorporate it into its responses.
+
+For finding sources to add to your corpus — running a web search to identify papers you may have missed, following citation trails — Deep Research mode is useful. It is doing reconnaissance, not synthesis, and you control what enters the verified corpus.
+
+For synthesizing, it is a problem. Deep Research's web-retrieved material is not in your verified corpus. It is not grounded against sources you have read and curated. The output may incorporate claims from papers you have not vetted, from sources of unknown quality, from preprints that were later retracted. The audit trail that makes the bounded-tool workflow trustworthy disappears.
+
+The operational rule: use Deep Research mode for *finding*, not for *synthesizing*. Anything retrieved via web search that you want to rely on needs to be added to the corpus as a verified source before you synthesize against it. The boundary is the point of the workflow; Deep Research mode can dissolve that boundary if you let it.
+
+---
+
+## The irreducible problem
+
+There is a version of the comprehensive-exam preparation story where the graduate student does not write her own synthesis Note, does not verify the framework attributions, and submits the model's output as her interpretive synthesis. The exam goes badly — not because the model was wrong about which papers used which frameworks, but because the examiner asks her to explain *why* the frameworks contradict each other, and she does not know. She has a fluent synthesis she did not produce and cannot defend.
+
+The tool is most dangerous for the researcher who uses it to avoid the reading, not to accelerate it. The acceleration is in the extraction layer — the pulling of sample sizes, the mapping of which papers belong to which framework, the surface-level contradiction detection. The reading, the theory, the judgment about what matters: none of that is accelerated, because none of it is in the extraction layer. It is in the thirty years of accumulated domain knowledge that makes the reading meaningful.
+
+Feynman had a name for the failure mode — knowing the name of something instead of knowing the thing. The researcher who can produce a fluent synthesis from a NotebookLM session without having read the papers knows the *output* of synthesis without knowing the *thing* the synthesis is about. The exam reveals it. The peer reviewer reveals it. The dissertation committee reveals it.
+
+The tool works when it is extension of the researcher's capability, not a substitute for the researcher's knowledge. The distinction is not sentimental. It is structural — and now you can see exactly where the structure runs.
 
 ---
 
 ## Exercises
 
-1. *(Apply)* Build a 15-source notebook for a current research task. Run one cross-source contradiction query. Verify the output against the sources. Document one correction the model needed.
+**Warm-up**
 
-2. *(Create)* Use the Note-to-Source loop to draft one section of a research outline. Identify which arguments are yours, which are the sources', and which are the model's synthesis.
+1. *(Apply — corpus level vs. single source)* Upload three papers from a current research task to a single notebook. Run the same summary query three times — once specifying only paper one, once specifying only paper two, once querying across all three. Describe in one sentence what the cross-source query produces that the individual queries cannot.
 
-3. *(Evaluate)* Take a recent NotebookLM synthesis output. Identify three places where domain judgment would change the synthesis. Explain each in two sentences.
+2. *(Apply — verification posture)* Upload one paper you know well. Ask NotebookLM to extract its sample size, primary outcome measure, and main finding. Verify each extracted claim against the source. Record how many required correction. This is your baseline error rate for a familiar source.
 
----
+3. *(Apply — data sensitivity)* List five sources you would consider uploading for a current literature review. For each, identify its data-sensitivity class: unrestricted published paper, pre-publication manuscript, IRB-restricted data, proprietary material, or other restricted category. Identify which, if any, require institutional clearance before upload.
 
-## What would change my mind
+**Application**
 
-A study documenting that NotebookLM-assisted literature reviews produced higher error rates or lower methodological quality than hand-built reviews, at comparable researcher time investment, would shift the chapter's framing. The current evidence (pantry research file references practitioner-level patterns) is observational. No controlled comparison exists yet.
+4. *(Apply — cross-corpus synthesis query)* Build a notebook with at least eight papers on a topic you are actively researching. Write a query that asks the model to extract one methodological variable across all papers and return it as a table. Verify every cell. Document the corrections. What does the error pattern tell you about which kinds of extraction the model handles reliably and which it does not?
 
-## Still puzzling
+5. *(Analyze — Note-to-Source loop)* Upload ten papers and generate a synthesis query. Before promoting any Note to source, write your own interpretive synthesis in one paragraph — what you believe the papers collectively argue, where the tension is, and what your position is on that tension. Compare your synthesis to the model's. Identify the specific claims in yours that are absent from the model's. Those are your contribution.
 
-- How disciplines that depend on close reading rather than synthesis (literary criticism, qualitative humanities) should use the tool. The chapter's framework leans quantitatively.
-- Whether Deep Research mode's web-retrieval capability should be treated as part of the workflow or as a separate tool with its own discipline.
-- How to handle the case where the verified synthesis contradicts the researcher's prior intuition — and the intuition was right.
+6. *(Analyze — Deep Research boundary)* You are building a literature review and discover that Deep Research mode has surfaced three papers not in your corpus that seem highly relevant. Describe the exact steps you would take to incorporate these papers into your synthesis workflow correctly — and explain why querying across them without those steps would be a problem.
 
----
+**Synthesis**
 
-## Chapter summary
+7. *(Evaluate — tool capability boundary)* Take a synthesis output NotebookLM produced for you from a multi-paper notebook. Identify one claim in that output where domain judgment would change the interpretation, one claim where methodological expertise would change it, and one claim where citation-context knowledge would change it. For each, write one sentence explaining why the model cannot perform that correction itself.
 
-You can now:
-- Build a multi-source research notebook for cross-corpus synthesis.
-- Use the Note-to-Source loop to ground an outline in your interpretive synthesis.
-- Name the categories of research work the tool cannot perform.
-- Apply the data-sensitivity classification step before uploading any source.
+8. *(Evaluate — the ratio)* A colleague tells you she ran her entire literature review through NotebookLM without verifying individual cells or writing her own synthesis Note, and the output looks good. Identify what she has and has not done, using the framework from this chapter. What is she most likely to discover when her dissertation committee asks her to defend a specific interpretive claim?
 
-## Key terms
+**Challenge**
 
-- **Cross-corpus synthesis** — Queries that reason across multiple uploaded sources simultaneously.
-- **Note-to-Source loop** — The research-workflow form: synthesize → pin → promote to source → outline against.
-- **Verification step** — Per-cell or per-claim audit against the original source. Not optional in research use.
-- **Data sensitivity classification** — Pre-upload check on whether the source is cleared for processing.
+9. *(Create — full workflow)* Execute the complete seven-step literature review workflow from the chapter on a current research task with at least fifteen sources. Document the time spent at each step. At the end, write a one-paragraph assessment of where the acceleration was real, where it was not, and what you would do differently in a second iteration.
 
-## Bridge question
-
-Research use is for faculty and graduate students. **How does NotebookLM work in undergraduate course design?** Chapter 10.
-
-## Further reading
-
-- *Pantry research file*, "Higher Education Use Cases" — UIC, Monash, NYU references.
-- Karpicke & Roediger, *Science* (2008) — Underwriting the cross-corpus comparison framework with retrieval-practice evidence.
-- Mollick, *Co-Intelligence* (pantry library file) — On the centaur model in expert research workflows.
-
-## Quick-start card
-
-> **The cross-corpus workflow**
->
-> 1. Curate 15+ high-relevance papers.
-> 2. Upload. Verify each ingested.
-> 3. Run a synthesis query that requires reading across.
-> 4. Verify every claim against source.
-> 5. Pin the interpretation. Promote to source. Outline against.
-
-## Aging note
-
-Deep Research mode's behavior is evolving (launched Nov 2025). The cross-corpus synthesis workflow is stable; web-retrieval extensions will require their own discipline-of-use as they mature. Re-verify the specific feature behaviors before reprint.
+10. *(Evaluate — the irreducible boundary)* The chapter argues that domain judgment, significance assessment, methodological critique, and citation context cannot be performed by the tool. Choose one of these four and argue the strongest possible case that a sufficiently capable future model *could* perform it. Then identify the one thing about the nature of that capability that your argument cannot fully account for.
