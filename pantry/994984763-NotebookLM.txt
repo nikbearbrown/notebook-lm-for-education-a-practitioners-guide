@@ -1,0 +1,437 @@
+          Notebook LM
+          Create one main notebook and then identify topic-based notebooks from there.
+
+                Add content to NotebookLM from different sources, then start asking
+                questions.
+
+                Suggest follow up queries
+
+                Turn sources into audio overviews
+
+                Download the Audio & put into google AI studio, ask it to create a transcript
+                and condense it, changes it to a single person
+
+          Architecture:
+              1. The Ingestion Layer (The "Loading Dock")
+
+                 a. Gather information from different locations and put into one container
+
+              2. The Grounding Engine (The "Brain")
+
+                 a. A mechanism that restricts LLM to a specific context, which means that
+                    the model is forced to have its answer in the documents that are uploaded
+                    rather than drawing from general training data to reduce hallucination.
+
+                 b. Must be able to identify relationships between different file types, such as
+                    contrasting "academic perspectives" (from PDFs) against "user pain
+                    points" (from Reddit threads or web scrapes)
+
+              3. The Trust & Verification Interface (The "Citation System")
+
+                 a. Citation Mapping: When the model generates a response (e.g., a
+                    summary or list), it must tag specific claims with citations (visualized as
+                    grey numbers
+
+                 b. A sidebar that when a user clicks a citation, guide should open and
+                    highlight the exact passage from where information was found
+
+              4. The Transformation Studio (The "Creative Lab")
+
+                 a. Takes the raw text and converts it into different learning modalities.
+
+
+
+
+Notebook LM                                                                                        1
+                     i. Audio Generation (TTS + Personality)
+
+                        1. Advanced text-to-speech system that can generate a deep dive
+                           convo between 2 AI hosts
+
+                     ii. Structured Output Generators
+
+                        1. Templates to automatically convert unstructured text into Briefing
+                           Docs, FAQs, Study Guides
+
+              5. The Iterative Database (The "Memory Loop")
+
+                 a. A unique workflow where outputs can become inputs.
+
+                       Ephemeral Chat vs. Permanent Notes: The chat interface should be
+                       ephemeral (unsaved when the window closes), forcing users to
+                       manually "Save to Note" to preserve insights.
+
+                       Feedback Loop: The system must allow users to take these saved
+                       notes and convert them back into "Sources". This allows the AI to
+                       refine its own work. For example, summarizing raw research, saving
+                       the summary, converting it to a source, and then using that summary
+                       to generate a specific Product Requirements Document (PRD)
+
+
+
+          Working:
+          Core Engine: Grounding and Multimodality:
+
+          NotebookLM is an "AI-first notebook" powered by Google’s Gemini 1.5 Pro model.
+          Its primary differentiator from general AI chatbots is a mechanism called
+          grounding.
+
+                Restricted Context: unlike general LLMs that draw broadly from the internet,
+                NotebookLM "grounds" its responses specifically in the documents you
+                upload. This prevents "drift" (where models hallucinate outside information)
+                and ensures the AI acts as an expert solely on your provided materials.
+
+                Multimodal Analysis: The system utilizes multimodal capabilities to process
+                diverse input formats simultaneously. It can "read" PDFs and Google Docs,
+                "watch" YouTube videos (via transcripts), and "browse" websites to identify
+                connections across these disparate media types.
+
+
+
+Notebook LM                                                                                     2
+              Privacy Architecture: The internal model processes your data to answer
+              queries but does not use your personal information or uploads to train the
+              model for other users.
+
+          2. The Ingestion Layer (Sources)
+          The workflow begins with the creation of a notebook, which serves as a container
+          for a specific project or topic.
+
+              Capacity: Users can upload up to 50 sources per notebook. The system
+              supports a massive context window, handling up to 25 million words total (or
+              500,000 words per individual source).
+
+              Supported Formats: The system accepts Google Docs, Google Slides, PDFs,
+              text files (.txt, Markdown), web URLs, and copied text.
+
+              Source Management: Users are encouraged to maintain an "everything
+              notebook" for general knowledge and separate project-based notebooks for
+              specific tasks.
+
+          3. The Interaction Layer (Chat & Citations)
+
+          Once sources are uploaded, the Notebook Guide dashboard appears, offering an
+          auto-generated summary and suggested questions to help the user navigate the
+          material.
+
+              Citations: To enforce reliability, every response provided by the AI includes
+              citations (displayed as grey numbers). Clicking these numbers opens a
+              "Source Guide" sidebar that highlights the exact passage in the original
+              document where the information was found.
+
+              Prompt Flexibility: Users can ask natural language questions, request specific
+              output formats (e.g., "write a haiku," "draft an email"), or ask for comparisons
+              between documents.
+
+              Chat Ephemerality: The chat history is not automatically saved long-term;
+              users must manually save specific AI responses to their notes to preserve
+              them.
+
+          4. The Transformation Layer (Studio)
+
+          The "Studio" section offers specialized tools to transform raw source text into
+          different learning and presentation formats.
+
+
+
+Notebook LM                                                                                      3
+              Audio Overviews (AI Podcasts): NotebookLM can generate a "Deep Dive"
+              audio discussion between two AI hosts. These hosts banter, summarize key
+              points, and use metaphors to explain complex topics. Users can customize
+              this output by providing instructions to focus on specific topics or adjust the
+              expertise level (e.g., asking for constructive criticism on writing).
+
+              Visualizations: The tool can generate Mind Maps to visualize data flow and
+              relationships, or Timelines to track chronological events.
+
+              Structured Reports: Users can instantly generate Briefing Docs, FAQs, Tables
+              of Contents, and Study Guides (complete with quizzes and answer keys)
+              based on the uploaded material.
+
+          5. The Iterative Knowledge Loop
+          A unique aspect of NotebookLM’s internal workflow is the ability to recycle
+          outputs back into inputs, creating a "feedback loop" for deeper analysis.
+
+          1. Save to Note: Interesting chat responses can be saved to the "Notes" board.
+
+          2. Convert to Source: These user-curated notes can be converted back into a
+          "Source".
+
+          3. Refine: The AI can then analyze these new sources alongside the original
+          documents.
+
+          This allows users to progressively distill broad information into specific outputs,
+          such as moving from raw research -> summaries -> a structured Product
+          Requirements Document (PRD).
+
+          6. Extensibility
+
+          NotebookLM is often used as a "middle layer" in a larger workflow. Users may
+          aggregate research using tools like Gemini "Deep Research," process it in
+          NotebookLM to remove noise, and then export the structured insights into coding
+          agents (like Firebase Studio) or presentation tools.
+
+
+
+
+          Critically analyze (personally) how this fits into our product given
+
+
+
+Notebook LM                                                                                     4
+          that we too deal with large corpuses of text.
+          What are our non-negotiables?
+
+              a. Text should be true to its citation, no fake citations. Need to be verified.
+
+              b. We can’t let model hallucinate and make up information
+
+
+
+
+              1. We have large amount of text like 50 files, and we cannot let the model
+                 hallucinate. It also has to be grounded in the citations, because the model
+                can’t have fake citations
+
+                  a. Example: Colorado sanctions (2023) - A lawyer filed a motion in federal
+                     court citing cases that didn't exist, also generated by AI. The lawyer was
+                    ordered to notify the fake cases' supposed authors (who didn't exist)
+                    about the misuse of their names.
+
+              2. A case has a corpus of documents that need to be represented, fetched
+                from and reasoned upon. Right now, our infrastructure is not scalable. We
+                fetch files by dumping summaries into an LLM and asking for relevant docs.
+                Garbage flow - courtesy yours truly. This understanding will help us
+                represent the information of a case better
+
+                  a. How to make the infrastructure scalable such that we dont dump
+                     summaries into an LLM, and rather have it reason it
+
+                      i. When we dump summaries, what does the LLM do:
+
+                          a. When you feed an LLM a summary, you have already stripped
+                             away the nuance, specific evidence, and context from the original
+                             documents. The LLM can only reason upon the high-level
+                             abstractions you provided, not the raw data. It effectively attempts
+                             to reconstruct the logic of the case based on a "lossy" version of
+                             the facts, meaning it cannot verify specific claims or find
+                             connections that were omitted from the summary
+
+                          b. LLM tries to fill the gaps & starts hallucinating
+
+
+
+
+Notebook LM                                                                                         5
+                 c. No verified citations because it is generating text based on a
+                    summary rather than the original doc
+
+              ii. When we give the same to NotebookLM, what does that do:
+
+                 a. RAG Framework that serves as the foundation for NotebookLM
+
+                 b. Process
+
+                     a. Retrieval: User has a query, RAG system uses algorithms to
+                       interrogate external data
+
+                           Identifying and fetching most relevant segments of
+                           information related to the query
+
+                    b. Pre-Processing: Retrieved info is in the form of chunks that
+                       undergoes pre-processing. Put into the prompt that will be fed
+                       to the LLM, augment’s the LLM’s context providing it with
+                       specific relevant data to base its response on
+
+                     c. Grounded Generation: LLM processes both augmented prompt
+                       that has user’s query & retrieved contextual information.
+                       Generates a response that is tied to facts, ensuring output is
+                       grounded in provided sources.
+
+                 c. How is the RAG Pipeline?
+
+
+
+
+Notebook LM                                                                             6
+                 1. Youtube URL -Import’s video’s text transcript as source material for AI
+                    processing
+
+                 2. For google docs, creates a static copy of the file at time of import
+
+              Uses google vertex AI for parsing techniques:
+
+                 1. Digital Parser
+
+                 2. OCR Parsing
+
+                 3. Layout Parser
+
+          Parsing does textual parsing & then advanced parsing.
+
+          Chunking Strategies:
+          For RAG as well, large documents must be broken down into smaller cohorts
+          known as chunks. Fundamental for RAG, because LLMs operate within finite
+          context window limits.
+
+
+
+Notebook LM                                                                                   7
+          Semantic context of original document is preserved as much as possible during
+          segmentation.
+          What are considerations for chunking:
+
+                 Determining optimal chunk size & degree of overlap between adjacent chunks
+
+
+
+              1. Recursive character text splitting
+
+              2. Markdown header splitting
+
+              3. Layout Aware document chunking
+
+
+
+
+          Documents are parsed & chunked.
+
+          Embedding Generation:
+              1. Role of embeddings
+
+                  a. Text chunk is turned into a dense vector representation known as
+                     embedding
+
+                  b. Embeddings are numerical arrays capture semantic meaning & context of
+                     the text.
+
+                      i. System performs similarity comparisons based on conceptual
+                         meanings, rather than relying on keyword matches ( that can lose
+                        context and have no meaning)
+
+              2. Google’s embedding models
+
+                  a. Google’s Vertex AI text embeddings API
+
+                      i. gemini-embedding-001 for embedding quality generate high dim
+                         vectors
+
+                  b. Generated vectors are normalised which ensures that different metrics will
+                     yield consistent similarity rankings
+
+
+
+
+Notebook LM                                                                                       8
+              c. Embeddings API has input token limit segments for each text segment
+                 being embedded
+
+                  i. ( what is the limit? commonly 2048)
+
+
+
+
+          Vector Storage & Indexing for efficient search
+
+
+
+
+Notebook LM                                                                            9
+              1. Vector databases:
+
+              2. Google has its own vector search
+
+              3. Indexing
+
+
+
+          Query Processing & Information Retrieval
+              1. User query Ingestion & Understanding:
+
+                 a. Handling User queries to retrieve most relevant information
+
+                 b. Understand query, Augment it, execute an efficient search against vector
+                    store & rank results to provide optimal context for LLM
+
+              2. Query Augmentation & Transformation
+
+                 a. Query Rewriting
+
+              3. Retrieval from Vector Store: Search Process
+
+                 a. Involves RAG system searching through user’s indexed notes & docs to
+                    find most pertinent info to the augmented query
+
+
+
+
+Notebook LM                                                                                    10
+                 b. Semantic Search that utilizes dense vector embeddings generated during
+                    document processing. User query also converted into an embedding, that
+                    calculates similarity between query embeddings and embeddings of all
+                    document chunks in vector store.
+
+                      i. Metrics, cosine/dot/euclidean distance. Quantitative measure of how
+                         close a document chunk is to the query.
+
+              4. Hybrid Search: Combine keyword & semantic approach:
+
+                 a. Keyword search along with conceptual understanding offered by semantic
+                    search
+
+                 b. Weight selection is important that determines contribution of keyword
+                    scores & semantic similarity scores to final relevance ranking.
+
+              5. Relevance Ranking & Re-ranking:
+
+                 a. Initial pass gives list of candidate document chunks, to further refine this,
+                    document re-ranking is used
+
+                 b. This involves cross-encoders, that evaluate relevance of each chunk with
+                    the query (Not like bi-encoders that generate standalone embeddings for
+                    query and chunk), here it does both simultaneously.
+
+              6. Contextualization
+
+                 a. Top ranked, most relevant text chunks are selected and presented as
+                    contextual info to gemini along with user’s query. Retrieval and
+                    augmentation need to very good, in order to
+
+
+
+
+          Technical Functionalities
+              1. Interactive Chat and Q&A
+
+              2. Automated Summarization & Content Generation
+
+              3. Audio Overviews
+
+              4. Guidebooks
+
+              5. MindMaps
+
+
+
+
+Notebook LM                                                                                         11
+              6. Discover Sources
+
+
+
+
+          Limitations:
+
+
+
+
+          Sources:
+
+          https://www.datacamp.com/tutorial/notebooklm
+          https://youtu.be/qbt-MFVvQQY?si=jTwRd04XuvBFL2BW
+
+
+
+Notebook LM                                                  12
+Notebook LM   13
+
