@@ -1,183 +1,179 @@
 # Chapter 4 — The K–12 Teacher: From Curriculum to Classroom
 
-> *Teachers use NotebookLM to turn approved materials into differentiated student resources — not to outsource the curriculum, but to multiply it.*
+*Where the production bottleneck was, and what happens when it moves.*
 
 ---
 
-## Problem this chapter solves
+Here is a problem that has a specific shape.
 
-You spend hours each week converting district-approved materials into versions that work for different learners. You know NotebookLM can accelerate that work. This chapter shows you exactly how, in a 45-minute workflow you can run on Sunday nights.
+A teacher walks into a classroom with thirty students. Those thirty students do not read at the same level. They do not have the same prior knowledge. They do not respond to the same analogies. The teacher knows this — has known it for years — and knows exactly what the right response is: differentiated materials, tiered for the actual distribution of the class. Extension work for the students who will be bored by the textbook. Vocabulary support for the students who will be lost before the second paragraph. Formative questions calibrated to what *this* class tends to get wrong about *this* topic.
 
-## Learning outcomes
+The teacher also knows that producing those materials takes three hours she does not have on a Sunday night. So she makes one version and teaches to the middle and notes in her head that she meant to differentiate and didn't. This is not a failure of intention. It is a failure of throughput.
 
-1. *(Apply)* Execute the 45-minute unit preparation workflow: three sources in, four artifacts out.
-2. *(Create)* Write a three-tier reading scaffold (extension, on-level, vocabulary-supported) from a single source.
-3. *(Evaluate)* Decide which generated outputs need teacher review before distribution and which can ship directly.
+The question worth asking precisely is: what, exactly, is the bottleneck? Not "teachers don't have time" — that is a description, not an analysis. The bottleneck is *production*. The teacher already knows the three versions she wants to make. She knows the vocabulary box the lower-tier version needs. She knows the extension questions the upper-tier version should include. She knows the analogy that lands with *this* class and the analogy that doesn't. The knowledge is there. The hours to translate that knowledge into formatted documents are not.
 
-## Prerequisites
-
-- Chapters 1–3.
-- An upcoming unit with district-approved materials you can upload.
-- Knowledge of your specific class — reading levels, prior misconceptions, student dispositions. *This is the prerequisite the tool cannot supply.*
+When you understand the bottleneck that precisely, you can ask a more precise question about any tool that claims to address it: *does this tool move the bottleneck, or does it just move it somewhere else?*
 
 ---
 
-## Opening case — The Sunday-night unit prep
+## What the tool is actually doing in a K-12 context
 
-It is 9:14 PM on a Sunday. You have lecture at 9 AM Monday. The unit covers cellular respiration. The textbook chapter is dense, the standards document is thirteen pages, and you have three reading levels in the class. You have done this work for years; you know how long it takes. Tonight you have 45 minutes before you want to be in bed.
+Chapter 1 established that NotebookLM answers from the sources you upload, with citations back to those sources. Chapter 3 introduced the Note-to-Source mechanism. The K-12 application is what happens when those two architectural facts collide with the production-bottleneck problem.
 
-In the pre-NotebookLM version of this story, you compromise. You make one set of materials and hope they reach the middle of the class. Two students at the top are bored; three students at the bottom are lost; you note it and plan to differentiate next week and then next week comes and you don't.
+The collision goes like this. You upload the materials you are already required to use — the district-approved textbook chapter, the scope-and-sequence document, the relevant state standards. The model can now answer questions about those materials, synthesize them, and generate derivative outputs — Briefing Docs, Audio Overviews, slide decks, formative assessments — all sourced from and cited back to the documents you uploaded.
 
-This chapter is about whether the post-NotebookLM version of this story can be different — and how, exactly. Not "the AI does it for you." Closer to: "the AI does the production work; you do the curatorial and verification work; the differentiation happens because the production work was no longer the bottleneck."
+The derivative outputs are the production step. That step, which previously took three hours, now takes 45 minutes. The 45 minutes includes review time — and I want to be exact about what review time means here, because the chapter's entire argument depends on it.
+
+Review time is not optional finishing. It is the step where your knowledge of your specific class enters the process. The model produced a vocabulary-supported version of the cellular respiration chapter. Does that version still reach the same learning goal, or did simplification remove a load-bearing piece of the explanation? The model produced ten formative assessment questions. Are any of them ambiguous, or do they test vocabulary you haven't introduced yet? The model's Audio Overview used a battery analogy for the proton gradient. You would have used a dam analogy, because that's the one that lands with this class. These are not corrections of AI error. They are the application of knowledge the model cannot have — your knowledge of the thirty specific students in front of you Monday morning.
+
+This is the answer to the bottleneck question. The tool moves the production bottleneck. It does not touch the judgment bottleneck, because the judgment bottleneck is not a bottleneck — it is the work. Production without judgment is faster *and worse*. Production with judgment, when production is no longer the constraint, is faster *and better*. That is what the 45-minute workflow is designed to produce.
+
+<!-- → [DIAGRAM: Two-column comparison of the pre-tool and post-tool preparation process. Left: Teacher knowledge → (3 hours production) → one undifferentiated artifact. Right: Teacher knowledge → (Note-to-Source loop) → model → (45 min including review) → differentiated artifacts. Arrow labels show where teacher judgment enters each process. Caption: The bottleneck moves from production to review; the judgment step is preserved in both.] -->
 
 ---
 
-## Core concept 1 — The 45-minute unit preparation sequence
+## The five-step sequence
 
-The sequence has five steps. Total wall time: 45 minutes assuming the verification steps are not skipped.
+The workflow has five steps. I will describe them in order and then explain why the order matters.
 
-**Step 1 — Upload (5 minutes).** Three sources: the textbook chapter PDF, your district's scope-and-sequence document, the relevant state standards (Common Core, NGSS). Watch the ingestion. If the textbook PDF is heavily formatted or scanned, ask a specific content question to confirm extraction worked.
+**Upload.** Three sources: the textbook chapter as a PDF, the district scope-and-sequence document, the relevant state standards. This step is five minutes if the sources are already in digital form. Watch the ingestion — if the textbook PDF is heavily formatted or scanned from print, ask a specific content question to confirm the text was extracted correctly. A scanned PDF that ingested poorly will produce outputs that look plausible and are missing content.
 
-**Step 2 — Briefing Doc (5 minutes).** Generate. Verify three citations. If the doc misses a section that matters, regenerate with a more targeted prompt naming the section.
+**Briefing Doc.** Generate it. Then verify three citations — pick three claims in the document and click through to the source. If the doc misses a section that matters to your unit, regenerate with a prompt that names the section explicitly. The Briefing Doc is not an end product; it is a quality check. If the model misrepresents your sources at this stage, the downstream outputs will be worse. Finding the error here costs two minutes. Finding it in a formative assessment you have already distributed costs a class period.
 
-**Step 3 — Audio Overview (10 minutes).** Use a specific prompt:
+**Audio Overview.** Use a specific prompt, not a generic one. The difference between "generate an audio overview" and the following prompt is substantial:
+
 > *"Focus on the three core concepts in chapter 4 that a 9th-grade student will struggle to grasp. Target a 12-minute run time pitched at a 9th-grade reading level. Include the egg-counting analogy from the Note pinned to source 4."*
->
-> Generate. Listen while reading the source. Note one omission you would address in your verbal lecture.
 
-**Step 4 — Slide Deck (10 minutes).** Generate 12 slides. Export to PPTX. Manually edit the 3–4 most consequential slides — the opener, the diagnostic question slide, the closing synthesis. The model handles consistency and layout; you handle the slides that carry the most cognitive weight.
+The specificity matters for the same reason that specificity always matters in retrieval: the model retrieves what you ask for. A vague prompt retrieves a vague result. Listen to the audio while reading the source — ten minutes of parallel processing. Note one place where the audio handles a concept differently than you would. That note becomes the first five minutes of Monday's lecture: *"The audio used a battery analogy. Here's why I'd use a dam instead, and here's what each one gets right."* That is not a correction of an AI error. It is a use of the divergence.
 
-**Step 5 — Formative assessment (15 minutes).** Generate questions mapped to Bloom's tiers. Review every question. Cut the 20% that are unclear, ambiguous, or pedagogically weak. The cut is not optional. Shipping un-reviewed quizzes produces classroom problems that cost more time than the review would have.
+**Slide Deck.** Generate twelve slides. Export to PPTX. Manually edit three or four slides — the opener, the diagnostic question slide, the closing synthesis. The model handles consistency and layout. You handle the slides that carry the most cognitive weight. Do not regenerate the whole deck to fix the opener. Edit the opener. Regeneration changes everything at once and can introduce new problems while fixing the one you saw.
 
-Output: a unit-ready packet differentiated for *your* specific class.
+**Formative Assessment.** Generate ten questions mapped to Bloom's levels. Review every question. Cut the 20% that are ambiguous, poorly framed, or that test something you haven't taught yet. This cut is not optional. An unreviewed quiz that goes out with a bad question produces a classroom problem — students who answered the question correctly according to one reasonable reading of it, students who answered it correctly according to a different reasonable reading, and a grade dispute that costs fifteen minutes of class time and twenty minutes after school. The review takes three minutes. The dispute takes thirty-five. The math is not subtle.
+
+<!-- → [TABLE: Five-step workflow with columns: Step / Time / What you do / What the model does / What breaks without this step. Rows: Upload, Briefing Doc, Audio Overview, Slide Deck, Formative Assessment. Caption: The 45-minute figure is wall time including review. Each "what breaks" entry names the specific downstream failure the step prevents.] -->
 
 ---
 
-## Core concept 2 — Tiered scaffolds from a single source
+## Tiered scaffolds
 
-A tiered scaffold is three (or more) versions of the same content at different reading levels and cognitive demands, all reaching the same learning goal. NotebookLM can produce them from one source if you prompt for them by name.
+The production bottleneck makes itself felt most acutely in differentiation, which is why it is worth treating separately.
 
-The standard three-tier prompt:
+A tiered scaffold is three versions of the same content — extension, on-level, vocabulary-supported — all aimed at the same learning goal. The idea is not new; the problem is always that producing three versions of anything takes three times as long as producing one. When the bottleneck is production time, differentiation is the first thing that gets cut.
+
+The prompt that generates a usable three-tier scaffold looks like this:
 
 > *"Produce three versions of the chapter 4 reading.*
 > *Version 1: extension version for advanced readers. Include additional context, advanced vocabulary, and comprehension questions at Bloom's Apply level.*
 > *Version 2: on-level version. No scaffolding changes; the textbook's intended reading level.*
 > *Version 3: vocabulary-supported version. Pre-defined glossary box inline for the terms [list]. Average sentence length under 15 words. Technical terms introduced one at a time."*
 
-What can go wrong: the vocabulary-supported version may simplify too aggressively. The model removes a key technical term to reduce difficulty and inadvertently removes a load-bearing piece of the explanation. Review the version 3 output against your learning goal — does the simplified version still reach the same destination?
+The on-level version is easy and mostly reliable. The extension version is usually fine. The vocabulary-supported version is the one to examine carefully. Simplification of sentence structure is mechanical and the model does it well. Simplification of content is not mechanical, and the model sometimes removes a technical term to reduce difficulty and inadvertently removes the concept that term was carrying. A student who reads a version 3 that has been over-simplified will reach the end of the document and miss the learning goal — not because they couldn't handle the concept, but because the scaffolded version didn't deliver it.
 
-This is a place where AI assistance lets you do work you previously could not afford to do at all. Differentiation that took three hours now takes 45 minutes. The honest qualification: the time savings depend on the review discipline. Without review, differentiation becomes faster *and worse*; with review, faster and (typically) better.
+The check is specific: take the vocabulary-supported version and ask, for each learning objective, whether the version gives the student enough to demonstrate that objective. If the objective is *"explain how ATP stores and releases energy,"* does version 3 contain a sentence the student could use to construct that explanation? If it doesn't, the simplification went too far. Add the sentence back.
 
----
-
-## Core concept 3 — The Note-to-Source loop for K-12 teaching
-
-Introduced in Chapter 3; here applied to the workflow that makes it most useful.
-
-Your accumulated teaching expertise about this class lives in your head — *students confuse mitosis with meiosis*, *the egg-counting analogy works better than the dimensional-analysis approach*, *Marcus will tune out if the example is finance-heavy; use sports or music*. None of this is in the textbook. None of it is in the model's training data. All of it is what makes your teaching of *this material with this class* work.
-
-The Note-to-Source loop captures it. You write a Note: *"For this 9th-grade class: framed misconceptions to address — mitosis/meiosis confusion (most common); ATP-as-energy-currency abstraction (second most common). Sports analogies land; finance analogies don't."* Promote to source. Every subsequent output is now grounded in your framing as well as the textbook's.
-
-The chapter's emphasis: this is where NotebookLM stops being interchangeable with any other AI tool. You can prompt ChatGPT with the same framing every time, but you have to *remember to do it* and the framing is not persistent across the model's responses. The Note-to-Source loop makes the framing structural.
+<!-- → [TABLE: Three-tier scaffold comparison — columns: Version / Reader target / Vocabulary handling / Cognitive demand / Where errors typically appear. Rows: Extension, On-level, Vocabulary-supported. Caption: Review effort is not evenly distributed — the vocabulary-supported version needs the most scrutiny because simplification can remove load-bearing content.] -->
 
 ---
 
-## Mid-chapter checkpoint
+## The Note-to-Source loop
 
-Before continuing:
-- Can you list the five steps of the 45-minute workflow without looking?
-- Can you state the structural difference between the workflow with the review steps and the workflow without them?
+Everything described so far applies to any teacher using NotebookLM for any class. The Note-to-Source loop is what makes the output specific to *your* class — and it is the mechanism that makes the tool irreplaceable once you have used it for a semester.
 
----
+The problem it solves is this. Your accumulated pedagogical knowledge about this class is not in the textbook. It is not in the state standards. It is not in the model's training data. It lives in your head: *students in this class confuse mitosis with meiosis*; *the egg-counting analogy works better than dimensional analysis for this group*; *examples with sports references land; examples with finance references lose half the class*; *Marcus needs diagrams; Priya needs text*. This knowledge is exactly what makes your teaching of this material with this class work. Without it, any AI-generated output is calibrated to a generic 9th-grade class that does not exist.
 
-## Worked workflow — Cellular respiration, Sunday night
+The Note-to-Source loop captures it. You write a Note in the notebook:
 
-It is the 9:14 PM scenario from the opening. The five steps in detail:
+> *"For this 9th-grade class: common misconceptions to address — mitosis/meiosis confusion (most common); ATP-as-energy-currency abstraction (second most). Sports analogies land; finance analogies lose students. Egg-counting analogy outperforms dimensional analysis for enzyme stoichiometry."*
 
-**5 minutes**: Upload textbook chapter (PDF), district scope-and-sequence (Google Doc, lives in your Drive), NGSS standards (PDF from state DOE site). All three sources show as "added." You ask the chat: *"What is the standard's expected proficiency on cellular respiration for grade 9?"* The response correctly quotes from the NGSS document. Standards source ingested correctly.
+You promote that Note to source. Now every output the model generates is grounded in your framing as well as the textbook's. The Audio Overview prompt that references "the egg-counting analogy from the Note pinned to source 4" works because the Note is a source.
 
-**5 minutes**: Generate Briefing Doc. The doc covers glycolysis, the citric acid cycle, the electron transport chain. It misses the section on aerobic vs. anaerobic respiration that you spend 8 minutes on Tuesday. You regenerate with: *"Add a section on aerobic vs. anaerobic respiration emphasizing how the cell switches between modes."* The second version is right.
+The distinction from a general-purpose chatbot matters here. You can paste similar framing into a ChatGPT prompt every time. But you have to remember to do it, and the framing does not persist across responses — each new query starts from scratch. The Note-to-Source loop makes the framing structural. It is there whether you remember to invoke it or not, because it is part of the source set.
 
-**10 minutes**: Generate Audio Overview at 12 minutes, 9th-grade level, focusing on the proton gradient. Listen at 1.5x while reading the source. The audio explains the proton gradient with a battery analogy. You would have used a dam analogy. You note this for the verbal lecture — the audio is fine but your version of the analogy lands better with this class. You decide to assign the audio as preview and address the analogy in your lecture's first 5 minutes.
+Over a semester, this accumulates. Each new unit you add a Note for. Each time you find that a framing worked or didn't, you update the Note. By February, the notebook for this class contains a compact model of how *this class* processes the material. That is something a general-purpose AI tool cannot build for you, because a general-purpose AI tool does not have a persistent, citable source set that you curate.
 
-**10 minutes**: Generate 12-slide deck. Export to PPTX. The opener slide is generic; you rewrite it as a question — *"Why do you need to keep breathing right now?"*. The diagnostic slide is fine. The closing synthesis slide is too text-heavy; you replace the bullets with the diagram from the textbook.
-
-**15 minutes**: Generate 10-question formative assessment. Two questions are ambiguous; one tests vocabulary you haven't taught yet; seven are good. You cut the three, leaving seven. The seven take students about 8 minutes during Wednesday's class.
-
-Total wall time: ~45 minutes. Output: Briefing Doc, Audio Overview, edited Slide Deck, edited assessment. You go to bed at 10 PM. The differentiation step (three-tier scaffold) is on Tuesday — another 30 minutes, but you have the workflow now.
+<!-- → [DIAGRAM: Note-to-Source loop — teacher writes observation about class (misconception, analogy, student need), promotes to source, subsequent model outputs are grounded in that observation. Show the feedback cycle: output → teacher observes what worked → Note updated → next output incorporates updated Note. Caption: The loop makes the tool more specific to your class over time. Without it, every query starts from scratch.] -->
 
 ---
 
-## Common misconceptions
+## What goes wrong
 
-> **"Once the model has generated, the materials are ready to ship."**
-> No. All five outputs require review. The 45-minute figure includes review time, not just generation time.
+The chapter's argument is that the tool moves the production bottleneck without touching the judgment requirement. The failure mode is treating the production output as the final output — generating without reviewing, distributing without checking.
 
-> **"AI-generated differentiation replaces my judgment about my class."**
-> The tool produces tiered versions. *Whether each tier is right for the students you actually have* is a judgment only you can make. The Note-to-Source loop lets the tool benefit from your judgment; it does not substitute for it.
+The formative assessment case is the clearest example. A teacher generates ten questions, does not review them, distributes them Monday. One question has two correct answers depending on how the student reads "primarily." Three students answer the wrong one, have a defensible reason for doing so, and come to the teacher during lunch. The teacher spends the afternoon deciding whether to regrade twenty papers. This is not a catastrophic outcome, but it costs more time than it saved — and it costs it in a worse moment, when Monday is already running and the slack is gone.
 
-> **"I should regenerate until the output is right rather than edit it."**
-> Regeneration changes everything at once and can introduce new errors while fixing old ones. Targeted editing of the 3–4 most consequential elements is faster and produces more predictable results.
+The vocabulary-supported scaffold case is subtler. The teacher produces version 3, reviews it quickly, distributes it. The simplification removed a sentence the learning objective depended on. Three weeks later, on the unit assessment, the students who used version 3 show a systematic gap on one question. The teacher diagnoses it correctly — the scaffold under-delivered — but the correction now has to happen after the assessment, during review, which is the worst possible moment for reteaching.
 
----
+Both failures have the same structure: the review step was skipped or shortened, and the error propagated forward. The honest accounting of the 45-minute workflow is that the review steps are not a small fraction of it. They are roughly fifteen of the forty-five minutes. Remove them and you have thirty minutes that produces faster-distributed mistakes.
 
-## Exercises
-
-1. *(Apply)* Execute the 45-minute workflow for an upcoming unit. Time yourself. Note which step took longest and why.
-
-2. *(Create)* Produce a three-tier scaffold for one section of the textbook. Test the vocabulary-supported version against your class's lowest reader: would they reach the same learning goal?
-
-3. *(Evaluate)* Take two outputs from the workflow. For each, identify what domain knowledge you brought to the revision. List in two sentences what a teacher *without* that knowledge would have shipped instead.
+<!-- → [TABLE: Error propagation by failure mode — columns: Where review was skipped / Error type / When the error surfaces / Cost to correct. Rows: Formative assessment (ambiguous question surfaces day-of, costs afternoon regrading); Vocabulary scaffold (over-simplification surfaces on unit assessment three weeks later, costs reteaching during review). Caption: The later an error surfaces, the more it costs — the review step is cheap precisely because it catches errors before they propagate.] -->
 
 ---
 
-## What would change my mind
+## The Sunday night in full
 
-A time-and-motion study at scale showing that K-12 teachers using this workflow produced lower-quality unit materials than teachers using traditional preparation methods at equivalent total time investment would weaken the chapter's core claim. No such study yet exists. The current evidence is observational and practitioner-reported (pantry research file).
+It is 9:14 PM. The unit is cellular respiration. You have 45 minutes.
 
-## Still puzzling
+You upload three sources: textbook chapter (PDF), district scope-and-sequence (Google Doc from your Drive), NGSS grade 9 standards (PDF from the state DOE site). You ask the chat: *"What is the expected proficiency on cellular respiration for grade 9 under NGSS?"* The response quotes correctly from the standards document. The sources ingested.
 
-- The Workspace Studio automation ("Ask NotebookLM" step, May 2026) can automate scope-and-sequence audits at district scale. Does that change the per-teacher workflow, or does it mostly change the per-district one?
-- How much of the workflow can move into the Note-to-Source loop over time — i.e., how much of a teacher's accumulated pedagogical knowledge can be captured in promoted Notes?
+Five minutes in, you generate the Briefing Doc. It covers glycolysis, the citric acid cycle, the electron transport chain. It misses the aerobic-vs.-anaerobic section you spend eight minutes on Tuesday. You regenerate with one additional sentence in the prompt: *"Add a section on aerobic vs. anaerobic respiration emphasizing how the cell switches between modes under different oxygen conditions."* The second version includes it.
+
+Ten minutes in, you generate the Audio Overview: twelve minutes, 9th-grade level, focused on the proton gradient, with the egg-counting analogy from your Note. You listen at 1.5x while reading the source. The audio uses a battery analogy for the proton gradient. You would use a dam analogy — the students in this class respond better to flow and pressure than to charge. You note it. Monday's lecture opens with: *"The audio used a battery. Here's the dam. Here's why both are partly right and which one you should keep."*
+
+Twenty minutes in, you generate the twelve-slide deck. Export to PPTX. The opener slide is a statement about cellular respiration. You rewrite it as a question: *"Why do you need to keep breathing right now, this moment, even though you haven't moved in ten minutes?"* The diagnostic question slide is fine. The closing synthesis slide has eight bullets; you replace them with the diagram from the textbook, which is cleaner.
+
+Thirty minutes in, you generate ten formative questions. Two are ambiguous. One tests vocabulary you introduce Thursday, not Monday. Seven are good. You cut three. The seven go into Wednesday's class as an eight-minute diagnostic.
+
+It is 10:00 PM. You have a Briefing Doc, an Audio Overview, an edited slide deck, and a seven-question formative assessment. The three-tier scaffold is Tuesday's 30 minutes; you have the workflow now, and Tuesday is a lighter night.
+
+<!-- → [INFOGRAPHIC: Horizontal timeline from 9:14 PM to 10:00 PM divided into five labeled blocks — Upload (5 min, output: 3 sources confirmed ingested), Briefing Doc (5 min, output: doc with aerobic/anaerobic section added), Audio Overview (10 min, output: 12-min audio + lecture note on dam vs. battery analogy), Slide Deck (10 min, output: 12 slides, 3 edited), Formative Assessment (15 min, output: 7 of 10 questions after cut). Each block shows generation time vs. review time as a split. Caption: The 45 minutes is not 45 minutes of generation — review accounts for roughly one third of each block.] -->
+
+The differentiation that previously didn't happen because the production work was the bottleneck now happens. Not because the tool removed the judgment — it didn't — but because the judgment is no longer waiting behind three hours of formatting.
 
 ---
 
-## Chapter summary
+## What this chapter established
 
-You can now:
-- Execute the five-step, 45-minute unit preparation workflow.
-- Produce a three-tier reading scaffold from a single source.
-- Use the Note-to-Source loop to make your pedagogical framing structural across all outputs.
-- Decide which outputs need teacher review before distribution and which can ship.
+The bottleneck in K-12 unit preparation is production, not judgment. NotebookLM moves the production bottleneck by generating derivative outputs — Briefing Docs, Audio Overviews, tiered scaffolds, formative assessments — from sources you upload. The 45-minute workflow preserves the judgment step by building review time into each stage; without review, the workflow produces faster mistakes, not better materials. The Note-to-Source loop makes the tool specific to your class over time by making your pedagogical knowledge part of the source corpus. The tool does not outsource the curriculum. It multiplies it.
+
+Chapter 5 is about what happens when the materials reach students — how assignment design determines whether the tool produces engagement or substitution, and why the same Audio Overview that helped one class hurt another.
+
+---
 
 ## Key terms
 
-- **45-minute workflow** — Upload three, generate four, review all. Sunday-night-friendly.
-- **Tiered scaffold** — Multiple versions of the same content at different reading and cognitive levels, same learning goal.
-- **Note-to-Source loop** — The mechanism by which your teaching expertise becomes part of the source corpus.
+- **Production bottleneck** — The constraint that prevents differentiation from happening: not lack of knowledge about what students need, but lack of time to produce it.
+- **45-minute workflow** — Upload three sources, generate four outputs, review all. Wall time including mandatory review.
+- **Tiered scaffold** — Extension, on-level, and vocabulary-supported versions of the same content, aimed at the same learning goal.
+- **Note-to-Source loop** — The mechanism by which your accumulated pedagogical knowledge about your specific class becomes part of the source corpus, making outputs specific rather than generic.
 
-## Bridge question
+---
 
-The teacher has the materials. **What happens when students use them?** Chapter 5 addresses the student-facing side: how assignment design determines whether the tool produces engagement or substitution.
+## LLM Exercises
 
-## Further reading
+*Use a language model with access to current literature on differentiated instruction, AI-assisted teaching, and educational technology to complete the following.*
 
-- Tomlinson, *The Differentiated Classroom* (2014) — Canonical differentiation framework.
-- McTighe & Silver, *Teaching for Deeper Learning* (pantry library file) — Backward design for unit planning.
-- *Pantry research file*, especially the K-12 use cases section.
+**Warm-up**
 
-## Quick-start card
+1. *(Verify the bottleneck claim)* The chapter argues that the primary constraint on differentiation is production time, not teacher knowledge. Ask a language model to locate research on why K-12 teachers report not differentiating instruction. Does the literature support production time as the dominant constraint, or does it identify other factors equally or more significant? Report what it finds and note any gaps between the chapter's framing and the evidence.
 
-> **The 45-minute Sunday-night workflow**
->
-> 1. Upload three sources (5 min).
-> 2. Briefing Doc + verify three citations (5 min).
-> 3. Audio Overview with targeted prompt (10 min).
-> 4. 12-slide Slide Deck, edit 3–4 slides (10 min).
-> 5. 10-question assessment, cut 20% (15 min).
->
-> Review time is not optional. It is what makes the 45 minutes worth more than the 3 hours it replaced.
+2. *(Stress-test the 40% cut rule)* The chapter recommends cutting 20% of generated formative assessment questions before distribution. Ask a language model: what does the research on item-writing quality suggest about the error rate of AI-generated assessment questions — and is 20% a conservative or aggressive cut? Evaluate whether the chapter's figure needs adjustment given current evidence.
+
+**Application**
+
+3. *(Scaffold audit)* Describe the vocabulary-supported version failure mode to a language model — the case where simplification removes a load-bearing concept — and ask it to generate a checklist a teacher could use to audit version 3 of a tiered scaffold before distribution. Map each checklist item to one of the chapter's learning objectives. Identify any items the model includes that the chapter doesn't address.
+
+4. *(Note-to-Source transfer)* Ask a language model to generate a Note-to-Source template a biology teacher could use for a 9th-grade class covering cellular respiration — capturing common misconceptions, effective analogies, and student-specific needs. Then evaluate: what would a teacher need to add from their own knowledge that the model cannot supply? What does that gap tell you about the limits of the Note-to-Source loop?
+
+**Synthesis**
+
+5. *(Failure mode extension)* The chapter describes two failure modes: the ambiguous quiz question and the over-simplified scaffold. Ask a language model to identify two additional failure modes that could arise in the 45-minute workflow — cases where the review step was completed but still failed to catch a downstream problem. Evaluate whether those failure modes are structural (inherent to the RAG architecture) or procedural (correctable by changing the review process).
+
+**Challenge**
+
+6. *(Bottleneck shift over time)* The chapter claims the Note-to-Source loop makes the tool more specific to your class over time. Ask a language model: is there a point at which accumulated Notes become a liability — where the teacher's prior framing of the class prevents the model from generating outputs that would work for new students, or that reflect student growth across a semester? Design a protocol a teacher could use to audit and update their Note corpus at the start of each unit. Evaluate whether the protocol addresses the failure mode you identified.
+
+---
 
 ## Aging note
 
-Workspace Studio automation (May 2026) may shift some workflow elements from per-teacher to per-district. Specific output types and Studio panel layout evolve. Re-verify before reprint. The structural argument — production work delegated, judgment work preserved, review time mandatory — is stable.
+Workspace Studio automation (launched May 2026) may shift scope-and-sequence auditing from per-teacher to per-district workflows. The specific output types available in NotebookLM and the Studio panel layout will evolve. Re-verify before reprint. The structural argument — production work delegated, judgment work preserved, review time mandatory — is stable and does not depend on any specific interface feature.
