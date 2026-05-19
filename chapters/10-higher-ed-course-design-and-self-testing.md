@@ -1,201 +1,147 @@
 # Chapter 10 — Higher Education: Course Design and the Self-Testing Model
 
-> *The Monash model — configure NotebookLM to quiz the learner, not explain to them — is the highest-leverage use case for undergraduate course integration.*
+*The Monash model — configure NotebookLM to quiz the learner, not explain to them — is the highest-leverage use case for undergraduate course integration.*
 
 ---
 
-## Problem this chapter solves
+Here is a puzzle worth sitting with.
 
-University faculty face the same passive/active problem as K–12 teachers, amplified by the absence of Google Classroom's supervised notebook model. This chapter teaches the highest-leverage configurations for undergraduate course integration: Monash-style self-testing and NYU-style feedback loops.
+Two universities deploy NotebookLM in undergraduate courses. Both deployments work. The design principles behind them are almost opposite.
 
-## Learning outcomes
+At UW-Milwaukee, a teaching consultant named Ed Price was working with a remedial math course — students who arrived with genuine math anxiety, the kind that shuts down cognition before the problem is half-read. He generated podcast-style Audio Overviews of the mathematical units and embedded them in Canvas as optional resources with closed captions. Students who chose to listen reported feeling more comfortable during in-person problem-solving sessions. Price's conclusion was careful: the tool works as a supplementary companion to dense material, not as a replacement for active study.
 
-1. *(Create)* Design a NotebookLM-integrated assignment that uses Learning Guide as a self-testing companion rather than a summary generator.
-2. *(Apply)* Configure a notebook for an undergraduate course and verify student access through institutional Workspace accounts.
-3. *(Evaluate)* Assess the NYU faculty feedback-loop use case for applicability in your own course context.
+At Monash University, the deployment looks nothing like this. Monash configures Learning Guide as a self-testing companion — not a tool that explains things to students, but a tool that asks students diagnostic questions, waits for their answers, and evaluates before offering feedback. The tool is the assignment. Engagement is not optional. The design is retrieval-practice from the first moment.
 
-## Prerequisites
+Both of these are right. They are right for different reasons, and mixing the reasons produces failures that are entirely predictable once you see what each design principle actually is.
 
-- Chapters 1–3 (design principle, operational fluency).
-- Chapter 5 (active-engagement framework — same logic, undergraduate population).
-- An upcoming undergraduate course where NotebookLM integration is being considered.
+UW-Milwaukee is running *accessibility plus optionality*. The resource is there for students who benefit; the rest of the class is not required to use it; the audio does not replace any required work. Monash is running *retrieval-practice integration*. The tool is the required cognitive event — not a supplement to learning but the mechanism that produces it.
+
+A faculty member who doesn't know which principle they are deploying will end up with something that is neither. They'll make the audio required and high-stakes, which is the wrong design for an accessibility resource. Or they'll make the self-testing optional and ungraded, which is the wrong design for a retrieval-practice tool. The chapter's job is to make the distinction clear enough that you cannot mix them by accident.
 
 ---
 
-## Opening case — Two correct deployments, different design principles
+## Why Retrieval Practice Is the Right Frame for Learning Guide
 
-**Case A: UW-Milwaukee Math 94.** Ed Price, Teaching, Learning, and Technology Consultant at UW-Milwaukee, addressed student math anxiety in a remedial math course by generating podcast-style Audio Overviews of mathematical units. The audios were embedded in Canvas via MyMedia with closed captions and made *optional*. Students who chose to listen reported greater comfort during in-person problem-solving sessions. Price's conclusion: the tool works as a *supplementary companion* to dense readings, not as a replacement for active study.
+<!-- → [CHART: Learning curve comparison — retrieval practice vs. re-reading/re-listening — data from Karpicke & Roediger 2008, showing durable retention gap over time] -->
 
-**Case B: Monash University.** Monash configures NotebookLM's Learning Guide as a *self-testing study companion* that asks students diagnostic questions, adapts to their answers, and supports formative self-testing rather than giving direct answers. The deployment is *active and integrated* — the tool is the assignment, not a supplement to one.
+The pedagogical foundation for the Monash model is decades old and unusually solid. Karpicke and Roediger, writing in *Science* in 2008, showed that retrieval practice — being asked to recall information from memory, rather than re-reading or re-listening — produces dramatically more durable learning. The finding has replicated. It holds across subjects, ages, and content types with enough consistency to call it one of the most reliable results in educational psychology.
 
-Both cases are correct. The reason each is correct is a different design principle:
+Here is the mechanism, stated plainly. When you encounter new information and then retrieve it — try to recall it, attempt to produce it, answer a question about it — you strengthen the memory trace in a way that passive re-exposure does not. The effort of retrieval is not a side effect. It is the event that produces learning. A tool that bypasses that effort, by explaining rather than testing, removes the cognitive event you actually needed.
 
-- Case A: *accessibility plus optionality.* The audio is there for students who benefit; the rest of the class is not penalized for skipping it. The audio does not replace any required work.
-- Case B: *retrieval-practice integration.* The tool is the assignment; engagement is required by design.
+This is why the default tutoring pattern — student asks a question, tool provides an explanation — is the least efficient use of a learning tool that is capable of doing something more demanding. The explanation feels useful. It is comfortable. The student finishes feeling like they understood. But the understanding is fragile in a way that retrieved understanding is not, because the retrieval event never happened.
 
-The chapter's argument: a faculty member must know *which principle they are deploying*. Mixing them — making the audio required and high-stakes, or making the self-testing optional and ungraded — produces the failure modes Chapter 5 named.
+The Monash configuration inverts this. Instead of the student asking *"explain X,"* the student invokes Learning Guide with *"test me on chapter 4."* The tool generates diagnostic questions one at a time. The student attempts each one. The tool evaluates and provides feedback only after the student has tried. The discomfort is the point. The effort of trying and being wrong before seeing the correct framing is exactly what produces learning that sticks.
 
----
+<!-- → [INFOGRAPHIC: Side-by-side diagram — default tutoring pattern (student asks → tool explains) vs. Monash retrieval pattern (tool asks → student attempts → tool evaluates) — annotated with where the learning-producing event occurs in each] -->
 
-## Core concept 1 — The Monash self-testing configuration
-
-Monash configures Learning Guide to *quiz the learner, not explain to them*. This inverts the default tutoring pattern (student asks → tool answers) into a retrieval-practice pattern (tool asks → student answers → tool evaluates).
-
-The pedagogical rationale is decades old. Retrieval practice produces durable learning (Karpicke & Roediger, *Science* 2008). A tutoring tool that bypasses retrieval — by explaining instead of testing — removes the cognitive event that produces learning. A tutoring tool configured to *force retrieval before explanation* preserves it.
-
-**Configuration walkthrough.** A student loads a notebook with the week's assigned readings. They invoke Learning Guide. Instead of asking *"explain X,"* they say: *"Test me on chapter 4."* The tool generates diagnostic questions one at a time. The student answers each. The tool evaluates and provides feedback only after the student attempts.
-
-The crucial design detail: this configuration must be *taught*. Students who haven't been told to use Learning Guide this way will default to asking it for explanations. The teacher's job is to make the configuration explicit — *here is how to use this tool. Here is why.*
-
-**When it works best.** During *initial learning*, not review. As the encoding event, not as a check after the fact. Used after, it's a quiz; used during, it's the mechanism that produces the learning the quiz would later measure.
+There is a timing detail here that matters and that most deployments miss. Learning Guide is most powerful during *initial learning* — as the encoding event, the first time the student works through the material. Most faculty deploy self-testing tools as review, after the fact, as a check that learning happened. That is less than half the leverage. Used before the student has consolidated the material, the tool is forcing the retrieval attempt that produces the encoding. Used after, it is measuring what the encoding produced. Both have value; the first has more.
 
 ---
 
-## Core concept 2 — The NYU faculty feedback loop
+## The Configuration That Produces This
 
-At NYU's October 2025 Teaching & Learning with Generative AI symposium, an instructor demonstrated a different use case: using NotebookLM to analyze student-feedback data from a large introductory programming course to create formative assessment activities, integrated with Brightspace and Poll Everywhere.
+<!-- → [TABLE: Learning Guide configuration options — columns: configuration approach, default student behavior, what changes with explicit prompt, pedagogical effect] -->
 
-The structure:
+The Monash model requires explicit configuration, and that configuration has to be taught to students. Students who are handed a notebook without instructions will do what comes naturally: they will ask the tool to explain things. The tool will oblige. The retrieval event will not occur. The deployment will look fine and produce less than it could.
 
-1. Collect student feedback (mid-semester surveys, common confusions from assignment grading, polling responses).
-2. Upload the feedback data to NotebookLM as a source.
-3. Query: *"Based on this feedback, what three concepts are students most struggling with? Generate a formative assessment activity targeting each."*
-4. Deploy the activities through the LMS and polling tool.
+The configuration is not complicated. It is a matter of what the student types.
 
-What's interesting about this case: NotebookLM is functioning as a *teaching analytics* tool — not generating content for students, but generating insight from student data that the teacher then acts on. It demonstrates the bounded-tool framework applied to course-improvement work, not just content production.
+Default behavior: *"Explain regression to the mean."* Tool response: two paragraphs of explanation, source-grounded. Student learns something; student doesn't retain it as well as they would have with a retrieval attempt.
 
----
+Monash configuration: *"Test me on chapter 4. Ask me one diagnostic question at a time. Do not give me the answer until I have attempted. If I am wrong, give me a more scaffolded question rather than explaining."* Tool response: a diagnostic question. Student attempts. Tool evaluates. If wrong, another question. The explanation arrives only after effort.
 
-## Core concept 3 — The April 2026 student notebook expansion
+The difference is entirely in how the student invokes the tool. This means the teacher's job at deployment is to write that configuration prompt into the student-facing instructions — not as an optional suggestion, but as the assignment itself. *Before our Friday session, open the class notebook and invoke Learning Guide with the prompt "Test me on chapter 4 applications." Work through at least three diagnostic questions. Bring to class: one question you struggled with, one question that made the concept click.*
 
-A higher-ed-specific operational fact: as of April 2026, higher-education students aged 18+ can create *personal class notebooks* grounded in educator-provided Classroom materials. This is the operational unlock for the Monash model at scale — students need to instantiate their own notebooks from teacher-provided sources, not just consume teacher-built ones.
+Two things make this work that would otherwise break it. First, the student-facing instructions must be specific about the invocation prompt, not just about the goal. "Use Learning Guide to study chapter 4" produces explanation-seeking. "Invoke Learning Guide with this exact prompt" produces self-testing. The specificity is not pedantic; it is the mechanism.
 
-The pedagogical implication: undergraduate faculty can now design assignments that depend on individual student notebooks, not just shared class notebooks. This expands the design space beyond what was possible in K–12 (where individual student notebook creation is still gated for under-18 students).
-
-The practical step: confirm institutional Workspace settings allow student notebook creation before designing assignments that require it. Some institutions enabled the feature; others have not.
+Second, the teacher should generate the question set themselves before deploying to students. Learning Guide's diagnostic questions are good enough to be useful and inconsistent enough to require review. Some questions are sharp, well-targeted, testing exactly the concept you want tested. Some are formulaic, pattern-matching on textbook phrasing without testing actual understanding. Some are ambiguous. Five minutes of question review per assignment — generating the set yourself, identifying the weak ones, cutting or flagging them — is cheap relative to the cost of deploying weak questions to 200 students who will form wrong impressions of what they're supposed to understand.
 
 ---
 
-## Core concept 4 — Accessibility uses
+## The NYU Feedback Loop
 
-Beyond the active-engagement and feedback-loop deployments, NotebookLM provides accessibility affordances that matter at the undergraduate scale:
+<!-- → [INFOGRAPHIC: NYU feedback-loop workflow — data collection → NotebookLM analysis → formative activity generation → LMS deployment → cycle back to data collection] -->
 
-- **Closed captions** on all Audio and Video Overview outputs.
-- **Multilingual output** for some output types (expanding through 2026).
-- **Audio Overviews as anxiety-reducing on-ramps** for high-anxiety subjects (UW-Milwaukee Math 94 case).
-- **Multimodal review** for students with reading-comprehension difficulties or visual-processing differences.
+At NYU's October 2025 Teaching and Learning with Generative AI symposium, an instructor showed a use case that looks nothing like either the UW-Milwaukee or Monash models, but is worth understanding because it demonstrates the bounded-tool framework applied in a direction most faculty don't consider.
 
-The chapter's framing: these are *legitimate uses* even when the active-engagement and retrieval-practice frameworks do not formally apply. A student who would otherwise disengage from dense reading entirely is better served by a tool-mediated entry point than by no engagement at all. The pedagogical bar is *did this student end up doing the work?*, not *did this student do the work in the canonical way?*
+The context: a large introductory programming course. Mid-semester student feedback, grading patterns from assignments, polling responses from in-class sessions. The instructor's question: *where are students actually stuck?*
 
----
+The workflow was this. Collect the feedback data — surveys, confusion patterns from grading, polling responses. Upload that data to NotebookLM as a source. Query: *"Based on this feedback, what three concepts are students most struggling with? Generate a formative assessment activity targeting each."* Deploy the activities through the LMS and polling tools.
 
-## Mid-chapter checkpoint
+What is happening here is different from content generation for students. NotebookLM is functioning as a *teaching analytics instrument* — the input is student data, the output is insight and response that the *teacher* then acts on. The tool is not in the student-facing workflow at all. It is in the faculty workflow, processing information about students to improve the course while it is running.
 
-Before continuing:
-- Can you state the two opening-case design principles and the deployment failures that result from mixing them?
-- Can you describe the Monash configuration in operational terms (what the student types, what the tool does)?
-- Can you name three higher-ed-specific affordances that change what NotebookLM is good for at this level?
+<!-- → [TABLE: Two higher-ed deployment archetypes — columns: UW-Milwaukee accessibility model, Monash self-testing model, NYU feedback loop — rows: who interacts with the tool, what the input is, what the output is, who acts on the output, design principle] -->
+
+This matters because it reveals a deployment pattern that works even for faculty who are uncertain about putting AI tools directly in students' hands. The question *"is NotebookLM appropriate for student use in my course?"* is separate from *"can I use NotebookLM to improve how I teach this course?"* The NYU case answers the second question affirmatively without touching the first.
+
+The limitation worth noting: the NYU feedback-loop pattern benefits from data volume. A large lecture generates enough feedback signal that the analysis produces genuinely useful patterns. In a seminar of twelve students, you may already know where everyone is stuck, and the analysis step adds overhead without insight. The tool generalizes to the problem of knowing where a crowd is confused; it does not generalize to the problem of knowing where a specific student is confused, which remains a human judgment.
 
 ---
 
-## Worked workflow — Configuring Learning Guide for self-testing
+## What Changed in April 2026
 
-For an upcoming undergraduate class session.
+<!-- → [INFOGRAPHIC: Timeline of NotebookLM access expansion — K-12 supervised model, 18+ personal notebook creation, institutional Workspace configuration] -->
 
-**Step 1 — Define the learning goal.** *Students will be able to apply the central concept of chapter 4 (e.g., regression to the mean) to a new case, identifying when the concept applies and when it doesn't.*
+A higher-education-specific operational fact: as of April 2026, students aged 18 and older can create personal class notebooks grounded in educator-provided Classroom materials. This is the operational unlock the Monash model was waiting for at scale.
 
-**Step 2 — Build the notebook.** Upload the chapter, any supplementary readings, and a Note from you specifying the kinds of questions you want Learning Guide to ask: *"Ask diagnostic questions that require the student to apply regression to the mean to a case they have not seen in the reading. Do not give the answer until the student has attempted. After their attempt, evaluate against the source and provide specific feedback. If they are wrong, ask a more scaffolded question rather than explaining."*
+Before this expansion, the fully individualized self-testing deployment — each student with their own notebook, their own diagnostic history, their own Learning Guide session — required either institutional provisioning or workarounds. After it, a faculty member can design assignments that depend on individual student notebooks rather than shared class notebooks, and students who have institutional Google Workspace accounts can instantiate those notebooks themselves.
 
-**Step 3 — Write the student-facing instructions.** *Before our Friday session, open the class notebook and invoke Learning Guide with the prompt 'Test me on chapter 4 applications.' Work through at least three diagnostic questions. Bring to class: one question you struggled with, one question that made the concept click for you.*
+The practical constraint that remains: institutional Workspace settings vary. Some institutions enabled the feature; others have not configured it. Confirm before designing assignments that depend on individual student notebook creation. The design assumption that students can do this is safe to make; the deployment assumption requires verification with your institution's IT or academic technology office.
 
-**Step 4 — Pilot with one or two students before deploying.** Their experience reveals configuration problems before you deploy to the full class.
-
-**Step 5 — Verify the question quality after deployment.** Generate the question set yourself. Identify any questions that are weak, ambiguous, or testing the wrong thing. Cut them — the AI's diagnostic generation, like its other outputs, requires teacher review.
+The pedagogical implication of the expansion is worth stating directly. The Monash model at scale requires students to build their own notebooks from course materials — not to consume a teacher-built notebook, but to instantiate their own retrieval-practice environment from the sources the teacher provides. That design was possible before April 2026 with enough configuration overhead to make it impractical for large courses. It is now a routine assignment design choice.
 
 ---
 
-## What can go wrong
+## Accessibility as a Legitimate Deployment Frame
 
-- **Learning Guide explains rather than tests.** The student didn't configure the prompt to force retrieval. The default mode is tutoring-by-explanation; the self-testing mode requires the explicit configuration. Re-verify the student-facing instructions emphasize the configuration step.
+The UW-Milwaukee case is worth examining more carefully than it usually gets, because "optional audio resource" sounds like a minimal intervention and is sometimes dismissed as not really deploying AI in a pedagogically serious way.
 
-- **The AI's diagnostic questions are weak.** Pattern-matching on textbook-style questions; some are genuinely good, some are formulaic, some test the wrong concept. The teacher's review step (Step 5) is what filters them. Five minutes of question review per assignment is cheap; deploying weak questions to 200 students is expensive.
+That framing misses what the deployment was actually for. Ed Price was working with students whose math anxiety was a genuine cognitive barrier — not a motivation problem, not a laziness problem, a barrier that prevented engagement with the material before the problem-solving work could even begin. The Audio Overview served as an anxiety-reducing on-ramp. Students who would otherwise disengage from a dense chapter entirely were instead arriving to in-person sessions with enough familiarity with the material to participate.
 
-- **Students treat the optional self-testing as ungraded busywork.** If the deployment is *active and integrated* (Case B), the work needs to be tied to a graded outcome — even if the tie is light (participation credit for showing up Friday with the two questions). If it's *supplementary and accessibility-focused* (Case A), let it be optional and stop worrying about uptake.
+The pedagogical bar for an accessibility resource is not *did this student do the work in the canonical way?* It is *did this student end up able to do the work?* By that bar, the UW-Milwaukee deployment worked.
 
----
+NotebookLM provides specific accessibility affordances that matter at the undergraduate scale: closed captions on all Audio and Video Overview outputs, multilingual output for some output types (expanding through 2026), multimodal review for students with reading-comprehension difficulties or visual-processing differences. These affordances do not make the retrieval-practice framework inapplicable — they make it accessible to students who would otherwise be excluded from the framework before reaching the cognitive work that matters.
 
-## Common misconceptions
-
-> **"Learning Guide is for review."**
-> Most powerful during initial learning. The encoding moment, not the post-encoding check.
-
-> **"AI tutoring matches human tutoring."**
-> Educational Psychology Review (2025) found AI-generated quiz questions can match teacher-created materials *for self-assessment use*. The evidence is weaker for open-ended tutoring. Use the configurations the evidence supports.
-
-> **"If students don't use the optional resource, the deployment failed."**
-> Not necessarily. Optional accessibility resources have value if even a subset of students benefits. The success metric depends on which deployment design you chose.
+The design rule that follows: accessibility deployments should be optional and not high-stakes. Required high-stakes use of an Audio Overview is the wrong design for an accessibility resource, for the same reason that making accommodations mandatory is the wrong design for accommodations. The resource serves students who need it when it is available but not required. It stops serving them when the course is structured to punish non-use.
 
 ---
 
-## Exercises
+## What Would Change the Chapter's Position
 
-1. *(Create)* Identify one undergraduate course where the self-testing model is applicable. Design the notebook, write the Learning Guide configuration prompt, and draft the student-facing instructions.
+The Educational Psychology Review published findings in 2025 suggesting that AI-generated quiz questions can match teacher-created materials for self-assessment use. If a controlled comparison study of Learning-Guide-configured self-testing against instructor-designed self-testing showed equivalent or worse learning outcomes for the AI version at the same student time investment, the chapter's central recommendation would require revision. The retrieval-practice mechanism is robust; whether AI-generated questions are good enough to produce that mechanism reliably is the empirical question the chapter bets on.
 
-2. *(Apply)* Configure Learning Guide for one upcoming class session. Pilot with two students before assigning to the full class. Document one configuration adjustment you made based on the pilot.
+Three things still genuinely uncertain. Whether Learning Guide's question quality varies enough across disciplines — humanities, STEM, professional fields — to require discipline-specific configuration guidance that doesn't exist yet. Whether the NYU feedback-loop pattern generalizes to small-class settings or requires the data volume of a large lecture course. And what the long-term effect of habitual AI-scaffolded self-testing is on student metacognition — whether it builds the capacity to self-test independently, or whether it creates a dependency on the structured framework that disappears when the tool does.
 
-3. *(Evaluate)* Compare the question quality of an AI-generated diagnostic set against your own instructor-designed set on the same material. Identify which questions you would keep, modify, or cut. What does the pattern tell you about where AI question generation is reliable and where it isn't?
-
----
-
-## What would change my mind
-
-A controlled comparison study of Learning-Guide-configured self-testing against instructor-designed self-testing showing equivalent or worse learning outcomes for the AI version (at the same student time investment) would weaken the chapter's central recommendation. The Educational Psychology Review 2025 finding suggests parity for the specific self-assessment use case; expansion of that evidence to the configured-tutoring use case is the relevant near-term research question.
-
-## Still puzzling
-
-- Whether Learning Guide's question quality varies enough across disciplines (humanities vs. STEM vs. professional fields) to require discipline-specific configuration libraries.
-- Whether the NYU feedback-loop pattern generalizes to small-class settings or requires the data volume of a large lecture.
-- What the long-term effect of habitual self-testing with AI is on student metacognition — does it build the skill, or does it create a dependency on the structured framework?
+That last question is the one I find hardest to answer. The retrieval-practice literature is clear that retrieving builds the capability to retrieve. Whether that generalizes across the AI scaffold is a genuinely open empirical question.
 
 ---
 
-## Chapter summary
+## LLM Exercises
 
-You can now:
-- Distinguish the *accessibility-plus-optionality* and *retrieval-practice-integration* design principles.
-- Configure Learning Guide for self-testing rather than explanation.
-- Apply the NYU faculty feedback-loop pattern to extract teaching-improvement signal from student data.
-- Use higher-ed-specific accessibility affordances where the canonical engagement frameworks don't directly apply.
+1. Take the Learning Guide configuration prompt from this chapter — *"Test me on [topic]. Ask me one diagnostic question at a time. Do not give me the answer until I have attempted. If I am wrong, give me a more scaffolded question rather than explaining."* — and paste it into an LLM along with a brief description of a course topic you teach. Ask the LLM to simulate three rounds of the diagnostic sequence. Evaluate the questions it generates: are they testing the concept you care about, or are they pattern-matching on surface features of the topic? What would you change in the configuration prompt to get better questions?
 
-## Key terms
+2. Take the NYU feedback-loop pattern and apply it to a course you are currently teaching or have recently taught. Collect whatever student-confusion signal you have available — assignment feedback notes, common errors, student questions. Paste that data into an LLM and ask it to identify three concepts where the confusion is concentrated and to generate one formative assessment activity for each. Evaluate the activities against your own knowledge of where students are actually stuck. Where did the LLM identify real confusion? Where did it miss?
 
-- **Monash self-testing model** — Learning Guide configured to ask diagnostic questions and force retrieval before explanation.
-- **NYU feedback loop** — NotebookLM as teaching-analytics tool, applied to student-feedback data.
-- **April 2026 expansion** — 18+ higher-ed students can create personal class notebooks from teacher-provided sources.
-- **Accessibility-plus-optionality** vs. **retrieval-practice-integration** — Two valid design principles; mixing them produces failures.
+3. The chapter claims that Learning Guide is most powerful during initial learning, not review. Ask an LLM to construct the strongest counter-argument: why might spaced retrieval after encoding be more practically useful in an undergraduate course context than retrieval during initial exposure? Evaluate the argument. Does it identify constraints — course structure, student preparation, contact-hour limits — that the chapter's framing doesn't account for? Use whatever is valid in the counter-argument to qualify your own deployment design.
 
-## Bridge question
+---
 
-Both K-12 and higher-ed paths have reached Chapter 11. **The remaining chapters address institutional deployment for all contexts. What does equitable deployment actually require?** Chapter 11.
+## Chapter Summary
 
-## Further reading
+You can now distinguish the accessibility-plus-optionality and retrieval-practice-integration design principles, and you know what goes wrong when they are mixed. You can configure Learning Guide for self-testing rather than explanation, write the student-facing instructions that produce the configuration, and review the question quality before deployment. You understand the NYU feedback-loop pattern as a faculty-facing use of the tool distinct from student-facing use. You know what the April 2026 expansion unlocks for individual-notebook assignment design.
 
-- Karpicke & Roediger, *Science* (2008) — Retrieval-practice foundation.
-- Educational Psychology Review (2025) — AI-generated quiz/flashcard finding. [verify exact citation]
-- Monash University NotebookLM teaching guidance. [verify URL]
-- *Pantry research file*, "Self-Regulated Study" and "Faculty Feedback Loops" sections.
-- McTighe & Silver, *Teaching for Deeper Learning* (pantry library file) — Formative assessment context.
+The one idea from this chapter that matters most: retrieval practice is the mechanism that produces durable learning, and Learning Guide is powerful precisely because it can force that mechanism rather than bypass it. The default tutoring pattern bypasses it. The Monash configuration preserves it. The difference is what the student types.
 
-## Quick-start card
+The common mistake: deploying the self-testing model as a review tool rather than an encoding tool. Used after the fact, it measures learning. Used during initial engagement with the material, it produces it. The timing is the leverage.
 
-> **The Monash self-testing pattern**
->
-> 1. Define the learning goal as a verb (apply, evaluate, construct).
-> 2. Upload sources + a Note specifying *test, do not explain*.
-> 3. Student-facing prompt: *"Test me on [topic]."*
-> 4. Tool asks diagnostic questions; student answers; tool evaluates.
-> 5. Tie the work to a low-stakes graded outcome.
+The Feynman test: explain to a colleague why a tool that explains things to students is less pedagogically valuable than the same tool configured to ask students questions. If you can walk them through the retrieval-practice mechanism — what the encoding event is, why effort before feedback matters, why comfortable re-reading produces less retention than uncomfortable retrieval — you have the chapter.
 
-## Aging note
+---
 
-Learning Guide's configuration interface and the specific feature set are evolving. The retrieval-practice mechanism it leverages is stable (decades of evidence). Re-verify the specific UI before reprint; the underlying argument can be re-issued unchanged.
+## Where This Leads
+
+Both the K–12 and higher-education deployment paths converge here. Chapter 11 addresses what comes next for all contexts: equitable institutional deployment, the administrative and policy layer that sits above individual course design, and what it means for an institution to deploy a tool like this fairly across the full range of students it serves.
+
+---
+
+*Learning Guide's configuration interface and specific feature set are evolving. The retrieval-practice mechanism it leverages is not — the Karpicke and Roediger finding has been stable for nearly two decades. Re-verify the specific UI configuration steps before each reprint; the underlying argument can be re-issued unchanged.*
