@@ -1,200 +1,159 @@
 # Chapter 5 — The K–12 Student: Active Use vs. the Shortcut
 
-> *The question is not whether students will use NotebookLM. It is whether you design the activity so that using it well requires engaging with the material.*
+*The question is not whether students will use NotebookLM. It is whether you design the activity so that using it well requires engaging with the material.*
 
 ---
 
-## Problem this chapter solves
+Here is a thing worth noticing.
 
-You deploy NotebookLM for student use. You see two outcomes: some students engage more deeply with difficult texts; other students use Audio Overviews to avoid reading. The variable is not the tool, the student, or the source. The variable is the assignment design. This chapter teaches you to design for engagement structurally — not by exhortation.
+You assign the same Audio Overview to two students. Same tool. Same source file. Same three words in the assignment: *listen before class.* One student listens, then reads, then arrives with two questions — one about what the audio skipped, one about an analogy the audio made that the textbook doesn't seem to support. The other student listens, does not read, arrives confident, and cannot answer a question about a passage the audio glossed over.
 
-## Learning outcomes
+Nothing about the tool differed. Nothing about the source differed. If you're inclined to attribute the difference to the students — one diligent, one lazy — you're not wrong exactly, but you're looking at the wrong variable. The assignment text *permitted both behaviors*. The first student made a better choice; the second made a defensible one given the prompt. An assignment that permits the wrong behavior will produce the wrong behavior in enough students to matter. Not all of them. Enough.
 
-1. *(Analyze)* Distinguish assignment designs that require active engagement from those that enable passive substitution.
-2. *(Create)* Redesign a summarization assignment as a source-verification or argument-extension task.
-3. *(Apply)* Configure Interactive Mode for student use and write a prompt template that scaffolds productive questioning.
+That's the problem this chapter is built around. Not that students misuse AI tools — every generation of students has found ways to do less work than their teachers intended. The problem is subtler: a tool this fluent, this plausible, this good at sounding like it understands the material, creates a new class of shortcut that is invisible at submission time. The student who listened once and the student who read carefully produce — under the right assignment design — identical artifacts. The teacher cannot tell them apart. The student who shortcut cannot tell, yet, that anything is missing. The gap only shows up later, in an exam, in a class discussion, in a paper that has no foundation under it.
 
-## Prerequisites
-
-- Chapter 4 (the teacher-facing workflow).
-- Chapter 3 (output-type selection).
-- One existing student-facing assignment you are willing to redesign.
+The corrective is not better students. It is better assignment design.
 
 ---
 
-## Opening case — Same audio, two students
+## The Variable That Actually Controls This
 
-You assign an Audio Overview of next week's reading. *"Listen before class."* Two students respond differently.
+<!-- → [INFOGRAPHIC: Spectrum diagram — passive substitution on one end, active engagement on the other, with example assignment types placed along it] -->
 
-Student A treats it as a preview. They listen, then they read, then they arrive at class with two questions: *Where the audio left out detail X, what does the textbook actually say? The audio's analogy implied Y; the textbook doesn't seem to support Y — which is right?* Student A learned more from the combination than either alone would have produced.
+Let me state the central claim precisely, because the precision matters.
 
-Student B treats it as a replacement. They listen, do not read, arrive at class confident. When called on, they can repeat the audio's framing but cannot answer the specific question you ask about a passage the audio glossed over. Student B learned less than they would have without the audio — because the audio's fluency masked the gap from the student herself.
+The single variable that determines whether NotebookLM helps or hurts a student is *what the assignment requires the student to produce as evidence of engagement*. Not the tool's settings. Not the school's AI policy. Not the student's character. The artifact the assignment demands.
 
-Same tool. Same source. The teacher's assignment text was identical: *listen before class*. What differed was nothing about the tool and nothing about the students. What differed was that the assignment text *permitted both behaviors*. Student A made the right choice; Student B made a defensible one given the prompt.
+Here is the test. Take any assignment. Ask: if a student took the shortcut — used NotebookLM to generate whatever the assignment asks for, lightly edited it, and submitted — would the result be distinguishable from the artifact produced by a student who engaged fully?
 
-The chapter argues: an assignment text that permits the wrong behavior *will produce the wrong behavior in enough students to matter*. The corrective is not better students. It is better assignment design.
+If the answer is no, the assignment is structurally broken for the current tool landscape. It was probably fine before generative AI existed. It is not fine now.
 
----
+*"Write a one-page summary of chapter 5's main argument."* NotebookLM generates a Study Guide in forty seconds. The student lightly edits. The teacher receives a fluent, accurate-sounding summary. The student learned nothing about chapter 5 and does not know they learned nothing, because the artifact looks like success.
 
-## Core concept 1 — The active/passive assignment spectrum
-
-The single variable that determines whether NotebookLM helps or hurts a student is *what the assignment requires the student to produce as evidence of engagement*.
-
-**Passive-substitution assignment.** *"Use the Audio Overview to learn about chapter 4. Be ready to discuss it Monday."*
-- Compliance path: listen once.
-- Evidence the student engaged: none.
-- The student who shortcut and the student who read both arrive Monday equally credentialed.
-
-**Active-engagement assignment.** *"Use NotebookLM to generate three quiz questions on chapter 4. Take the quiz. Identify one question you think is bad — too easy, ambiguous, or testing the wrong thing — and rewrite it."*
-- Compliance path: read the chapter closely enough to evaluate quiz quality.
-- Evidence the student engaged: the rewrite.
-- The shortcut produces a *worse* artifact than the engaged path.
-
-The chapter's structural argument: design assignments so that the shortcut is harder, not exhortation that the shortcut is wrong. The MDPI 2025 study found that students' *ethical beliefs* — not their *policy awareness* — predicted whether they used AI inappropriately. Policies and warnings act on the wrong variable. Assignment design acts on the right one.
+The failure is in the assignment design, not in the student. Students optimize for what the assignment rewards. This has always been true. The tool just changed what optimization looks like.
 
 ---
 
-## Core concept 2 — Four assignment-design patterns that produce engagement
+## What Makes an Assignment Shortcut-Resistant
 
-These four patterns recur across published faculty guidance (FSU, UIC, Monash) and across the pantry research synthesis:
+<!-- → [TABLE: Four engagement patterns — columns: pattern name, what the student produces, why the shortcut produces a worse artifact, example prompt] -->
 
-**1. Source-check.** *Compare NotebookLM's summary against the original. Identify what is missing, oversimplified, or wrong.* The artifact is a critique, not a summary. The student cannot complete the assignment without reading the original.
+There are four design patterns that recur across published faculty guidance — from Florida State, from UIC, from Monash — and across the research on what produces genuine learning outcomes when AI tools are in the workflow.
 
-**2. Argument-extension.** *Use NotebookLM to extract the source's main claim and supporting evidence. Then write your own counter-argument with new evidence or reasoning.* The tool produces the platform; the student produces the move the tool cannot make.
+**Source-check.** The student compares NotebookLM's output against the original source and identifies what is missing, oversimplified, or wrong. The artifact is not a summary — it is a critique. The student cannot complete the assignment without reading the original closely enough to evaluate the tool's performance. The shortcut path — generating a critique using NotebookLM again — produces an empty artifact, because the model's critique of its own output is nearly always charitable. The student who reads produces something the student who doesn't cannot fake.
 
-**3. Socratic dialogue.** *Use Interactive Mode. The AI hosts will only ask diagnostic questions, not answer your questions. Your task is to answer correctly, with reasoning, three diagnostic questions on chapter X.* The student is producing reasoning, not consuming explanation.
+**Argument-extension.** NotebookLM extracts the source's main claim and supporting evidence. The student's job is to write a counter-argument — something the tool cannot do because it requires reasoning beyond the source. The tool prepares the platform; the student produces the move. The shortcut here is to ask the model to generate the counter-argument too. This works — but the resulting artifact is visibly unmoored from the student's own thinking, which shows in discussion, in follow-up questions, in any subsequent work that builds on the argument.
 
-**4. Error-hunt.** *Generate a quiz on chapter X using NotebookLM. Take the quiz. Identify at least one question that is bad and explain why.* This combines source verification with metacognitive evaluation; both require the student to know the material well enough to judge.
+**Socratic dialogue.** The student uses Interactive Mode, but the framing inverts the usual direction. Instead of asking the AI to explain things, the student answers the AI's diagnostic questions — with reasoning, out loud or in writing. The artifact is the student's reasoning, not the AI's explanation. The shortcut here is to have the AI answer its own questions, which produces an artifact the student cannot defend or extend.
 
-All four patterns produce artifacts the AI cannot produce alone. All four make the shortcut visible. None requires AI-detection tools or proctoring software; the design is the enforcement.
+**Error-hunt.** The student generates a quiz on the assigned chapter, takes the quiz, and then identifies at least one question that is bad — too easy, ambiguous, or testing the wrong thing — and rewrites it. This is the deepest engagement of the four: to rewrite a question well, you have to know the material well enough to know what a good question would look like. The shortcut is to flag a question as bad and offer a vague rewrite. The artifact is immediately distinguishable from genuine engagement.
 
----
+All four patterns share a structure. They require the student to produce something the tool cannot produce alone — a critique, a counter-argument, a piece of reasoning, a metacognitive evaluation. All four make the shortcut visible, not by surveillance, but by making the shortcut produce a worse artifact than the engaged path.
 
-## Core concept 3 — Configuring Interactive Mode for student use
-
-Interactive Mode converts an Audio Overview from a podcast (passive listening) into a tutoring conversation (active questioning). The student clicks **Join**, asks a clarifying question while listening, and the AI hosts pause, address the question from grounded source text, and resume.
-
-For student deployment:
-
-- **Verify age eligibility first.** As of writing, Interactive Mode for students under 18 depends on institutional account configuration. Confirm before assigning. (Chapter 6 details the admin landscape.)
-
-- **Scaffold the questions.** Students who haven't been taught to formulate good questions get little from Interactive Mode. Provide a template:
-  > *"When you don't understand a step, ask: 'Why does X happen before Y?' or 'What would change if Z were different?' When you want a different framing: 'Can you explain this with a concrete example?' When you want to test your understanding: 'If [my framing], is that accurate?'"*
-
-- **Set the verification expectation.** Even in Interactive Mode, the AI's answers are source-grounded. If the source is wrong or incomplete, so is the AI. The student's job is still to verify against the source, not to trust the conversation.
-
-The chapter's emphasis: Interactive Mode is the highest-engagement default output NotebookLM currently produces, but only if the student knows how to use it. Without scaffolding, students ask *"explain it again"* and *"can you make it simpler"* — questions that move them back toward passive listening.
+This is the design principle. Not: catch students who shortcut. Design: make shortcuts self-defeating.
 
 ---
 
-## Mid-chapter checkpoint
+## Why Policy Doesn't Solve This
 
-Before continuing:
-- For each of the four engagement patterns above, can you identify one specific assignment from your current syllabus where the pattern would apply?
-- Can you describe one place where the *shortcut* on your current assignments produces *the same artifact* as the engaged path? (That is the assignment most in need of redesign.)
+<!-- → [CHART: Conceptual diagram showing the relationship between policy stringency, policy awareness, ethical beliefs, and actual behavior — based on the MDPI 2025 finding that ethical beliefs predict behavior more than policy awareness] -->
 
----
+A 2025 study in MDPI found that students' ethical beliefs about AI use — not their awareness of their institution's AI policy — predicted whether they used AI inappropriately. Students who knew the policy but didn't believe the behavior was wrong used AI in ways the policy prohibited. Students who believed the behavior was wrong were more likely to comply even when policies were ambiguous.
 
-## Worked workflow — Redesigning a summarization assignment
+This is important because it tells you where the intervention lever is. Policy acts on awareness. Assignment design acts on the actual behavioral incentive. You can have a strict policy and an assignment design that makes the shortcut invisible — that combination fails, because the structural incentive overrides the policy signal. You can have a permissive policy and an assignment design that makes the shortcut self-defeating — that combination works, because the student who shortcuts produces a worse outcome for themselves.
 
-The original assignment: *"Read chapter 5. Write a one-page summary of its main argument. Due Monday."*
-
-Audit:
-- Stated goal: students understand chapter 5's argument.
-- Can NotebookLM substitute for the student doing the summary? Yes — generate a Study Guide, lightly edit, submit.
-- Is that substitution the goal? No.
-- Therefore: redesign needed.
-
-Three possible redesigns:
-
-**Source-check version.** *"Read chapter 5. Then have NotebookLM generate a summary of chapter 5. Submit a one-page document with two columns: NotebookLM's summary on the left, your corrections and additions on the right. Identify at least three places where NotebookLM omitted, oversimplified, or misframed."* Production-tier work; shortcut produces a worse artifact (an empty right column).
-
-**Argument-extension version.** *"Have NotebookLM produce the chapter's main claim and three pieces of supporting evidence. Then write your own counter-argument: identify one piece of evidence from elsewhere (lecture, prior chapter, your own reasoning) that complicates the claim. One page."* The tool prepares the platform; the student's contribution is the move the tool cannot make.
-
-**Process documentation version.** *"Write a one-page summary in Google Docs. Submit the document with revision history enabled. Your draft should show iterative work — outline, paragraph drafts, revisions — not a single block of finished text. Optionally, include a one-sentence note disclosing whether and how you used NotebookLM."* The submitted artifact is the *process*, not just the product.
-
-Pick one. Pilot with one class section. Iterate.
+The chapter's bet is that you should spend your design energy where the leverage is. The four patterns above do not require you to detect AI use. They do not require proctoring software. They do not require AI-detection tools, which have documented problems with false positives — Liang et al., 2023, showed systematic bias against non-native English writers in detection tools currently in use. The design is the enforcement. When the shortcut produces a worse artifact, the student has no structural incentive to take it.
 
 ---
 
-## What can go wrong
+## How Interactive Mode Changes the Equation
 
-- **The Interactive Mode question template is too generic.** Students still ask *"explain it again."* Make the template subject-specific — give example questions in the disciplinary vocabulary the unit uses.
-- **The source-check assignment lets students fake the comparison.** They generate the summary, generate a critique of the summary using NotebookLM again, submit both. Make the critique require evidence the student must produce: *"For each correction, cite the specific paragraph in the source that supports your correction."*
-- **Process documentation assignments produce defensiveness.** Students feel surveilled. Frame it as *"I want to see how you think, not catch you using AI."* Mean it.
+<!-- → [INFOGRAPHIC: Side-by-side comparison — standard Audio Overview (passive flow, no interaction) vs. Interactive Mode (pause points, student questions, grounded responses) — annotated with what the student does in each] -->
 
----
+Standard Audio Overview is a podcast. You listen. The audio ends. You either engaged or you didn't, and the assignment can't tell.
 
-## Common misconceptions
+Interactive Mode is different in a specific way. The student can pause the audio at any point, ask a clarifying question, and the AI hosts answer from the grounded source text before resuming. That interaction changes the cognitive mode. Listening passively and formulating a question are different mental operations. The question requires the student to notice a gap in their understanding, which requires having some understanding to notice gaps in.
 
-> **"Stricter AI policies will produce more engaged students."**
-> The MDPI 2025 finding: students' ethical beliefs predict behavior more than policy awareness does. Policy stringency does not reach the variable that controls behavior.
+But — and this is the part that matters for deployment — Interactive Mode only produces engagement if the student knows how to ask good questions. Students who haven't been taught to formulate productive questions default to the easiest ones: *"explain it again"* and *"can you make it simpler."* Those questions move the student back toward passive listening. The AI obliges, restates the point in simpler terms, and the student has done less cognitive work than if they'd just kept listening.
 
-> **"AI assignments require AI-specific pedagogy."**
-> They require *backward design* (Wiggins & McTighe). Decide what the student should be able to *do*. Design the assignment so the AI tool is a means, not a substitute. This is not new pedagogy.
+The fix is a scaffold. Before students use Interactive Mode, give them a question template in the vocabulary of your subject:
 
-> **"If the assignment is good, students will not take the shortcut."**
-> Some will. The design's job is to make the shortcut produce a worse outcome for the student, not to prevent all shortcuts in all students.
+> *When you don't understand a step, ask: "Why does X happen before Y?" or "What would change if Z were different?" When you want a different framing: "Can you explain this with a concrete example?" When you want to test your understanding: "If [my framing], is that accurate?"*
 
----
+The template is not about Interactive Mode specifically. It is about teaching students to formulate questions that require reasoning to answer. The tool is the context; the skill is the thing that transfers.
 
-## Exercises
-
-1. *(Analyze)* Take three current assignments. For each, name whether the AI-shortcut path produces the same artifact as the engaged path, or a worse one.
-
-2. *(Create)* Take one assignment from the previous exercise where the shortcut produces the same artifact. Redesign it using one of the four patterns. Pilot it.
-
-3. *(Apply)* Configure Interactive Mode for one upcoming class. Write the question template students will use. Test it yourself: ask three of the scaffolded questions against a source you know well. Refine the template based on the responses.
+One more constraint worth knowing: as of writing, Interactive Mode for students under 18 depends on institutional account configuration. Confirm eligibility before assigning. Chapter 6 covers the administrative landscape in detail.
 
 ---
 
-## What would change my mind
+## The Redesign in Practice
 
-A controlled study showing that students in a source-check or error-hunt assignment context performed no better on subsequent unaided assessments than students in a passive-summarization context — at equivalent time-on-task — would weaken the chapter's design claim. The cognitive-science literature predicts the redesigns should help (retrieval practice, generative effect). The classroom-scale empirical evidence is still being built.
+<!-- → [TABLE: Original assignment vs. three redesigned versions — columns: version name, assignment text, what the student must produce, why the shortcut fails] -->
 
-## Still puzzling
+Take a real assignment. *"Read chapter 5. Write a one-page summary of its main argument. Due Monday."*
 
-- Whether the four patterns generalize equally across disciplines. Source-check works cleanly in humanities; what is the analog for math, where the "source" is a problem set?
-- Whether AI-detection-tool use creates collateral damage worse than the cheating it catches. (Liang et al. 2023 documented bias against non-native English writers; the situation is fluid.)
-- How to handle students who used AI well, before the redesign existed, and now feel mistrusted by the new policy.
+The goal is genuine: the teacher wants students to understand chapter 5's argument. The problem is structural: NotebookLM produces a Study Guide of chapter 5 in forty seconds. Lightly edited, it is a one-page summary of the main argument. The student who shortcut and the student who read both submit on Monday.
+
+Three ways to redesign.
+
+**Source-check version.** *"Read chapter 5. Then have NotebookLM generate a summary of chapter 5. Submit a document with two columns: NotebookLM's summary on the left, your corrections and additions on the right. Identify at least three places where NotebookLM omitted, oversimplified, or misframed the argument."* The shortcut path — generating the corrections using NotebookLM too — produces an empty right column or a vague one. The student who read the chapter has something specific to put there. The artifact's quality is directly correlated with whether the student read.
+
+**Argument-extension version.** *"Have NotebookLM produce chapter 5's main claim and three pieces of supporting evidence. Then write your own counter-argument: one piece of evidence from elsewhere — lecture, prior chapter, your own reasoning — that complicates the claim. One page."* The tool handles extraction. The student handles the intellectual move. The shortcut is to have the model write the counter-argument too — but that counter-argument will be drawn from the same source, which means it will not actually complicate the claim. The student has to go outside the source to do the job.
+
+**Process documentation version.** *"Write a one-page summary in Google Docs. Submit with revision history enabled. Your draft should show iterative work — outline, paragraph drafts, revisions — not a single block of finished text."* This one is not about catching AI use. It is about making the process visible. A student who generated the summary from NotebookLM will have revision history showing one paste and no iterations. A student who wrote it will have something messier and more honest. You are not surveilling; you are asking the student to show you how they think, not just what they produced.
+
+Pick one. Pilot it with one section. The goal is not to find the optimal design on the first try — it is to notice what the design reveals about what students actually did.
 
 ---
 
-## Chapter summary
+## What Goes Wrong
 
-You can now:
-- Place any assignment on the passive-substitution-to-active-engagement spectrum.
-- Identify which of your current assignments produce the same artifact whether the student engaged or shortcut.
-- Redesign one of those assignments using source-check, argument-extension, Socratic-dialogue, or error-hunt patterns.
-- Configure Interactive Mode with a scaffolded question template that produces productive student behavior.
+Two failure modes appear reliably in early deployments of these patterns.
 
-## Key terms
+The source-check assignment, in its simple form, is gameable. The student generates the summary, then asks NotebookLM to critique the summary, then submits both. The critique is real — it will identify issues — but the student has not engaged with the source at all. The fix is to require specificity: *"For each correction, cite the specific paragraph in the source that supports your correction."* A model-generated critique rarely includes paragraph citations. A student who read the chapter can. The specificity requirement closes the loophole.
 
-- **Passive substitution** — Assignment where the AI shortcut produces the same artifact as engaged work.
-- **Active engagement** — Assignment design where the shortcut produces a worse artifact than engaged work.
-- **Source-check / Argument-extension / Socratic / Error-hunt** — Four assignment patterns that structurally require engagement.
-- **Scaffolded question template** — A teacher-provided prompt structure students use to ask good questions in Interactive Mode.
+The question template for Interactive Mode, if it is too generic, produces generic questions. Students ask *"why does X happen"* about the wrong X — the one they already understand — rather than the one that's actually unclear. The fix is to make the template subject-specific, in the vocabulary of the current unit. A template that says *"ask about steps you don't understand"* is less useful than one that says *"in this unit, the key relationships are between [A] and [B] and between [C] and [D] — if either of those is unclear, ask about them specifically."*
 
-## Bridge question
+Neither failure is fatal. Both are solvable in one iteration.
 
-You have the assignment designs. **How do you actually distribute them through Google Classroom — and what gates stand between you and the student?** Chapter 6 addresses the administrative layer.
+---
 
-## Further reading
+## What the Research Does and Doesn't Say
 
-- McTighe & Silver, *Teaching for Deeper Learning* (pantry library file) — Backward design as the structural lever.
-- Karpicke & Roediger, *Science* (2008) — Retrieval-practice foundation that underwrites the engagement patterns.
-- MDPI 2025 study on student AI use behavior — Ethical beliefs over policy awareness.
-- Horvath, *The Digital Delusion* (pantry library file) — The skeptical case on engagement-vs-learning, useful as a stress test on the chapter's claims.
+The cognitive-science literature predicts these redesigns should work. Retrieval practice — being asked to produce information rather than consume it — produces better retention than re-reading or re-listening. The generative effect — having to produce something, even something imperfect — produces deeper encoding than passive exposure. Karpicke and Roediger's 2008 *Science* paper established the retrieval-practice finding robustly. The four engagement patterns are essentially retrieval-practice designs delivered via a new interface.
 
-## Quick-start card
+What the literature does not yet say is whether these specific patterns, in these specific AI-tool deployments, produce the expected outcomes at classroom scale. The controlled studies do not exist yet. The chapter's claim is that the cognitive-science foundation is strong and the structural logic is sound — the shortcut produces a worse artifact, therefore students have no incentive to take it. Whether that prediction holds uniformly across subjects, student populations, and assignment contexts is still being measured.
 
-> **The shortcut test**
->
-> Ask of every assignment: *if a student took the shortcut and used NotebookLM to generate the artifact, would the result be the same as if they did the work?*
->
-> If yes → the assignment needs redesign.
-> If no → the design is doing its job.
+One honest limit: the source-check and error-hunt patterns work cleanly when the "source" is a text. In mathematics, where the source is a problem set or a derivation, the analog is less obvious. What does it mean to check NotebookLM's summary of a proof? The pattern probably applies — generate a worked example from the tool, then find the step the tool glossed over — but the translation is not automatic. That's a design problem the chapter doesn't fully solve.
 
-## Aging note
+---
 
-Interactive Mode age eligibility and Classroom-integration restrictions on student notebook creation are evolving (Chapter 6 details). The four engagement patterns are stable. The MDPI 2025 finding is current; replication and refinement studies are likely through 2026–2027.
+## LLM Exercises
+
+1. Take one current assignment from your syllabus. Feed it to an LLM and ask it to audit the assignment for shortcut-resistance: does the compliance path require engagement with the source material, or does it permit substitution? Ask the LLM to suggest one redesign using each of the four patterns. Evaluate the suggestions. Note which ones it got right, which ones would fail on closer examination, and what the LLM missed that you can see from knowing your students.
+
+2. Write a question template for Interactive Mode for a specific unit you teach. Feed the template to an LLM along with a sample source document and ask it to simulate what a student using the template would ask — and what the AI hosts would answer. Check whether the simulated questions are the ones you wanted students to ask. Revise the template based on what the simulation reveals.
+
+3. Take the MDPI 2025 finding — ethical beliefs predict behavior more than policy awareness — and ask an LLM to generate the strongest counter-argument to the chapter's claim that assignment design is the primary intervention lever. Evaluate the counter-argument. Does it identify a case where policy outperforms design? Does it identify a student population for whom the structural argument breaks down? Use whatever is valid in the counter-argument to qualify your own assignment redesign.
+
+---
+
+## Chapter Summary
+
+You can now place any assignment on the spectrum from passive substitution to active engagement. You have four design patterns — source-check, argument-extension, Socratic dialogue, error-hunt — each of which makes the shortcut produce a worse artifact than genuine engagement. You know why policy acts on the wrong variable and why design acts on the right one. You can configure Interactive Mode with a scaffolded question template that produces productive student behavior rather than passive re-listening.
+
+The one idea from this chapter that matters most: the shortcut test. Ask it of every assignment before you deploy. *If a student took the shortcut, would the artifact be the same as if they didn't?* If yes, redesign. That question is the entire chapter.
+
+The common mistake: attributing the shortcut problem to student character rather than assignment design. Some students will always shortcut regardless of design. The design's job is to make the shortcut self-defeating for the student who takes it — not to prevent all shortcuts in all students, which is not achievable, but to ensure the shortcut path leads somewhere worse than the engaged path.
+
+The Feynman test: explain to a colleague why a stricter AI policy does not solve the problem this chapter addresses. If you can walk them through the MDPI finding, the artifact-indistinguishability problem, and why design acts on a different variable than policy — you have the chapter.
+
+---
+
+## Where This Leads
+
+You now have assignment designs that structurally require engagement. Chapter 6 asks a different question: how do you actually get these assignments in front of students, through your institution's systems, within the constraints of your district's AI governance? The design is the easy part. The administrative layer — Classroom integration, account eligibility, institutional policy — is where most deployments stall. Chapter 6 is the map through it.
+
+---
+
+*Interactive Mode age eligibility and Classroom-integration restrictions on student notebook creation are evolving. Chapter 6 details the current administrative landscape. The four engagement patterns are stable. Re-verify platform-specific constraints before each deployment; leave the design logic alone.*
