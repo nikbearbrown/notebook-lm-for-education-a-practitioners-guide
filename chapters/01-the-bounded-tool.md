@@ -1,200 +1,151 @@
 # Chapter 1 — The Bounded Tool
 
-> *NotebookLM is not a faster ChatGPT. Its restriction to your sources is the feature.*
+*What the restriction is actually doing.*
 
 ---
 
-## Problem this chapter solves
+There is a particular kind of confusion that happens when a new tool arrives and people try to fit it into a category they already have. The category almost fits — it is close enough that you think you understand it — and that is exactly when the confusion is most dangerous. You think you know what the thing does, so you stop looking.
 
-You have heard conflicting things about NotebookLM. You do not know whether it is meaningfully different from the AI tools you already know. This chapter answers that question precisely, so the rest of the book can build on the answer.
+NotebookLM arrived this way. People tried it and immediately filed it under *AI chatbot* because it answers questions in plain language, like an AI chatbot. That is not wrong. But it is the wrong level of description. Saying NotebookLM is an AI chatbot is like saying a thermostat is a heater. A thermostat regulates temperature — that is the thing it actually does. A heater only produces heat. The thermostat contains a heater, but its distinguishing feature is the feedback loop, and if you don't see the feedback loop, you don't understand the thermostat.
 
-## Learning outcomes
+The distinguishing feature of NotebookLM is the boundary. The tool answers only from documents you give it, and it cites exactly which passage backed each claim. That is the feedback loop. Everything that follows in this book — every use case, every failure mode, every classroom design — is downstream of that one structural fact. I want to explain it properly, because if you understand why the boundary is there, you understand the tool. If you only know that the boundary exists, you just know a rule.
 
-After this chapter you should be able to:
-
-1. *(Understand)* Describe in plain language the difference between **source-grounded** AI and the open-loop chatbots most readers have used.
-2. *(Analyze)* Explain why source-grounding **reduces but does not eliminate** hallucination risk in educational use.
-3. *(Evaluate)* Decide whether a proposed classroom AI use case is better served by a bounded tool or an open-loop one — and defend the call.
-
-## Prerequisites
-
-- A working Google account.
-- One prior attempt to use a generative AI tool (ChatGPT, Gemini, Claude, or similar), so the comparison lands.
-- No technical understanding of transformers, attention, or retrieval architectures is assumed. Everything you need is in this chapter.
+<!-- → [DIAGRAM: Simple two-column contrast — left: open-loop chatbot (arrow from "training data" into model, arrow out to response, no feedback loop); right: RAG-based tool (arrow from "your documents" into retrieval, retrieved passages + question into model, arrow to response + citation links back to documents). Caption: The feedback loop that defines bounded AI.] -->
 
 ---
 
-## Opening case — The Sunday-night Audio Overview
+## What a general chatbot is actually doing
 
-A high school AP teacher uploads the week's reading to NotebookLM on Sunday night and generates an Audio Overview. The audio is good — two AI hosts in a podcast voice, fifteen minutes long, hitting the main concepts in the right order. The teacher assigns it to her class: *listen before Monday*.
+Before you can understand the boundary, you need to understand what is on the other side of it — the kind of AI you have probably used before.
 
-Monday arrives. About a third of the students listened to the audio. About a third did not. The teacher asks the comprehension questions she always asks at the start of the unit. The students who listened do worse than students did the previous semester when there was no audio — even on questions about content the audio covered explicitly. The teacher concludes that NotebookLM caused the problem and shelves the tool.
+A general-purpose language model like ChatGPT or Claude or Gemini was trained on an enormous amount of text: books, websites, academic papers, code, conversations. During training, the model learned statistical patterns — which words tend to follow which words, in which contexts, across which topics. That learning got compressed into billions of numerical parameters. The parameters don't store facts the way a database stores facts. They store tendencies, patterns, probabilities. When you ask the model a question, it generates a response by running those probabilities forward: predicting, token by token, what a plausible answer would look like, given everything it absorbed during training.
 
-This chapter argues she shelved the wrong thing. The tool did not produce the failure. The *assignment* did. To see why, you need to know what the tool is actually doing — which is different from what most people think it is doing.
+This is why general chatbots are so fluent. The pattern-matching is extraordinarily good. The model has absorbed so much text that it has a plausible response for almost anything. This is also why they hallucinate. Hallucination is not a glitch or a bug in the usual sense — it is what the system does when the probability distributions point confidently toward an answer that isn't true. The model produces a fluent, well-structured sentence that happens to be wrong, and it has no mechanism to tell you it's wrong, because it has no mechanism to check its output against ground truth. It only has the patterns.
 
----
-
-## Core concept 1 — Retrieval-Augmented Generation, in plain language
-
-A general-purpose chatbot like ChatGPT or Claude or Gemini produces text by predicting plausible next tokens from everything the model was trained on. When you ask it a question, it answers from a kind of compressed memory of its training data. If the memory has a good answer, the answer is good. If it doesn't, the model still answers — fluently, confidently, sometimes correctly, sometimes not. The model has no way to tell you which.
-
-NotebookLM works differently. When you ask it a question, the system first *retrieves* — it searches the documents you uploaded for passages relevant to your question. Then it passes those passages, plus your question, to the language model with an instruction to answer *from them*. Every response carries inline citations linking back to the specific source passage that backed each claim.
-
-This pattern is called **Retrieval-Augmented Generation**, or RAG ([Lewis et al., 2020](https://arxiv.org/abs/2005.11401) [verify exact citation]). It has been the standard architecture for source-grounded AI assistants for several years. NotebookLM is the consumer-friendly version of it, tuned for an educational use case and running on **LearnLM** — a Gemini variant fine-tuned for learning-science principles.
-
-The practical difference matters in three ways. The model answers from *your* documents, not from the open web. Every claim is *traceable* via the citation. And the answer's quality is *capped by the source set* you uploaded — not by the model's training data.
+The practical consequence: when you ask a general chatbot to summarize a specific document, the model does not actually read that document the way you read it. It uses the document as a prompt — as a kind of context that shapes the probability distributions — and it generates a summary that looks like what a summary of that kind of document usually looks like, weighted toward whatever the document contained. This is mostly fine. Where it fails is at the edges: exact details, qualifications that matter, claims the document explicitly hedges. Those are exactly the things that get softened or lost or quietly fabricated.
 
 ---
 
-## Core concept 2 — What "bounded" does and does not mean
+## What NotebookLM is actually doing
 
-The boundary in *bounded tool* is the user's uploaded source set. As of writing, the free tier holds up to 50 sources per notebook; Education Plus and AI Pro for Education tiers hold up to 300. Each source can be a PDF, a Google Doc with live sync, an EPUB, a YouTube video transcript, an audio file, a web URL, a CSV, a spreadsheet, or a Word document. The model answers from inside this set.
+The architecture is different in a way that matters.
 
-What "bounded" does *not* mean:
+When you ask NotebookLM a question, the first thing the system does is search your uploaded documents for passages that are relevant to the question. This is a real retrieval step — a semantic search across your source set, returning the chunks of text that best match what you asked. Those retrieved passages get passed to the language model along with your question. The model's job is now narrower: answer *this* question using *these* passages. And the system keeps track of which passage backed which part of the answer, so it can produce inline citations — those small numbered markers that link back to specific locations in your source.
 
-- It does not mean *private*. Privacy depends on whether you are logged into an institutional Google Workspace for Education account or a personal Google account. The accounts are governed by different terms. (Chapter 11 develops this fully.)
-- It does not mean *offline*. Your sources are processed on Google's servers, just like any other Google-hosted document.
-- It does not mean *the model cannot reach the web*. The default behavior is to stay inside your sources, but a feature called **Deep Research** (launched November 2025, restricted to paid tiers) lets the model decompose a question into sub-queries and search the web. By default Deep Research is off; turning it on intentionally breaches the boundary.
+This architectural pattern has a name: **Retrieval-Augmented Generation**, or RAG. It was described formally by Lewis and colleagues in 2020, and it has since become the standard approach for building AI systems that need to answer from specific documents rather than from general training data. NotebookLM is Google's consumer-facing implementation, running on a Gemini variant called **LearnLM** that has been fine-tuned for educational use cases.
 
-The chapter's working definition: bounded means *the model answers only from the sources you give it, with citations that point back to those sources*. Hold on to that sentence. Everything in the rest of the book follows from it.
+<!-- → [DIAGRAM: RAG pipeline in three steps — Step 1: user question enters retrieval layer, which searches uploaded documents; Step 2: top-matched passages + original question enter the language model; Step 3: model generates response with citation markers pointing back to source passages. Clean, sequential, no unnecessary detail.] -->
 
----
+Three things change when you build on this architecture.
 
-## Core concept 3 — Three structural differences that matter for education
+**The answer is capped by your sources.** The model can only say what your documents say. If you upload a weak source, you get weak output — fluent and confident, but weak. If you upload nothing relevant, the model tells you it can't find a relevant passage, rather than inventing one. This is a feature. It is also a responsibility: curating your source set is now the highest-leverage work you do, upstream of any prompt.
 
-The first difference is **citation discipline**. Every NotebookLM output carries inline citations. A student or teacher can audit any claim in seconds: click the citation, read the cited passage, confirm or refute. ChatGPT and similar tools do not provide this by default. This single property is the largest defensibility advantage NotebookLM has in educational contexts where verification matters.
+**Every claim is auditable.** The citation is an audit trail. It doesn't mean the response is correct — it means you can check. Click the citation marker, the source pane jumps to the passage, and you can read whether the underlying text actually supports what the response said. In most cases it does. In some cases — and you will find these — the passage is more qualified, more conditional, or more complicated than the response made it sound. That gap is information. It is the tool showing you exactly where it simplified.
 
-The second difference is **curation responsibility**. Output quality is capped by source quality. Upload a weak source and you get weak output — confidently presented, but weak. This shifts the teacher's work *upstream*. Curating the source set is now a higher-leverage activity than refining the prompt. This is the opposite of how most teachers learn to use ChatGPT, where prompt engineering is the lever.
-
-The third difference is **engagement asymmetry**. The same tool produces both consumption artifacts (Audio Overview, Video Overview, summaries) and production artifacts (flashcards, quizzes, Learning Guide diagnostics). Which kind a student receives depends entirely on what you ask for. The default outputs Google has put forward in its marketing are mostly consumption-leaning. The high-engagement outputs are equally available; they have to be deliberately chosen. (Chapter 3 develops this.)
+**Fabrication becomes structurally harder.** A general chatbot can confidently state something that isn't in any source, because it isn't working from sources. NotebookLM cannot produce a citation that links back to a passage saying something the passage doesn't say — the passage is right there, readable by you. This doesn't eliminate all errors. But it converts a certain class of invisible error (fabrication) into a class of visible error (misinterpretation), and visible errors can be caught.
 
 ---
 
-## Mid-chapter checkpoint
+## The numbers behind the claim
 
-A reader who has followed this far should be able to answer, in their own words:
+A comparative analysis conducted in late 2025 [verify exact citation in pantry/notebooklm_education_research.md] tested major AI systems against a 300-document academic corpus. When the source material ran short — when a question reached the edges of what the documents contained — general-purpose chatbots produced fabricated assertions in roughly 40% of outputs. NotebookLM, with the same corpus uploaded, held its error rate to about 13%.
 
-1. *What is the one operational difference between asking ChatGPT to summarize a chapter and asking NotebookLM to summarize that same chapter, after you have uploaded it?*
-2. *What does the citation link in a NotebookLM response let you do that a ChatGPT response does not?*
-3. *If you upload a poor-quality source to NotebookLM and ask a good question, what kind of answer should you expect?*
+The gap is large and the direction is what theory predicts. The architecture makes fabrication harder, so there is less fabrication.
 
-If any of these is unclear, re-read the corresponding section before continuing.
+But I want to sit with the 13%, because this is where the chapter's argument gets careful. Thirteen percent is not zero. The model still makes errors — not by inventing claims from nowhere, but by misreading what's there. It overgeneralizes. A finding that the source describes as preliminary becomes definitive in the output. A finding that holds under specific conditions gets stated as a general principle. A contested claim that the source flags as contested arrives in the response without the flag.
 
----
+These are interpretation errors, not fabrication errors. The distinction matters because they require a different response from you. Fabrication errors are caught by checking whether the citation exists and links to something relevant. Interpretation errors are caught by reading the cited passage and asking whether the response accurately represents what it says. That second step requires more effort and more domain knowledge. There is no shortcut.
 
-## Core concept 4 — Why the source-grounding helps (and where it doesn't)
+<!-- → [TABLE: Two-column table — Fabrication errors vs. Interpretation errors. Rows: definition, what causes it, how source-grounding affects it, how the reader catches it. Caption: The two error types are different problems requiring different responses — source-grounding eliminates most of the first column; the second column remains the reader's responsibility.] -->
 
-A comparative study conducted in late 2025 [verify exact citation in pantry/notebooklm_education_research.md] analyzed major AI systems against a 300-document academic corpus. General-use chatbots produced fabricated assertions in approximately 40% of outputs when source material ran short. NotebookLM, with the same corpus uploaded, held its error rate to about 13%. The improvement is structural — the model cannot fabricate text and present it with a citation linking back to your source, because the citation would be empty.
-
-But 13% is not zero. The model can still:
-
-- **Misread a source.** Especially with technical content, the model's interpretation of a passage can lose precision, framing, or qualification.
-- **Overgeneralize.** A claim true under specific conditions in the source becomes a general statement in the output.
-- **Omit critical nuance.** The source notes that a finding is *contested* or *preliminary*. The output reports the finding without the caveat.
-- **Produce bad quiz questions.** The "correct" answer is technically supported by the source, but the framing tests the wrong thing or assumes ambiguity is closure.
-
-This is the part of the bounded-tool argument that the chapter is most insistent on: source-grounding reduces *fabrication*. It does not eliminate *misinterpretation*. The student or teacher's verification step — clicking the citation, reading the source, checking the framing — is not optional. The citation is the *audit trail*, not the *guarantee*.
-
-This is also where the chapter's deeper claim begins to land. AI is reliably strong at one tier of cognitive work — pattern-matching, retrieval, fluent summary. It is reliably weak at another tier — judging whether the pattern it found is the *right* pattern for what you actually need. Source-grounding handles the first tier; the human handles the second. The verification step is the human's part of the deal. (See Appendix A for the longer version of this argument.)
+The citation is an audit trail, not a guarantee. I will say this a few more times in this book, because every time I have seen NotebookLM used badly, it is because someone treated the citation as a credential — a small marker that meant *this is correct* — rather than as a link that meant *here is where you check*.
 
 ---
 
-## Worked workflow — A five-minute first audit
+## Why the boundary is the feature
 
-1. Open notebooklm.google.com. Sign in with your institutional Google account if you have one.
-2. Click **Create**, then **New notebook**.
-3. Upload one source — pick something you know well. A textbook chapter, a syllabus, a paper.
-4. In the chat pane, type: *"Summarize the central argument in three sentences."*
-5. Read the response. Look at the citation marker (a small numbered chip after each claim).
-6. Click one citation. The source pane jumps to the passage that backed the claim.
-7. Read the cited passage. Confirm: does it actually say what the response claims?
+Let me now return to the Sunday-night audio case, because I think it illustrates something precise.
 
-Total time: under five minutes. Output: an immediate, concrete sense of what the tool does — and where you would catch it if it were wrong. Most readers find at least one citation where the underlying passage is more qualified, more conditional, or more complicated than the response made it sound. That's not a bug; that's the work the tool *cannot* do for you.
+A high school AP teacher uploads the week's reading to NotebookLM and generates an Audio Overview. Two AI voices, podcast style, fifteen minutes, hitting the main concepts in order. She assigns it: listen before Monday. Students who listened do worse on comprehension questions than students did the previous semester without any audio at all. She concludes NotebookLM caused the failure, and she shelves the tool.
 
----
+The inference is wrong, and here is why. The Audio Overview is a consumption artifact — the student receives processed information, which is the cognitive opposite of what produces durable learning. The research on this is not subtle. Generative activity — retrieving, connecting, explaining, testing — builds retention. Passive consumption at best maintains it and at worst replaces the original processing that would have happened if the student had read the source directly. The Audio Overview is an efficient substitute for reading. Substitution was the problem.
 
-## Role-specific note — K-12 vs. higher education
+The tool did not produce the failure. The *assignment* did. And the assignment happened to use the consumption-mode output that NotebookLM offers, when the learning-mode outputs were equally available: quizzes, flashcards, the Learning Guide diagnostic that generates questions instead of answers. The boundary is still there in both modes. The difference is what the student does with the output.
 
-For a K-12 teacher, the chapter's central case (the audio-overview failure) is the typical one. Students will substitute the audio for the reading unless the assignment requires production. The boundary the teacher needs is *between AI's preparation work and the student's cognitive work*.
+<!-- → [TABLE: Two-column comparison — Consumption artifacts (Audio Overview, Video Overview, summary) vs. Production artifacts (quiz, flashcards, Learning Guide diagnostic). Row headers: what the student receives, required cognitive activity, learning research prediction, when to assign. Caption: Both output types are available; the assignment design determines which you invoke.] -->
 
-For a higher-education instructor, the typical case is different — graduate students drowning in literature, undergraduates needing scaffolded study companions. The boundary you need is similar but lives at a different point: between AI's *synthesis* work and the researcher's or student's *judgment* work. The chapter's design principle is the same. The applications (Chapters 9–10) differ.
+This is the thing about bounded tools that takes a moment to see. The restriction is not a limitation on what the tool can do. It is a clarification of what the tool is for. NotebookLM is for working with specific documents — understanding them, synthesizing them, being tested on them, getting scaffolded into their arguments. It is not for open-ended generation from anything the model knows. When you use it for the second purpose, you are using the wrong tool. When you use it for the first purpose and then hand students a passive artifact, you are using the right tool in the wrong assignment.
+
+Getting this right requires understanding the boundary — what it is, why it is there, what it produces. That is what this chapter has been doing.
 
 ---
 
-## Common misconceptions
+## What "bounded" does and does not mean
 
-> **"Source-grounding eliminates hallucination."**
-> No. It reduces fabrication from roughly 40% to roughly 13% in the cited study. The remaining error rate is from misinterpretation, not invention. The citation makes the error *auditable*, but only if you click it.
+Because the term will appear throughout the book, I want to be precise about it.
 
-> **"NotebookLM is a privacy-safer ChatGPT."**
-> Conditionally. Workspace for Education accounts have FERPA/COPPA compliance and training-data exclusions. Personal Google accounts do not. The same tool, two different governance regimes. Chapter 11.
+Bounded means the model answers only from the sources you upload, with citations that point back to those sources. That is the working definition. It does not mean anything else.
 
-> **"Bounded means the tool can only do less."**
-> Bounded means the tool does *less of one thing* (open-ended generation from training data) so that it can do *more of another* (citation-grounded answers from your specific sources). This is a feature when "understand these sources" is the learning goal.
+It does not mean *private*. Privacy depends on whether you are operating under an institutional Google Workspace for Education account or a personal Google account. These are governed by different terms, with different data-handling commitments. The same tool, two different governance regimes. Chapter 11 works through this properly.
 
----
+It does not mean *offline*. Your sources are processed on Google's servers. Nothing about the bounded architecture changes the server-side processing.
 
-## Exercises
+It does not mean *the model cannot reach the web*. A feature called Deep Research — launched November 2025, restricted to paid tiers, off by default — lets the model decompose a question and search the web. When Deep Research is on, the boundary is intentionally breached. The chapter's argument holds for the default configuration. The implications of optional un-bounding deserve separate treatment.
 
-1. *(Understand)* In three sentences, explain to a colleague who has not read this chapter what makes NotebookLM structurally different from ChatGPT. Use the words *source-grounded* and *citation* — but define both in plain language.
+And it does not mean *bounded tools are worse*. Bounded means less of one thing — open-ended generation from everything the model was trained on — so that you get more of another thing — reliable, citable, auditable answers from your specific sources. Whether that trade is good depends entirely on what you need. "Understand and work with these specific documents" is a need. NotebookLM is built for it. "Generate a creative essay about anything" is a different need. NotebookLM is not built for that. Using the right tool means knowing what the tool was built to do.
 
-2. *(Apply)* Execute the five-minute first audit above. Take one source you know well. Find one citation where the underlying passage is more qualified than the response made it sound. Note in two sentences what was lost in translation.
-
-3. *(Evaluate)* Take three classroom AI use cases — one for tutoring, one for synthesizing assigned reading, one for open-ended creative brainstorming. For each, predict whether NotebookLM or an open-loop tool serves it better. Defend each call in one sentence.
+<!-- → [TABLE: Three-column table — What "bounded" means / What it does NOT mean / Why the distinction matters. Rows: answers from uploaded sources only; private/offline/no web access; a limitation. Each row clarifies the positive claim, corrects the misconception, and states the practical implication. Caption: Common misreadings of the bounded-tool claim, and the corrections.] -->
 
 ---
 
-## What would change my mind
+## The verification step
 
-If a controlled study at scale (hundreds of classrooms, multi-semester, with rigorous outcome measures) showed that NotebookLM's source-grounding produced no measurable difference in student verification behavior, error-catching, or learning outcomes vs. an unbounded chatbot — the chapter's structural argument would weaken substantially. The citation discipline matters only if it actually changes what users do. As of writing, the comparative evidence on citation-driven behavior in educational settings is suggestive but not conclusive.
+There is one more thing the boundary does that I want to name explicitly, because it is easy to miss.
 
-## Still puzzling
+The boundary creates a verification discipline.
 
-- Why does Google not provide a visible *extraction confidence* indicator on the source list, so users could tell when a source ingested poorly?
-- Does the Interactive Mode Audio Overview (Chapter 3) produce better learning than the standard mode? Plausible from first principles; no controlled study yet.
-- What happens to the bounded-tool argument when Deep Research is on? The chapter argues bounded is the default; the implications of optional un-bounding deserve their own treatment.
+With a general chatbot, there is no obvious verification step. The response arrives. It seems right — it is fluent, confident, detailed. To check it, you would need to go find the sources yourself, which is exactly the work you were hoping to avoid. Most people don't check. They cite the chatbot, or act on its output, or pass it to students, trusting the fluency.
+
+With NotebookLM, the verification step is built into the interface. The citation is right there. Clicking it costs two seconds. The passage is right there. Reading it costs thirty seconds. The discipline is: *click the citation, read the passage, confirm the claim*. This is not difficult. It is just a habit, and like all habits, it requires deciding to form it.
+
+<!-- → [INFOGRAPHIC: Three-step horizontal sequence — (1) Response arrives with citation marker → (2) Click citation: source pane jumps to passage → (3) Read passage: confirm, qualify, or flag the claim. Each step labeled with the action, the cost in time, and the outcome. Caption: The verification loop takes under a minute. The habit is the hard part, not the mechanics.] -->
+
+The value of the citation is not that it makes the response correct. The value is that it makes the response *checkable by you, immediately, without going elsewhere*. That is a structural property of the architecture, not a feature someone added for user-friendliness. It is a consequence of how RAG works: the retrieved passages are already in the system, already associated with the response, because the response was generated from them.
+
+This is why I said earlier that citation discipline is the most important thing in the book. Not the most impressive feature, not the most powerful capability — the most important practice, because everything else depends on it. An AI tool you can't verify is a tool you have to trust blindly. A tool with auditable citations is a tool you can actually use as a professional.
 
 ---
 
-## Chapter summary — capabilities gained
+## What this chapter established
 
-You can now:
-- Distinguish source-grounded AI from open-loop AI in plain language.
-- Explain why source-grounding reduces fabrication but does not eliminate misinterpretation.
-- Run a five-minute verification audit on a NotebookLM output and articulate what the citation does and does not guarantee.
-- Decide whether a classroom AI use case is better served by a bounded tool or an open-loop one.
+The tool answers from your sources. It cites which passage backed each claim. Source-grounding reduces fabrication from roughly 40% to roughly 13% in the comparative data, by making fabrication structurally harder — but it converts that fabrication risk into interpretation risk, which requires a different check. The citation is an audit trail. Clicking it is the discipline. The boundary is not a limitation; it is a clarification of what the tool is for.
+
+Chapter 2 walks you through building your first notebook. The concept is clear now. Time to see it.
+
+---
 
 ## Key terms
 
-- **Source-grounded AI** — AI that answers only from documents the user provides, with citations.
-- **Hallucination** — Fluent AI output that is unsupported by training data or sources. Reduced (not eliminated) by source-grounding.
-- **Retrieval-Augmented Generation (RAG)** — The architectural pattern NotebookLM uses: retrieve relevant passages first, then generate from them.
-- **LearnLM** — The Gemini variant tuned for learning-science principles, powering NotebookLM in education.
-- **Citation discipline** — The practice of treating every AI-output citation as an audit trail to be clicked, not a credential to be trusted.
+- **Source-grounded AI** — AI that answers only from documents the user provides, with inline citations back to source passages.
+- **Hallucination** — Fluent AI output that is unsupported by training data or source documents. Source-grounding reduces but does not eliminate this.
+- **Retrieval-Augmented Generation (RAG)** — The architectural pattern NotebookLM uses: retrieve relevant passages from uploaded documents first, then generate a response from them.
+- **LearnLM** — The Gemini variant fine-tuned for learning-science principles, powering NotebookLM in educational contexts.
+- **Citation discipline** — The practice of treating every AI-output citation as an audit trail to be clicked and read, not a credential to be trusted.
 
-## Bridge question
+---
 
-The tool is bounded. **What does that boundary actually produce — and what does it not?** Chapter 2 answers by walking you through your first notebook.
+## LLM Exercises
 
-## Further reading
+*Use a language model with access to current literature on retrieval-augmented generation and educational AI to complete the following.*
 
-- *NotebookLM Help Center* — Google's official documentation. Operational. Keep open in a tab. [verify URL]
-- Lewis et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," NeurIPS 2020 — The architectural paper. Technical but accessible. [verify citation]
-- Ethan Mollick, *Co-Intelligence: Living and Working with AI* (2024) — Frames the centaur model of AI augmentation. The bounded-tool view is consistent.
-- Jared Cooney Horvath, *The Digital Delusion* — The skeptical cognitive-science perspective. Read this if you want the case against the case this chapter makes.
+1. *(Verify and extend)* The 40% vs. 13% fabrication comparison cited in this chapter references a 2025 study. Ask a language model to locate this study or the closest verifiable equivalent. If the exact study cannot be confirmed, ask it to summarize what the current peer-reviewed literature says about fabrication rates in source-grounded vs. open-loop AI systems. Report what it finds and flag any gaps.
 
-## Quick-start card
+2. *(Stress-test the architecture)* Describe the RAG pipeline to a language model and ask it to identify three scenarios where the architecture would fail to reduce errors — cases where retrieval-augmented generation performs no better than open-loop generation, or potentially worse. Evaluate whether those failure modes apply to NotebookLM's specific implementation.
 
-> **The bounded tool, in one card**
->
-> 1. NotebookLM answers *only* from the documents you upload.
-> 2. Every output carries an inline citation back to the source passage that backed it.
-> 3. Source-grounding reduces fabrication; it does not eliminate misinterpretation.
-> 4. Curate the source set carefully — that work is upstream of every prompt.
-> 5. Click citations before trusting outputs. Always.
->
-> *The boundary is the feature. The verification is the discipline.*
+3. *(Design probe)* Ask a language model: "If you were designing a classroom assignment using a bounded AI tool, what signals in a student's output would tell you the student engaged with the source material rather than passively consuming an AI-generated summary?" Evaluate the response against the consumption-vs.-production distinction drawn in this chapter.
+
+---
 
 ## Aging note
 
-Specific feature names (Deep Research, Interactive Mode), tier limits (50 / 300 sources, daily query caps), and ingestion size limits (500,000 words / 200 MB) are current as of May 2026 and likely to change. The structural arguments — source-grounding, citation discipline, the verification step — are stable. Re-verify the numbers before re-printing. Re-verify the principles only if Google fundamentally restructures the tool.
+Specific feature names (Deep Research, Interactive Mode), tier limits (50 / 300 sources, daily query caps), and ingestion limits (500,000 words / 200 MB) are current as of May 2026 and subject to change. The structural arguments — source-grounding, citation discipline, the RAG architecture — are stable across versions. Re-verify numbers before reprinting. Re-verify the principles only if Google fundamentally restructures the tool's architecture.
