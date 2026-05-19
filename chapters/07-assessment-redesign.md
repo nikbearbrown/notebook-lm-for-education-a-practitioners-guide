@@ -1,204 +1,165 @@
 # Chapter 7 — Assessment Redesign: The Part You Can't Skip
 
-> *Any assessment a student can complete by generating a NotebookLM output and submitting it is an assessment you need to redesign.*
+*Why the detection question is the wrong question, and what the right one produces.*
 
 ---
 
-## Problem this chapter solves
+There is a question that, once you ask it precisely, dissolves a problem that seemed intractable.
 
-You know assessments need to change in an AI-augmented environment. You do not yet have a concrete framework for doing the redesign that is *more learning-aligned*, not just *more surveillance-intensive*. This chapter provides the framework.
+In the fall of 2024, teachers across the country were asking a version of the same question: *how do I catch students using AI?* They ran submissions through detection tools. They got inconsistent verdicts. They escalated to proctored conditions, in-class writing days, surveillance regimes. By the end of the semester, most of them had caught no one definitively, lost weeks of instruction to enforcement, and noticed that the students they trusted most were the ones most upset by the policy.
 
-## Learning outcomes
+The question *how do I catch students using AI?* has no satisfying answer. The detection tools don't work reliably enough to base policy on. The 2023 study by Liang and colleagues in *Patterns* documented that AI detectors are systematically biased against non-native English writers — the tools flag honest student work at disproportionate rates for specific student populations. OpenAI withdrew its own classifier the same year, citing low accuracy. The trajectory of evidence since then has been toward *less* confidence in detection, not more.
 
-1. *(Evaluate)* Apply the three-question audit to an existing assessment and determine whether it requires redesign.
-2. *(Create)* Redesign one summarization or take-home reading assessment using the source-verification, oral-defense, AI-critique, or process-documentation framework.
-3. *(Analyze)* Explain why timestamped version control in Google Docs is a pedagogical tool, not only a surveillance tool.
+But here is the thing about a question that has no good answer: sometimes the question is wrong. Not unanswerable — wrong. And when the question is wrong, the move is not to work harder on the answer. The move is to find the right question.
 
-## Prerequisites
+The right question is: *what learning am I actually trying to assess, and does this assessment measure it?*
 
-- Chapter 5 (the active-engagement framework for formative assignments).
-- Familiarity with backward design (Wiggins & McTighe). The chapter summarizes; the library file provides depth.
-- One or more current assessments you are willing to redesign.
+That question has a good answer. This chapter is the answer.
 
 ---
 
-## Opening case — The backward-design reframe
+## What the audit reveals
 
-A high school history teacher gets the first AI-generated essay submission in October 2024. The essay is competent, generic, technically correct, structurally bland. The student insists they wrote it. The teacher's first instinct is detection: she runs the essay through three AI-detection tools, gets three different verdicts, and realizes she cannot adjudicate.
+An assessment exists to produce evidence of learning. That is the entire purpose. Wiggins and McTighe's backward design framework — which most teachers have encountered in some form — makes this explicit: you start with the learning goal, derive the evidence you need to confirm the goal was met, and then design the activity that produces the evidence. The assessment is the middle step. It is not the learning itself; it is the measurement of the learning.
 
-She spends the rest of the semester escalating: more proctored conditions, harder essay prompts, in-class writing days. By Thanksgiving she has caught no one definitively, lost three weeks of instruction to surveillance, and noticed that the students she trusts most are now the ones most upset by the policy regime.
+When you ask *can a NotebookLM output substitute for demonstrating this learning?*, you are asking a backward-design question. You are asking whether the evidence the assessment produces can be generated without the learning having occurred. If it can, the assessment is not measuring what it says it's measuring. That is a design flaw. The AI did not create the flaw. The AI exposed it.
 
-In December she reframes. The question changes from *"how do I catch students using AI?"* to *"what learning am I actually trying to assess, and does this assessment measure it?"* The first question has no good answer. The second question has one — and it is the chapter's framework.
+The three-question audit makes this concrete:
 
----
+**First: what is the learning goal of this assessment?** State it as a student action — something the student can *do* as a result of having learned. Not "understanding of the French Revolution." Yes: "the student constructs a defensible causal argument about a major historical event." The difference matters because the second formulation tells you what evidence you need, and the first one doesn't.
 
-## Core concept 1 — The three-question assessment audit
+**Second: can a NotebookLM output substitute for demonstrating that learning?** Be honest. Many assessments — a five-paragraph essay on a primary source the student has uploaded — can be substituted, completely, in two minutes. If the honest answer is yes, you have found a design flaw.
 
-For every assessment in your course, ask:
+**Third: is the substitution the goal?** For some assessments, yes. A recognition quiz where the goal is *identify key vocabulary* doesn't require the work to be human-generated; both a student and an AI tool can demonstrate the recognition. The substitution is fine because the goal doesn't depend on the process. For most assessments where the goal includes synthesis, argument, or judgment, the answer is no — and the assessment requires redesign.
 
-1. **What is the learning goal of this assessment?** State it as a *student action*, not a topic. (Not "understanding of the French Revolution." Yes: "the student constructs a defensible causal argument about a major historical event.")
+The audit's value is not its sophistication. It is its enforcement. Most assessments have never been audited this way. Running the audit on five assessments takes twenty minutes. The number that fail Question 2 is typically higher than expected.
 
-2. **Can a NotebookLM output substitute for demonstrating that learning?** Be honest. Many assessments — a five-paragraph essay on a primary source the student has uploaded — can be substituted, completely, in two minutes.
-
-3. **If yes — is that substitution the goal?** For some assessments, yes. A recognition quiz where the goal is *recognize key vocabulary* doesn't care whether the student or an AI tool produced the recognition; both demonstrate the goal. For most assessments where the goal includes synthesis, argument, or judgment, the answer is no — and redesign is required.
-
-The audit's value is not its complexity. It is its enforcement. Most assessments fail Question 2 and have never been audited. Running the audit is the entire move.
+<!-- → [TABLE: Three-question audit applied to four common assessment types — columns: Assessment type / Learning goal stated as action / AI substitution possible? / Substitution is the goal? / Verdict. Rows: five-paragraph essay on primary source, take-home reading quiz, oral thesis defense, process-documented research draft. Caption: The audit forces the backward-design question that most assessments have never faced. Only assessments that fail Q2 without passing Q3 require redesign.] -->
 
 ---
 
-## Core concept 2 — The four redesign frameworks
+## Why banning doesn't work
 
-When an assessment fails the audit, four redesign patterns recur across published faculty guidance:
+Before describing the redesigns, the chapter needs to address the temptation to solve this by prohibition. Ban AI. Problem solved.
 
-**Source-verification.** Student compares AI output against the original source(s), identifying what is missing, oversimplified, or wrong. The artifact is a *critique*, not a *summary*. The shortcut produces an empty critique; the engaged path produces a substantive one. (UIC's recommended pattern.)
+Two reasons this fails, and they operate at different levels.
 
-**Oral defense.** Student submits the written work *and* defends it verbally — explaining reasoning, source choices, what they would change. Five-minute one-on-one. The AI cannot show up to the defense. Costs: instructor time at scale. Benefits: catches the cases that no other method can.
+The first is enforceability. A policy that depends on detection tools that don't reliably work is not a policy. It is a posture. The detection problem is structurally hard: distinguishing AI-generated text from human-generated text in a domain where both draw on the same linguistic patterns is a statistical problem, and the margin is not wide enough for the error rates the tools currently produce. The Liang finding about non-native English writers is not an edge case — it is the central case, because the students most likely to write in ways that trigger the detectors are the students whose writing least resembles the training-data baseline for fluent native English. A ban enforced by biased tools produces disproportionate false accusations against the students with the least institutional protection. This is not a theoretical risk. It happened in 2023 and 2024, repeatedly.
 
-**AI-critique.** Student is *required* to generate the AI output, then deconstruct it — identifying weaknesses, what it gets wrong, what it overconfidently asserts. The artifact builds the metacognitive skill the integrity policy is supposed to encourage anyway.
+The second is misalignment with learning goals. If the stated learning goal includes synthesis, evaluation, or argument construction, then the AI-assisted version of those skills is what students will exercise in professional life. Teaching students to perform synthesis without AI, then releasing them into a world where synthesis happens with AI, is the opposite of authentic assessment. The authentic question is not whether AI was used. It is whether learning occurred and whether the student can demonstrate it. An assessment that catches AI use by requiring the absence of AI may catch nothing about learning at all.
 
-**Process documentation.** Student submits not the final artifact but the *iteration history* — drafts, dead ends, decisions made, prompts tried. Google Docs version history makes this verifiable.
+The chapter is not arguing that AI use should be required or encouraged in every assessment. It is arguing that ban-and-detect is a design choice that requires justification — and the justification requires showing that the learning goal genuinely depends on human-only production, and that the enforcement mechanism reliably distinguishes human from AI. In most contexts, neither condition holds.
 
-All four put production work the AI cannot perform at the center of the assessment. None requires detection software. All four are gradable in less time than the surveillance regime they replace.
-
----
-
-## Core concept 3 — Why banning AI is not an assessment strategy
-
-The temptation: solve the problem by banning AI. Two reasons this fails:
-
-**Enforceability.** AI-detection tools have unacceptable false-positive rates for general deployment. The Liang et al. 2023 study in *Patterns* documented that GPT detectors are biased against non-native English writers — the tools flag honest student work at rates that disproportionately harm specific student populations. OpenAI withdrew its own classifier in 2023, citing low accuracy. A policy that depends on enforcement that doesn't work is not a policy; it is a posture.
-
-**Misalignment with learning goals.** If the assessment's stated learning goal includes synthesis, evaluation, or argument construction, the AI-assisted version of those skills is what students will use in professional life. Assessing the pure-human version while preparing students for an AI-augmented world is the opposite of authentic assessment.
-
-The chapter is not arguing AI use should be required or even encouraged in every assessment. It is arguing that *ban-and-detect* is a policy choice that needs the same justification as *design-it-in* — and most contexts cannot justify the ban.
+<!-- → [CHART: Timeline of AI detection tool reliability 2022–2025 — horizontal axis: date; vertical axis: confidence in tool accuracy (qualitative). Key events marked: GPTZero launch (Jan 2023), Liang et al. bias study in Patterns (Jul 2023), OpenAI classifier withdrawal (Jul 2023), Turnitin AI detection launch and subsequent accuracy disputes (2023–2024), continued bias findings (2024–2025). Trend line slopes downward. Caption: Each cycle follows the same pattern — launch, bias finding, modification or withdrawal. The trajectory of evidence has been toward less confidence, not more.] -->
 
 ---
 
-## Core concept 4 — Google Docs version history as a pedagogical tool
+## The four redesign frameworks
 
-For assessments built on Google Docs, the auto-save revision history surfaces:
+When an assessment fails the audit — when a NotebookLM output can substitute for demonstrating the stated learning goal, and the substitution is not the point — four redesign patterns recur across published faculty guidance.
 
-- Sudden large blocks of text appearing at once (copy-paste, possibly AI).
-- Iterative typing with backspaces, edits, additions (human composition pattern).
-- The timeline of when work was done relative to the deadline.
+**Source-verification.** The student compares the AI output against the original source materials, identifying what is missing, oversimplified, or wrong. The artifact is a *critique*, not a *summary*. A student who uploads the source and submits an AI-generated summary without reading the source cannot produce a substantive critique — the shortcut leads to an empty document. The engaged path leads to a document that demonstrates the student read and understood the source. The assessment now measures what it was supposed to measure.
 
-The chapter's framing — and this is where the chapter takes a position that some readers will resist — is that revision history is **feedback data, not surveillance data**. It lets you see the student's process, not just the product. A student who clearly struggled, revised, and built toward the final draft has done the cognitive work. A student whose document went from blank to finished in four minutes has not — regardless of whether AI was involved.
+**Oral defense.** The student submits the written work and defends it verbally — explaining reasoning, source choices, what they would revise. Five minutes, one-on-one with the instructor or a TA. The AI cannot show up to the defense. The cost is instructor time; for a class of thirty, that is two and a half hours. Compare that against the hours lost to detection disputes, the emotional cost to falsely accused students, and the instruction time consumed by the surveillance regime. The oral defense is not cheap. It is cheaper than the alternative.
 
-The pedagogical use: identify students who are struggling silently (no iteration, panic-typing on deadline day) and reach out *to support*, not to accuse. The version history is not a polygraph; it is a window into student work patterns. Use it for the supportive intervention, not just the disciplinary one.
+**AI-critique.** The student is required to generate an AI output and then deconstruct it — identifying weaknesses, errors, overconfident assertions, what the source material contradicts. The artifact builds the metacognitive skill that the integrity policy was supposed to encourage anyway. The student who can identify where AI reasoning fails has demonstrated more sophisticated engagement with the material than the student who simply wrote a compliant essay.
 
----
+**Process documentation.** The student submits the iteration history — drafts, dead ends, revision decisions, prompts tried. Google Docs version history makes this verifiable. The grading rubric shifts from the polish of the final product to the quality of the reasoning visible in the process. A student who revised substantively and shows it in the document history has done the cognitive work. A student whose document went from blank to finished in four minutes has not.
 
-## Mid-chapter checkpoint
+<!-- → [TABLE: Four redesign frameworks — columns: Framework / What the student produces / What AI cannot do / Instructor time cost / Best fit for. Rows: Source-verification, Oral defense, AI-critique, Process documentation. Caption: All four put work the AI cannot perform at the center of the assessment. Choose based on class size and learning goal.] -->
 
-Before continuing:
-- Can you state the three audit questions from memory?
-- For each of the four redesign frameworks, can you state in one sentence what kind of artifact the assessment now requires the student to produce?
-- Can you articulate why "ban AI" is a posture rather than a policy?
+All four share a structural property: the AI can help with some of the work, but the work that demonstrates learning requires the student to be present and engaged. This is the correct relationship between AI and assessment. Not prohibition — design.
 
 ---
 
-## Worked workflow — Redesigning a take-home essay
+## Google Docs version history as a window into process
 
-Original assessment: 1,500-word essay on the causes of the American Civil War. Take-home, one week.
+For assessments built on Google Docs, the auto-save revision history creates a record of how the document was produced. Large blocks of text appearing at once suggest copy-paste. Iterative typing with revisions and backtracking shows human composition under construction. The timeline shows when work was done relative to the deadline.
 
-**Audit.**
-- Goal: demonstrate causal reasoning about complex historical events.
-- AI substitution possible? Yes — NotebookLM can produce a passable 1,500-word essay from uploaded primary sources in three minutes.
-- Is substitution the goal? No — the goal is the student's reasoning.
+The chapter's position on this record — and it is worth stating directly — is that revision history is feedback data, not surveillance data. The distinction is not semantic. It is a decision about what you are trying to do with the information.
+
+Surveillance use: find students who pasted in AI text and accuse them. This use has the same problem as the detection tools — the signal is imperfect, the false-positive risk is real, and the intervention is adversarial.
+
+Feedback use: identify students who are struggling silently. A student who typed everything in a frantic session the night before the deadline, with no iteration, is a student who may be in trouble — not necessarily because they used AI, but because they didn't have enough time or didn't understand the assignment early enough to build toward it. The version history tells you that. The right response is to reach out and ask if they are okay. The version history is not a polygraph. It is a window into student work patterns, and work patterns are useful information for teaching.
+
+This reframe — from surveillance to support — is available in any Google Docs-based course right now, without new tools or new policies. It requires only the decision to use the information that way.
+
+<!-- → [DIAGRAM: Two interpretations of the same revision history data. Left (surveillance frame): blank → sudden complete document → flag for investigation. Right (support frame): blank → no iteration → deadline-day panic-typing → reach out with support question. Same data, different intervention. Caption: The version history doesn't change based on what you intend to do with it. The intervention does.] -->
+
+---
+
+## The redesign in practice
+
+Start with the audit. Pick five assessments from your current course. For each, ask the three questions. Flag the ones where a NotebookLM output could substitute and the substitution is not the learning goal. That list is your redesign queue.
+
+Take the top item on the queue. Pick one framework. Pilot it with one class section before scaling.
+
+Here is what that looks like for a specific case. A high school history teacher uses a 1,500-word take-home essay on the causes of the American Civil War. The audit: the goal is causal reasoning about a complex historical event. AI substitution is possible in three minutes with uploaded primary sources. Substitution is not the goal. The assessment fails.
 
 Three plausible redesigns:
 
-**Oral defense version.** Student submits the essay. In a five-minute one-on-one, instructor asks: *"What would change your argument? Why did you weight cause X above cause Y? What is the strongest objection to your thesis?"* The AI cannot answer those questions about a specific essay it didn't write. Cost: instructor time. For a class of 30, that is 2.5 hours. Compare against the cost of detection-and-dispute.
+The oral defense version keeps the essay submission and adds a five-minute one-on-one. The instructor asks: *"What would change your argument? Why did you weight cause X above cause Y? What is the strongest objection to your thesis?"* Those questions cannot be answered by an AI that didn't write a specific essay. The student who wrote it can answer them. The student who submitted something they didn't write cannot, or answers in ways that reveal the gap.
 
-**AI-critique version.** Student generates an AI-written essay AND a human-written essay. Submits both with a third document analyzing where the AI version is weaker and why. Three artifacts, same learning goal, integrity question dissolved.
+The AI-critique version requires the student to generate an AI-written essay on the same prompt and submit both, with a third document analyzing where the AI version is weaker and why — specifically, with evidence from the primary sources that the AI essay missed or misread. The three-artifact submission is harder to fake than a single essay, and the critique artifact demonstrates exactly the close-reading skill the original essay was supposed to demonstrate.
 
-**Process documentation version.** Student submits draft history with annotations explaining why each revision was made. Two pages of annotated drafts replaces the 1,500-word polished essay. The grading rubric shifts from polish to revision quality.
+The process documentation version replaces the polished essay with an annotated revision history. The student submits two pages of annotated drafts explaining why each revision was made. The grading rubric evaluates the quality of the reasoning visible in the process. Polish is no longer the metric.
 
-Pick one. Pilot with one class section before scaling.
+None of these is perfect. The oral defense doesn't scale to 200 students without modification — small-group defenses, TA-led defenses, or randomized sampling where any student can be called. The AI-critique can be meta-shorted (student generates both the essay and the critique with AI), which requires adding a source-grounding check: the critique must cite specific passages from the primary sources that the AI essay missed. The process documentation can in principle be faked, though simulating a realistic iterative work pattern is substantially more labor than doing the work.
 
----
+The honest comparison is not against a perfect redesign. It is against the alternative: a surveillance regime that doesn't work, produces false accusations at disproportionate rates against specific student populations, loses instruction time, and measures compliance rather than learning.
 
-## What can go wrong
-
-- **Oral defense at scale.** A class of 200 cannot all do five-minute defenses. Modifications: TA-led defenses; small-group defenses where peers contribute questions; randomized sampling (any student can be called for defense; expectation creates the same incentive as universal defense).
-
-- **AI-critique becomes meta-shortcut.** Student generates the AI essay, generates an AI critique of the AI essay, submits both. Require the critique to cite specific evidence from the source materials that the AI essay missed — work the AI cannot do without re-reading the source.
-
-- **Process documentation produces defensiveness.** Students feel surveilled. Frame it as supportive feedback data, not detection. Mean it. If the version history shows a student is panic-typing on deadline day, reach out to ask if they are okay — not to confront them.
+<!-- → [TABLE: Redesign decision matrix — columns: Class size / Time available per student / Primary learning goal / Recommended framework / Modification needed at scale. Rows covering small seminar, medium lecture, large lecture. Caption: The right redesign depends on context. The audit question is the same regardless of class size; the framework choice is not.] -->
 
 ---
 
-## Common misconceptions
+## What this chapter established
 
-> **"Redesign means more surveillance."**
-> No. Redesign means more authentic assessment, where AI use is either irrelevant (because the goal is fine with substitution) or designed-in honestly.
+The question *how do I catch students using AI?* is wrong. The right question is *what learning am I trying to assess, and does this assessment measure it?* The three-question audit applies that question to any existing assessment. Most assessments have never faced it. Many fail.
 
-> **"AI-detection tools will improve and solve this."**
-> The 2023–2025 evidence cycle has produced repeated rounds of *new detector — bias finding — withdrawal or modification*. The fundamental problem — the tools must distinguish AI text from human text in a domain where the distinction is statistical — has not been solved. Designing assessments around the assumption that detection works is a fragile design.
+When an assessment fails, four redesign frameworks put work the AI cannot perform at the center of the assessment: source-verification, oral defense, AI-critique, and process documentation. All four are gradable. None requires detection software. Google Docs version history is useful as feedback data — a window into student work patterns for supportive intervention — and corrosive as surveillance data. The ban-and-detect posture depends on tools that don't work reliably enough to build policy on.
 
-> **"Every assessment must be redesigned."**
-> No. Audit first. Some assessments pass Question 2 unchanged (the goal does not depend on the work being human-only). Only redesign the failures.
+Chapter 8 is about writing the academic integrity policy that the redesigned assessment framework implies — one that is defensible to students, parents, and administrators, and honest about what the evidence actually supports.
 
 ---
-
-## Exercises
-
-1. *(Evaluate)* Run the three-question audit on five of your current assessments. Flag the ones that fail Question 2 without "yes" to Question 3.
-
-2. *(Create)* Take one failed assessment. Redesign it using one of the four frameworks. Pilot it with a single class section. Compare student outcomes to the previous semester's version.
-
-3. *(Analyze)* Examine the Google Docs revision history of one student's previous submission. What does the timeline tell you about how they worked? Is there a supportive intervention the data suggests?
-
----
-
-## What would change my mind
-
-If AI-detection tools reached a documented false-positive rate below 1% with no measurable bias against any demographic group, the chapter's argument against detection-based policy would weaken substantially. As of writing, no detection tool has approached this threshold; the trajectory of evidence has been toward *less* confidence in detection, not more.
-
-## Still puzzling
-
-- Whether oral-defense assessment scales without becoming logistical theater. The Monash and NYU models in pantry are partial answers; the limit at 500-student lectures is real.
-- Whether process documentation can be faked at scale (students simulating iterative work patterns).
-- How to handle the student who used AI honestly and well, before any policy existed, and now feels mistrusted by the new regime.
-
----
-
-## Chapter summary
-
-You can now:
-- Apply the three-question audit to any existing assessment.
-- Redesign a failed-audit assessment using source-verification, oral defense, AI-critique, or process documentation.
-- Use Google Docs revision history as feedback data rather than surveillance data.
-- Defend the position that ban-and-detect is a posture, not a strategy.
 
 ## Key terms
 
-- **Three-question audit** — Goal? Substitution possible? Substitution is the goal? Audit before every assessment.
-- **Source-verification / Oral defense / AI-critique / Process documentation** — The four redesign frameworks.
-- **Detection-based policy** — A policy whose enforcement depends on tools that don't reliably work.
-- **Backward design** — Wiggins & McTighe's framework: learning goal → evidence → activity. The structural lever for all four redesigns.
+- **Three-question audit** — Goal stated as student action? AI substitution possible? Substitution is the goal? The audit before every assessment.
+- **Source-verification** — Redesign framework where the student critiques an AI output against the original source. Artifact is a critique.
+- **Oral defense** — Student submits written work and defends it verbally. AI cannot attend the defense.
+- **AI-critique** — Student generates and deconstructs the AI output, identifying failures and gaps against the source material.
+- **Process documentation** — Student submits iteration history with annotations. Grading shifts from product polish to reasoning quality.
+- **Detection-based policy** — A policy whose enforcement depends on tools with unacceptable false-positive rates. A posture, not a strategy.
+- **Backward design** — Wiggins and McTighe's framework: start from the learning goal, derive the evidence, design the activity. The structural lever for all four redesigns.
 
-## Bridge question
+---
 
-Assessment redesign requires an academic integrity framework. **How do you write one honestly — defensible to students, parents, administrators?** Chapter 8.
+## LLM Exercises
 
-## Further reading
+*Use a language model with access to current literature on educational assessment, academic integrity, and AI detection to complete the following.*
 
-- Wiggins & McTighe, *Understanding by Design* (2005) — Canonical framework.
-- McTighe & Silver, *Teaching for Deeper Learning* (pantry library file) — Practitioner-facing application.
-- Liang, Yuksekgonul, Mao, Wu, Zou, "GPT detectors are biased against non-native English writers," *Patterns* (2023) — The detection-bias study.
-- Horvath, *The Digital Delusion* (pantry library file) — The cognitive-science case for the structural argument.
+**Warm-up**
 
-## Quick-start card
+1. *(Verify the detection evidence)* The chapter cites the Liang et al. 2023 study in *Patterns* and OpenAI's classifier withdrawal as anchors for the claim that detection tools are unreliable. Ask a language model to locate both references and confirm the key findings. Then ask it to identify any high-quality studies published since that report detection accuracy above 95% with documented false-positive rates below 1%. Report what it finds. If no such studies exist, state that as the finding.
 
-> **The three-question audit**
->
-> 1. What is the learning goal? (State as student action.)
-> 2. Can a NotebookLM output substitute? (Be honest.)
-> 3. If yes — is that substitution the goal? (If no, redesign.)
->
-> **The four redesigns:** source-verify, oral defense, AI-critique, process documentation.
+2. *(Audit a real assessment)* Take one assessment from your current course and apply the three-question audit. Ask a language model to help you state the learning goal as a student action verb — give it your current assessment description and ask it to rewrite the goal in the form "the student [action verb] [what]." Evaluate whether the rewrite captures what you actually want to measure or whether it reveals a gap between your stated goal and your real one.
+
+**Application**
+
+3. *(Framework selection)* Describe a specific assessment you want to redesign to a language model — the subject, the learning goal, the class size, the time constraints. Ask it to recommend which of the four frameworks fits best and why, and what modifications would be needed at your specific scale. Evaluate the recommendation against the chapter's decision matrix. Where does the model's reasoning diverge from the chapter's, and which argument is stronger?
+
+4. *(Meta-shortcut stress test)* The chapter notes that each redesign framework has a meta-shortcut — a way students could attempt to complete the redesigned assessment without doing the intended work. Ask a language model to identify the most plausible meta-shortcut for each of the four frameworks, then design one additional requirement for each that would close the shortcut. Evaluate whether the additional requirement changes the nature of the assessment or only its integrity properties.
+
+**Synthesis**
+
+5. *(Backward design audit at scale)* Ask a language model to generate five sample assessments across different subjects and grade levels, then apply the three-question audit to each. For each one that fails, ask the model to propose a redesign using the most appropriate framework. Then evaluate: which redesigns required the most instructor judgment that the model couldn't supply? What does that tell you about the limits of AI assistance in assessment design itself?
+
+**Challenge**
+
+6. *(The honest student problem)* The chapter ends with an unresolved question: how do you handle the student who used AI honestly and well, before any policy existed, and now feels mistrusted by the new regime? Ask a language model to draft a response to that student — a policy statement or a direct explanation — that is honest about the reasons for the redesign without implying that past AI use was wrong. Evaluate the draft: does it hold the tension between supporting legitimate AI use and requiring demonstrated learning, or does it collapse toward one side? Revise where it collapses.
+
+---
 
 ## Aging note
 
-AI-detection tool reliability claims will continue to evolve. The pattern (new tool launches, bias studies follow, modifications or withdrawal) has held since 2022. Re-verify the Liang et al. citation and look for any new high-N evidence before reprint. The structural argument is stable.
+AI-detection tool reliability claims will continue to evolve. The pattern since 2022 — new tool launches, bias studies follow, modifications or withdrawal — has been consistent. Re-verify the Liang et al. citation and look for high-*N* evidence before reprint. The structural argument is stable: designing assessments around the assumption that detection works is fragile design, and the fragility is a property of the detection problem, not of any particular tool.
