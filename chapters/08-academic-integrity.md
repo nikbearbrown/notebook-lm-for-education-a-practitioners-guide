@@ -1,201 +1,163 @@
 # Chapter 8 — Academic Integrity: The Honest Conversation
 
-> *An AI use policy that says "don't" without saying "because" will not survive the first conversation with a student who asks why.*
+*An AI use policy that says "don't" without saying "because" will not survive the first conversation with a student who asks why.*
 
 ---
 
-## Problem this chapter solves
+Here is a thing Florida State University noticed.
 
-You need an AI use policy that is defensible, specific to NotebookLM's actual capabilities, and honest about what the evidence shows — without either banning the tool reflexively or pretending the integrity questions don't exist. This chapter teaches the policy design.
+When faculty looked at students who were using AI in ways that undermined their own learning, four behavioral markers showed up reliably. Not "submitted text that sounded like a chatbot." Something more specific and more useful than that.
 
-## Learning outcomes
+First: the student cannot explain the intellectual steps to a conclusion without referencing the AI. Second: the student uses the tool to generate complete responses rather than to understand the material. Third: the student relies entirely on summaries and avoids engaging with original texts. Fourth: the student experiences heightened anxiety when forced to complete work without digital assistance.
 
-1. *(Create)* Write an AI use policy for NotebookLM appropriate to your context (course, grade level, institution).
-2. *(Analyze)* Explain why students' ethical beliefs — not policy awareness — are the strongest predictor of AI use behavior, and what that means for policy design.
-3. *(Evaluate)* Assess whether a given NotebookLM use case constitutes an academic integrity violation in a specified context.
+These are observable. A teacher can see them without reading anyone's mind, without running detection software, without accusing anyone of anything. And they are framed for conversation, not punishment. The right response to any of these markers is a one-on-one about the student's learning — not an honor-code filing.
 
-## Prerequisites
+What the FSU markers point toward is a policy design problem. Every one of these behaviors is *downstream* of an assignment structure that permitted it. The student who cannot explain steps to a conclusion was never required to explain them. The student who avoided original texts was never required to demonstrate engagement with the original. The anxiety student was trained, by assignment design, to rely on the tool in contexts that later disappeared.
 
-- Chapter 7 (assessment design — integrity policy and assessment design are coupled).
-- Chapter 5 (active-engagement framework).
-- One course or program for which you are responsible for the policy.
+This chapter works backward from those markers. What design makes each one more or less likely? What policy supports the conversation instead of the surveillance? And — the deeper question — why do students use AI in academically dishonest ways at all, when most of them know it's against policy?
 
 ---
 
-## Opening case — The FSU red flags
+## Why Policy Doesn't Work the Way We Think It Does
 
-Florida State University's faculty guidance on AI identifies four behavioral markers that indicate a student's relationship with AI has crossed a line:
+<!-- → [CHART: Bar chart or scatterplot visualization of MDPI 2025 finding — ethical beliefs vs. policy awareness as predictors of AI use behavior — student sample n=401] -->
 
-1. The student cannot explain the intellectual steps to a conclusion without referencing the AI.
-2. The student uses the tool to generate complete homework responses rather than to understand materials.
-3. The student relies entirely on summaries and avoids engaging with original texts.
-4. The student experiences heightened anxiety when forced to complete exams without digital assistance.
+In 2025, a study published in MDPI tested two variables against AI use behavior in writing assessments across 401 students at major U.S. universities. The variables were: students' *awareness* of their institution's AI policy, and students' *ethical beliefs* about whether AI use in academic work was wrong.
 
-These markers are *observable*, *behavioral*, and *operational*. A teacher can use them as a diagnostic without reading the student's mind. They are framed for *conversation*, not punishment — the right response to a flagged behavior is a one-on-one about the student's learning, not an honor-code charge.
+Policy awareness had no significant predictive effect. Ethical beliefs predicted behavior strongly.
 
-The chapter works backward from these markers. *What assignment design makes each marker more or less likely? What policy supports the conversation, not the surveillance?* These are the chapter's organizing questions.
+Read that carefully. Knowing the rule didn't change what students did. Believing the behavior was wrong did.
 
----
+This is uncomfortable for anyone who has spent time writing AI policies, distributing them through syllabi, posting them to course management systems, asking students to sign acknowledgment forms. All of that acts on awareness. None of it acts on belief. And belief is what controls behavior.
 
-## Core concept 1 — Ethical beliefs predict AI use, not policy awareness
+The implication follows directly. A policy that only states what is prohibited — without explaining *why*, without giving students the reasoning behind the prohibition, without asking students to think about what authorship and learning actually mean — is an inert policy. It may satisfy an institutional compliance requirement. It will not change what students do when the assignment text makes the shortcut available.
 
-The MDPI 2025 study of 401 students at major U.S. universities tested two variables against AI use behavior in writing assessments: students' *awareness* of their institution's AI policy, and students' *ethical beliefs* about whether AI use in academic work was wrong. Policy awareness had no significant predictive effect. Ethical beliefs predicted behavior strongly.
-
-The implication is structural and uncomfortable: a policy that only states what is prohibited, without articulating *why*, is acting on the wrong variable. The variable that controls behavior is *belief*. The lever is shared moral reasoning about what learning is for and what authorship means. A policy that gives that reasoning to students has a chance of shifting beliefs. A policy that only enforces rules does not.
-
-This finding is the chapter's load-bearing claim. Most academic-integrity policies in current use are written as rule lists. The MDPI finding suggests rule lists do not work, or at least do not work alone. The work the chapter argues for is harder than writing a rule list — it requires the teacher to *make the reasoning visible* in the policy itself, in classroom conversation, in assignment design.
+The policy that has a chance of working is one that treats the student as someone capable of moral reasoning and gives them something to reason about. Not "AI use is prohibited on this assignment" alone. "AI use is prohibited on this assignment *because* this assignment is designed to build the specific skill of synthesizing conflicting sources under time pressure, which you cannot build if the synthesis is done for you — and here is why that skill matters for what comes after this course." That argument can be believed or rejected. A bare prohibition cannot.
 
 ---
 
-## Core concept 2 — Source-grounding helps with fabrication, not substitution
+## What Academic Integrity Actually Protects
 
-NotebookLM's source-grounding (Chapter 1) reduces *fabrication* — the student cannot present made-up facts as cited. Every claim has a source link. This is a meaningful integrity advantage over open-loop chatbots.
+<!-- → [INFOGRAPHIC: Diagram showing the three parties in an academic integrity framework — student, institution, future context — and what each loses when integrity fails] -->
 
-It does not reduce *substitution* — the student can still submit AI-synthesized analysis as their own. Citation discipline is orthogonal to authorship.
+Let me be precise about what we are protecting, because the precision changes the policy.
 
-The chapter must be precise about this. Conflating the two produces policies that are either too lax (treating source-grounding as if it solved integrity entirely) or too strict (banning a tool that solves the fabrication problem because it doesn't solve all problems).
+Academic integrity protects three things, and they are not the same thing.
 
-A useful framing for student-facing policy: *NotebookLM helps you read more carefully, generate study artifacts more quickly, and verify claims against sources more reliably. It does not produce your judgment, your argument, or your written work. Those are yours. Submit your own work; cite the AI when you used it.*
+It protects the *student's own learning*. A student who uses AI to complete work they were meant to do is acquiring a credential without acquiring the underlying capability. In the short term this is a successful optimization. In the medium term — in a job, a graduate program, a professional context — the missing capability surfaces. The credential promised something that wasn't there. This is a harm to the student, even if the student doesn't experience it as one until later.
 
----
+It protects *institutional credibility*. A degree or a grade is a signal to the world about what the student can do. If the signal is systematically decoupled from the capability it claims to represent, the signal degrades for everyone who holds it — including students who earned their credential honestly.
 
-## Core concept 3 — AI use disclosure as policy mechanism
+It protects the *intellectual community* of the classroom. When students are all doing the cognitive work — struggling with the same hard texts, making their own arguments, producing their own analyses — the conversation that follows is real. When some students have offloaded that work to a tool, the conversation is unequal in a way that damages it for everyone.
 
-A practical policy mechanism in increasingly common use: students must disclose AI use as part of submitting work. The disclosure includes:
+These three concerns don't all point to the same policy. The first suggests that integrity policy should be designed around genuine learning outcomes — and that assignment designs which permit shortcuts are as much an integrity problem as the student who takes them. The second suggests that credentialing contexts require more stringent controls than formative learning contexts. The third suggests that integrity in discussion and participation matters differently than integrity in individual written work.
 
-- Whether NotebookLM was used at all.
-- What sources were uploaded.
-- What outputs were generated.
-- What the student accepted, rejected, or revised.
-
-Effects of this mechanism:
-
-- Use becomes *visible* (and therefore discussable).
-- The student must *reflect* on their use — itself a metacognitive exercise.
-- It distinguishes the student who used NotebookLM to *understand* material (low risk) from the student who used it to *produce* the deliverable (high risk).
-
-Several major universities adopted this framework in 2024–2025. The chapter treats it as a current default option rather than a novel idea.
+A policy that treats all of these the same, with one blanket statement about prohibited AI use, is a policy that hasn't thought clearly about what it is trying to protect.
 
 ---
 
-## Core concept 4 — The conversation, not the conviction
+## NotebookLM Specifically
 
-The FSU red flags are diagnostic markers for *conversation*, not punishment. This framing matters. A student showing red flag #1 (cannot explain reasoning without AI) needs help building the cognitive skill, not an honor-code charge. A student showing red flag #4 (anxiety without digital assistance) needs scaffolded practice in unassisted work, not surveillance during exams.
+<!-- → [TABLE: NotebookLM use cases mapped to integrity risk — columns: use case, context where integrity is maintained, context where integrity is at risk, distinguishing factor] -->
 
-The chapter's position: integrity violations exist and deserve appropriate response. But the larger population the policy must serve is students who are *confused* about what counts as legitimate use — and confusion responds to clarity, not to consequences.
+Most AI integrity discussions happen at a level of generality that makes them difficult to apply. "AI use" covers a spectrum from a student asking a general-purpose chatbot to write their essay, to a student using a source-grounded tool to navigate a difficult primary document. Those are not the same action, they don't produce the same learning outcomes, and they don't raise the same integrity concerns.
 
-The conversation, scaffolded: *Show me what you did. Walk me through the reasoning. What did NotebookLM contribute? What did you contribute? Where did you have to make a judgment the tool couldn't help with?* These questions cannot be answered by a student who used NotebookLM as a substitute. They can be answered by a student who used it as support.
+NotebookLM's source-grounding constraint is the fact that changes the integrity calculus. The tool generates outputs only from sources the user uploads. It cannot write a student's essay from thin air; it can only produce outputs grounded in what the student has given it. This means the tool's integrity risk is concentrated in specific use cases, not distributed uniformly.
 
----
+The high-risk use cases are these. A student uploads a text they are supposed to read and uses the Study Guide to avoid reading it — submitting a summary that is the model's summary, not their own engagement with the source. A student uploads their own draft essay and uses NotebookLM to rewrite or extend it, submitting output they did not write as their own work. A student uses the Flashcard or Quiz function to generate a set of materials in a context where producing those materials was the assignment.
 
-## Mid-chapter checkpoint
+The low-risk use cases are structurally different. A student uploads a difficult primary source they are struggling with and uses the notebook's chat function to ask specific questions about passages they have already tried to read. A student uses an Audio Overview as a preview before reading, not as a replacement for reading. A student uses the notebook's citation function to check whether their interpretation of a source is supported — and reads the passage.
 
-Before continuing:
-- Can you state the MDPI 2025 finding in one sentence?
-- Can you distinguish fabrication from substitution and explain which one source-grounding addresses?
-- Can you describe what an AI-use disclosure looks like, in operational terms?
+The distinguishing factor is not the tool or the feature. It is whether the student's intellectual contribution — their reading, their reasoning, their synthesis — is the primary labor, with the tool playing a supporting role; or whether the tool's output is the primary artifact, with the student playing a light-editing role. The first is fine. The second is the problem.
 
----
-
-## Worked workflow — Drafting a course policy
-
-A history teacher drafts an AI use policy for a 12th-grade course. The drafting sequence:
-
-**Step 1 — State the learning goals the course's assessments measure.** *In this course, you will construct causal arguments about historical events, defend them with primary-source evidence, and revise them in response to challenges. The course assesses your ability to do those things.*
-
-**Step 2 — Specify what NotebookLM can do legitimately in service of those goals.** *You may use NotebookLM to: prepare structured study artifacts from assigned readings; verify your citations; generate self-test questions to check your understanding; surface tensions or contradictions across multiple sources.*
-
-**Step 3 — Specify what would constitute substitution.** *You may not: submit NotebookLM's analysis or argument as your own writing; have NotebookLM generate your final essay text and submit it; use NotebookLM during in-class proctored work without explicit instructor permission.*
-
-**Step 4 — Make the disclosure mechanism explicit.** *Every submitted assessment must include a one-paragraph AI use disclosure: what tools you used, what you generated, what you accepted, what you revised. The disclosure itself is not an integrity violation; failing to disclose is.*
-
-**Step 5 — Make the reasoning visible.** *The reason for these distinctions is that the course's goal is to build your causal-reasoning skill. Skills are built through practice, not through reading well-produced explanations. NotebookLM is a powerful study and verification tool; it is not a thinking partner that can substitute for your own work.*
-
-**Step 6 — Have a colleague who is skeptical of AI read the policy and identify the question it fails to address.** Iterate.
+A policy that applies this distinction — rather than either banning all NotebookLM use or permitting it entirely — is a policy grounded in what the tool actually does.
 
 ---
 
-## What can go wrong
+## Writing the Policy
 
-- **Policy is too generic.** Generic prohibitions on "using AI to cheat" do not help students who are confused about what counts as cheating. Specificity is what gives the policy traction.
+<!-- → [TABLE: Policy template structure — rows: statement of purpose, permitted uses, restricted uses, disclosure requirement, conversation clause — with example language for each] -->
 
-- **Policy treats disclosure as confession.** If students fear that disclosing legitimate AI use will be treated as misconduct, they will not disclose. The disclosure mechanism only works if disclosure of legitimate use is genuinely safe.
+A NotebookLM use policy has five components. Not because five is the right number for any mystical reason, but because each component addresses a different failure mode.
 
-- **Policy is unevenly enforced.** Inconsistency does more damage than imperfect rules. If two faculty members in the same department have different policies, students will probabilistically optimize across them. A department-level baseline (which faculty can extend, not contradict) reduces this.
+**Statement of purpose.** Why does academic integrity matter in this context? Not the legal boilerplate — the actual argument about learning and credentialing. This is the component that acts on belief rather than awareness. If this component is missing or generic, the policy is doing nothing the MDPI finding would predict to be effective.
 
----
+**Permitted uses.** Specific. What can a student do with NotebookLM in this course, on what kinds of tasks? "Use as a reading aid to help you understand difficult passages" is specific. "Use for study" is not. The specificity matters because a student trying to comply in good faith needs to know what compliance looks like. A student trying to find the loophole will find it whether the policy is specific or general — but the specific policy makes good-faith compliance possible.
 
-## Common misconceptions
+**Restricted uses.** Equally specific. What may not be submitted as the student's own work that was generated by the tool? "Submitting a NotebookLM Study Guide as your own summary of the reading" is specific. "Do not have AI do your work" is not. Again, specificity serves the student trying to comply.
 
-> **"Stricter policies produce more integrity."**
-> The MDPI 2025 finding suggests policy strictness has little effect; what matters is whether the policy enables the conversation that shifts student belief.
+**Disclosure requirement.** In contexts where AI use is permitted in some forms, require students to disclose how they used it. Not as a policing mechanism — as a norm. "I used NotebookLM to generate flashcards on chapter 4, then took the flashcards and added three of my own" is a disclosure that demonstrates exactly the kind of engagement the tool should be supporting. The act of writing the disclosure requires the student to be aware of their own process.
 
-> **"AI use disclosure is surveillance theater."**
-> If implemented as accusation, yes. If implemented as part of normal academic citation practice — *you cite the AI for the same reason you cite a peer, an article, or a textbook: to be transparent about your sources* — it is consistent with longstanding scholarly norms.
+**Conversation clause.** "If you're unsure whether a particular use is permitted, ask me before you do it — not after." This is the FSU behavioral-marker framing applied at the policy level. The markers are for conversation, not punishment. The policy should say so explicitly.
 
-> **"Banning AI is the safe institutional choice."**
-> It is the *defensible-without-thought* choice, which is different. The pantry research and the MDPI finding both suggest bans drive use underground without reducing it. The institutional cost shows up in degraded integrity climate, not in detection metrics.
+These five components together form a policy that can survive a student asking "why." The purpose explains the why. The permitted/restricted structure explains the what. The disclosure norm builds the habit of reflection. The conversation clause keeps the policy human.
 
 ---
 
-## Exercises
+## The Conversation You Are Actually Designing For
 
-1. *(Create)* Draft a one-paragraph AI use policy for one of your courses. Share it with a colleague known to be skeptical of AI tools. Identify the question it fails to address. Revise.
+<!-- → [INFOGRAPHIC: Decision tree for handling a suspected integrity violation — branching from "observable behavior" through conversation, assessment, and outcome paths] -->
 
-2. *(Evaluate)* Given three submissions — one with full disclosure of legitimate NotebookLM use, one with no disclosure but written-by-AI signals, one with no disclosure and human writing patterns — determine which (if any) merits an integrity conversation and what the opening sentence of that conversation should be.
+Most integrity policies are written for the enforcement scenario — what happens after a violation is documented. The better design question is: what conversation do I want to be able to have with a student *before* a violation is documented?
 
-3. *(Analyze)* Take your current course's integrity policy. Identify the section that articulates *why* the rules exist. If there is no such section, draft one in two paragraphs.
+The FSU behavioral markers are a diagnostic for that conversation. A student who cannot explain their reasoning without referencing the AI is not necessarily a student who violated a rule. They may be a student who has learned to rely on a tool as a cognitive prosthetic, which is a learning problem before it is an integrity problem. The right first move is a conversation about the student's learning — what did you understand before you used the tool? What can you explain without it? Where is the gap?
 
----
+That conversation requires a teacher who has thought clearly about what the assignment was for, what capability it was meant to build, and whether the student has that capability. It does not require AI-detection software. It does not require an accusation. It requires the specific knowledge of what this assignment was supposed to produce in this student.
 
-## What would change my mind
-
-A controlled study showing that strict-detection policies produced equivalent integrity outcomes to disclosure-plus-conversation policies, at comparable instructor effort, would weaken the chapter's framing. The MDPI 2025 finding plus the trajectory of detection-tool research currently both point against detection-based policy. New evidence in either direction would shift the chapter's emphasis.
-
-## Still puzzling
-
-- Whether disclosure mechanisms scale to large lecture courses without becoming pro forma.
-- Whether honor-code institutional cultures translate to AI integrity questions, or whether AI requires a different cultural infrastructure.
-- How to handle the student who used AI honestly and well, before any policy existed, and now must comply with a policy they did not have when the work was done.
+The policy that enables this conversation is one that has been *explained* to students in advance, so the student knows what the teacher values and why, and the teacher can refer back to that shared understanding rather than introducing a new standard after the fact. "You and I discussed at the start of this course what kind of work demonstrates genuine understanding in this subject. Let's look at this together through that lens." That conversation is possible when the policy was explained. It is not possible when the policy was only distributed.
 
 ---
 
-## Chapter summary
+## What the Detection Tools Get Wrong
 
-You can now:
-- Articulate why student ethical belief, not policy awareness, predicts AI use behavior.
-- Distinguish fabrication from substitution and explain what source-grounding addresses.
-- Draft an AI use policy that includes the reasoning, not only the rules.
-- Treat the FSU red flags as diagnostic markers for supportive conversation rather than disciplinary trigger.
+<!-- → [CHART: Liang et al. 2023 finding — false positive rates for AI detection tools across native vs. non-native English writers — visualize the disparity] -->
 
-## Key terms
+AI detection tools deserve a specific note, because their use is spreading and their reliability is poor in ways that matter for equity.
 
-- **MDPI 2025 finding** — Ethical beliefs predict AI use; policy awareness does not.
-- **AI use disclosure** — Student-submitted statement of what tools were used, what outputs were generated, what was accepted or revised.
-- **FSU red flags** — Four behavioral markers indicating an AI relationship has crossed a line.
-- **Fabrication vs. substitution** — Two distinct integrity questions; source-grounding addresses the first, not the second.
+Liang et al., in 2023, documented systematic false positive rates in AI detection tools against writing by non-native English speakers. The tools trained to identify AI-generated text had also learned, in effect, to flag certain features of non-native writing — features that correlate with how non-native writers structure sentences, choose vocabulary, and produce prose under time pressure. A student writing genuinely but writing in English as a second or third language is more likely to be flagged as having used AI than a native speaker writing at the same level of sophistication.
 
-## Bridge question
+This is not a minor calibration problem. It is a systematic bias that would concentrate false accusations on students who are already navigating additional challenges. A policy that relies on detection tools as enforcement infrastructure is a policy that will produce unjust outcomes at a predictable rate.
 
-Act Two's K–12 workflow sequence is complete. **What does the higher-education version of this work look like?** Chapters 9 and 10 address research synthesis and undergraduate course design.
+The alternative is not to ignore integrity concerns. The alternative is the design-based approach the previous chapters describe — assignments that make the shortcut self-defeating, policies that act on belief rather than surveillance, conversations that diagnose learning rather than punish rule violations. These approaches do not require detection tools and do not produce the equity problem the tools introduce.
 
-## Further reading
+---
 
-- *Pantry research file*, "Academic Integrity" section. MDPI 2025 citation.
-- McCabe, Treviño & Butterfield, *Cheating in College* (2001) — Foundational on moral climate.
-- Liang et al., *Patterns* (2023) — Detection-bias evidence.
-- FSU faculty AI guidance — Operational source for the red flags. [verify URL]
+## What Would Change the Chapter's Position
 
-## Quick-start card
+A replication of the MDPI 2025 finding that did not hold — that found policy awareness did predict behavior in a different student population or institutional context — would complicate the chapter's central design claim. The finding is based on one study of 401 students at major U.S. universities. That is a real finding, but it is not a law. If institutional context, policy framing, or student population characteristics moderate the effect, the policy design implications would need revision.
 
-> **The policy that works**
->
-> 1. Make the reasoning visible (not just the rules).
-> 2. Distinguish fabrication from substitution; address each.
-> 3. Require AI use disclosure; treat disclosure as safe.
-> 4. Treat red flags as conversation triggers, not disciplinary triggers.
-> 5. Iterate with a skeptical-colleague stress test.
+A reliable, validated AI detection tool with documented false positive rates below a meaningful threshold — below the background rate of academic dishonesty it would be used to address — would change the chapter's position on detection tools specifically. As of writing, no such tool exists for the text modalities commonly used in K–12 and higher education. The situation is technically fluid; the equity concern remains regardless of accuracy improvements.
 
-## Aging note
+Three things still genuinely uncertain: whether the ethical-beliefs finding replicates across non-U.S. educational contexts where AI policy norms differ; whether the disclosure requirement norm, if widely adopted, changes student behavior by making AI use visible rather than hidden; and whether the FSU behavioral markers, while clinically useful, can be operationalized in large-enrollment courses where the one-on-one conversation they imply is not feasible at scale.
 
-University AI policy is evolving rapidly. Specific institutional examples will date quickly. The MDPI 2025 finding is current and replicates the longer pattern from academic-integrity research. The structural argument — belief drives behavior, design over enforcement — is stable.
+---
+
+## LLM Exercises
+
+1. Take your current AI use policy — or, if you don't have one, take a generic policy from your institution's current guidance — and paste it into an LLM. Ask the LLM to identify: which components act on student *awareness* of rules, and which components act on student *beliefs* about what learning and authorship mean. Ask it to rewrite the policy with the MDPI finding in mind — emphasizing the reasoning, not just the rules. Compare the rewrite against your original. Note what changed and what was lost.
+
+2. Take the five FSU behavioral markers. Paste them into an LLM along with the description of a specific assignment in your course. Ask the LLM to identify which assignment design features make each marker more or less likely to appear. Ask it to suggest one design change per marker that would reduce the likelihood of the problematic behavior. Evaluate its suggestions against what you know about your students and context.
+
+3. Write a one-paragraph "honest conversation" statement — the part of your policy that explains *why* integrity matters in your specific course, addressed directly to your students. Paste it into an LLM and ask it to evaluate whether a skeptical student would find the reasoning compelling, where the argument is weakest, and what objections a student might raise. Use the LLM's critique to revise the statement. Note: the goal is not a policy that is invulnerable to objection — it is a policy that has already thought about the objections and answered them honestly.
+
+---
+
+## Chapter Summary
+
+You can now write an AI use policy for NotebookLM with five components: purpose, permitted uses, restricted uses, disclosure requirement, and conversation clause. You understand why the policy's purpose statement — the reasoning, not just the rules — is the component that actually acts on behavior, and why the FSU behavioral markers are a diagnostic for learning conversations rather than a trigger for enforcement. You know why detection tools introduce equity risk and why design-based approaches are the more reliable alternative.
+
+The one idea from this chapter that matters most: policy awareness does not predict behavior. Ethical belief does. The policy that has a chance of working is the one that gives students the reasoning to form beliefs about what learning and authorship mean — not just the rules to comply with.
+
+The common mistake: writing the policy after the course design is complete, as a final compliance step. Policy and assignment design are coupled. A policy that permits certain uses while an assignment design makes those uses invisible produces the gap everything falls through. Design first, then write the policy that reflects the design.
+
+The Feynman test: explain to a colleague why a stricter AI policy does not solve the problem this chapter addresses. Walk them through the MDPI finding, the distinction between belief and awareness, and what the conversation clause is actually for. If you can do that — if you can explain why "don't" without "because" fails — you have the chapter.
+
+---
+
+## Where This Leads
+
+You have the policy. Chapter 9 asks what happens when the policy meets an institution that has made different choices — districts that have banned AI tools entirely, institutions that have mandated them, the range of administrative contexts you may not control but have to navigate. The policy you've designed is yours. Chapter 9 is about what you do when the institutional context pushes back.
+
+---
+
+*The MDPI 2025 finding is current as of writing; replication studies are likely through 2026–2027. The Liang et al. 2023 detection-tool bias finding is documented; the technical landscape for detection tools is changing faster than the equity concern. Re-verify specific tool recommendations before each deployment.*
