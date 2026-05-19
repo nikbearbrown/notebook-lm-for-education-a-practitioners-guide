@@ -133,3 +133,42 @@ For permissions, errata, and corrections: bear@bearbrown.co.
 ---
 
 *Practitioner Guides for the AI Classroom* — a series of short, opinionated handbooks for educators deploying AI tools in real classrooms. The series argues for deliberate design over enthusiasm, honest evidence framing over marketing, and the labor separation between what AI does well and what only a human can do.
+
+---
+
+## Who This Book Is For
+
+This is a book for practicing educators. It is for the K–12 teacher who heard about NotebookLM in a professional-development workshop, opened it once, and could not tell whether the Audio Overview she generated was good enough to assign. It is for the community-college instructor whose department head asked her to "explore AI tools" with no further specification. It is for the graduate-program faculty member who has 40 papers to read this week and has wondered, more than once, whether NotebookLM could help with that. It is not for AI researchers, edtech-industry analysts, or instructional-design specialists already deep in the field. It is for the person who has slides to make for Tuesday, students to teach on Wednesday, and 30 minutes on Monday night to figure out whether this tool is worth the effort.
+
+---
+
+## How to Read It
+
+Fourteen chapters in three acts.
+
+**Act One — Orient (Chapters 1–3): the design principle.** Chapter 1 names NotebookLM as a bounded tool and argues that the boundary is the feature. Chapter 2 walks you through your first notebook in thirty minutes, with the verification step intact. Chapter 3 reframes output-type selection as a pedagogical decision rather than a feature exploration.
+
+**Act Two — Build (Chapters 4–11): role-specific workflows.** Chapters 4 and 5 cover the K–12 teacher and K–12 student perspectives. Chapter 6 addresses the Google Classroom integration and the admin landscape. Chapter 7 takes on the hardest question: redesigning assessments for an AI-augmented environment. Chapter 8 covers academic integrity policy. Chapters 9 and 10 cover higher-education research workflows and undergraduate course design. Chapter 11 addresses privacy and equity — the structural deployment constraints.
+
+**Act Three — Sustain (Chapters 12–14): institutional and evaluative work.** Chapter 12 places NotebookLM in the broader AI-tool landscape and teaches a selection framework. Chapter 13 walks you through writing a one-page administrator brief. Chapter 14 is the book's terminal deliverable: the honest capability assessment you write for your own context, using a four-bucket evidence framework to keep your claims defensible.
+
+The Appendix follows. It is optional. The book works without it.
+
+---
+
+## Signature Simulations
+
+<!-- TODO: populate from chapter content -->
+
+---
+
+## About the Author
+
+**Nik Bear Brown** is an Associate Teaching Professor in the College of Engineering at Northeastern University, where he teaches AI, data science, programming, and the design of AI-assisted education infrastructure. He founded *Humanitarians AI* (a 501(c)(3) supporting graduate students building consequential AI projects) and *Bear Brown & Company*, which publishes the *Practitioner Guides for the AI Classroom* series this book belongs to. His current work centers on the *Irreducibly Human* framework — a curriculum project on the cognitive capacities the AI era most urgently requires humans to develop — and on *Medhavy*, an AI-native adaptive tutoring platform that this book is designed to integrate with.
+
+He holds a PhD in Computer Science from UCLA (computational and systems biology, AI, statistics), an MS in Information Design and Data Visualization from Northeastern, an MBA from Northeastern, and a BA in Biochemistry and Molecular Biology from UC Santa Cruz. He did a part-time postdoc in deep learning at Harvard Medical School while teaching at Northeastern. Earlier in his career he worked as a molecular biologist at DNAX Research Institute and Cetus Corporation.
+
+He writes at [nikbearbrown.com](https://www.nikbearbrown.com), at [irreducibly.xyz](https://irreducibly.xyz), and at [skepticism.ai](https://www.skepticism.ai). He works in Boston.
+
+The connective thread across his work is simple: AI is powerful, but power without judgment is just a microscope sitting in a box. This book is one attempt to put the right humans in the room with the microscope, looking at the right thing, asking the right questions.
+
