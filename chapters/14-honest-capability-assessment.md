@@ -1,215 +1,195 @@
 # Chapter 14 — Honest Capability Assessment: What the Evidence Shows
 
-> *NotebookLM is not a learning revolution. It is a useful bounded tool with a thin evidence base, strong adoption evidence, and real deployment risks. This chapter gives you the language to say that clearly.*
+*How to say what you actually know, and nothing more.*
 
 ---
 
-## Problem this chapter solves
+There is a habit of mind that is harder than it sounds, and it is the one this chapter is about. The habit is this: when you know something, say what you know. When you don't know something, say that too. Don't let enthusiasm fill in the gaps. Don't let skepticism close them off. Say exactly what the evidence supports and exactly where it runs out.
 
-You want to evaluate NotebookLM seriously — not as an enthusiast or a skeptic. You need a framework for reading the evidence honestly and communicating your assessment to others. This chapter is the terminal deliverable of the book.
+This sounds like the obvious thing to do. It is not what most people do when evaluating a new tool. What most people do is start with a conclusion — the tool works, or the tool doesn't — and then recruit evidence to support it. The enthusiasm version: find the positive case studies, cite the engagement numbers, describe the transformed classroom. The skepticism version: find the thin evidence base, cite the methodological limitations, describe the surveillance risks. Both versions are built from the same evidence. The difference is what each leaves out.
 
-## Learning outcomes
+The chapter is about a third version. Not enthusiasm, not skepticism — assessment. The discipline of stating claims at exactly the level of specificity the evidence supports, no more and no less.
 
-1. *(Evaluate)* Apply the four-bucket evidence framework to a claim about NotebookLM's educational impact.
-2. *(Create)* Produce a one-page honest capability assessment for a specific educational context.
-3. *(Analyze)* Identify three claims about NotebookLM that are currently overstated and explain what the evidence actually supports.
-
-## Prerequisites
-
-- All prior chapters.
-- A specific educational context for which you are responsible for evaluating the tool.
+This is the book's terminal chapter for a reason. Everything before it was operational — how to configure the tool, how to design assignments, how to redesign assessments, how to choose among tools. This chapter asks a different question: given everything you have learned and done, what can you honestly say about whether it works?
 
 ---
 
-## Opening case — The strongest available evidence
+## The strongest available evidence
 
-In 2025, researcher Ammar Mohamed published a mixed-methods study at Gulf University in Bahrain. The study covered five undergraduate communication and media courses, 102 students total. The reported findings: improvements in engagement, comprehension, and analytical rigor in written submissions when students used NotebookLM in the course design.
+In 2025, researcher Ammar Mohamed published a mixed-methods study at Gulf University in Bahrain. Five undergraduate communication and media courses. 102 students. Reported findings: improvements in engagement, comprehension, and analytical rigor in written submissions when students used NotebookLM in the course design.
 
-This is the strongest single piece of evidence currently available for NotebookLM's educational impact. The chapter opens with it for that reason — and uses what follows to explain precisely what one mixed-methods study with 102 students does and does not establish.
+This is the strongest single piece of evidence currently available for NotebookLM's educational impact. The chapter opens with it because what follows is a precise account of what that evidence does and does not establish — and working through that account is the entire skill.
 
-What it establishes: in this specific context, with this specific instructor and these specific students, NotebookLM use was associated with reported gains. The pattern is real for this case.
+What the Mohamed study establishes: in this specific context, with this specific instructor and these specific students, NotebookLM use was associated with reported gains. The pattern is real for this case.
 
-What it does not establish:
-- Generalizability to other disciplines, institutions, or student populations.
-- Causal attribution to NotebookLM specifically (vs. the assignment design changes that came with it).
-- Long-term retention or transfer outcomes.
-- Comparison against a well-designed non-NotebookLM control condition.
+What it does not establish: generalizability to other disciplines, institutions, or student populations. Causal attribution to NotebookLM specifically, as distinct from the assignment-design changes that accompanied it. Long-term retention or transfer outcomes. Comparison against a well-designed control condition using different tools or no AI.
 
-This is the strongest evidence. The chapter's argument: a tool whose strongest evidence is one 102-student mixed-methods study with no comparison group has a *thin* evidence base. That is not a critique of NotebookLM. It is an honest description of where the evidence currently stands. Stating it clearly is the chapter's central skill.
+One study. One institution. 102 students. No comparison group. The reported gains may be genuine. They may reflect the Hawthorne effect — the students performed better because they were being studied, not because of the tool. They may reflect the novelty effect — engagement was higher because the tool was new. The study cannot distinguish among these. It is not designed to.
+
+This is the strongest evidence. A tool whose strongest evidence is one 102-student mixed-methods study with no comparison group has a thin evidence base. That is not a critique of the tool. It is an honest description of where the field stands in mid-2026. The critique would be claiming otherwise.
 
 ---
 
-## Core concept 1 — The four-bucket evidence framework
+## The four-bucket framework
 
-Every claim about NotebookLM's educational impact falls into one of four evidence buckets. The discipline: locate each claim in its bucket before accepting or repeating it.
+Every claim about NotebookLM's educational impact can be located in one of four evidence buckets. Locating the claim before repeating it is the discipline.
 
-**1. Institutional exemplars.** Specific deployments at specific institutions — Monash self-testing, UW-Milwaukee Math 94, UIC research workflows, NYU formative feedback loops. These show *workflow and engagement* patterns. They do not establish causal effects on learning outcomes.
+**Institutional exemplars.** Specific deployments at specific institutions — the Monash self-testing configuration, the UW-Milwaukee Math 94 audio case, the UIC research workflow, the NYU formative feedback loop. These show that educators have found configurations that work in their contexts. They establish workflow and engagement patterns. They do not establish causal effects on learning outcomes across other contexts. The Monash model shows that retrieval-practice-configured Learning Guide produces high engagement at Monash. It does not show that it will produce the same engagement at your institution, with your students, for your subject.
 
-**2. Conference and review papers.** Argumentative pieces framing NotebookLM as supporting cognitive engagement, self-directed learning, etc. (e.g., 2025 AACE/eLearn paper). These are *critical overviews*, not efficacy trials.
+**Conference and review papers.** Argumentative pieces framing NotebookLM as supporting cognitive engagement, self-directed learning, accessibility, or specific pedagogical frameworks. The 2025 AACE/eLearn paper is a representative example. These are critical overviews — they synthesize what's known, identify research directions, and make theoretical arguments for why the tool should work. They are not efficacy trials. "NotebookLM is consistent with self-directed learning principles" is a theoretical argument. "NotebookLM improves self-directed learning outcomes" is an empirical claim. The conference papers support the first; the evidence does not yet support the second.
 
-**3. Emerging case studies.** Mixed-methods studies at single institutions (Mohamed 2025; Gulf University; 102 students). *Suggestive*, not generalizable.
+**Emerging case studies.** Mixed-methods studies at single institutions: Mohamed 2025. Suggestive. The pattern may generalize. It hasn't been tested for generalization. The disciplined version of using this evidence: "one mixed-methods study found X; the finding is plausible and worth replication; it should not be cited as established."
 
-**4. Learning-science plausibility.** Mappings from NotebookLM features to known cognitive-science findings — flashcards to retrieval practice (Karpicke & Roediger 2008), quizzes to spaced retrieval, Socratic mode to diagnostic questioning. *Theoretical predictions*, not empirical demonstrations.
+**Learning-science plausibility.** Mappings from NotebookLM features to documented cognitive-science findings. Flashcards map to retrieval practice (Karpicke and Roediger 2008). Spaced quiz generation maps to the spacing effect. Learning Guide's diagnostic questioning maps to the testing effect and formative assessment literature. These are theoretical predictions of what *should* work based on mechanisms that have been studied in other contexts. They are not demonstrations that the mechanism operates as predicted when mediated by this specific tool. The plausibility is real. The empirical demonstration is still pending.
 
-Claims that span buckets need both legs stated explicitly. *"NotebookLM helps students learn"* is too vague to place; locate the specific sub-claim and the bucket.
+The framework's use: before citing a claim about NotebookLM, place it in its bucket and ask whether you are citing it as if it belonged in a higher-confidence bucket. Most enthusiasm-mode claims do exactly this — they cite an institutional exemplar as if it were a controlled study, or cite learning-science plausibility as if it were demonstrated outcome data.
 
----
-
-## Core concept 2 — The Educational Psychology Review 2025 finding
-
-A more methodologically rigorous finding: Educational Psychology Review (2025) reported that AI-generated quiz questions and flashcards can match teacher-created materials for learning outcomes *when used for self-assessment and repeated practice*. This is the closest thing to a controlled efficacy finding currently available for AI-generated learning materials.
-
-What it establishes: AI-generated materials are not categorically worse than teacher-created materials *for this specific use case*. The mechanism (retrieval practice from AI-generated questions) preserves the learning event.
-
-What it does not establish: that AI-generated materials are *better* than teacher-created ones, or that AI-generated tutoring (open-ended explanation) matches teacher-led tutoring. The finding is specific to structured self-assessment use.
-
-This is the chapter's strongest pro-NotebookLM evidence — and it illustrates the methodological care the chapter argues for. Even the strongest evidence is specific, bounded, and not yet expansive.
+<!-- → [TABLE: Four-bucket evidence framework — columns: Bucket / What it shows / What it does not show / Example from this chapter. Rows: Institutional exemplars (workflow/engagement patterns at specific institutions; causal effects or generalizability; Monash, UW-Milwaukee, NYU), Conference/review papers (theoretical arguments for why tool should work; efficacy; 2025 AACE eLearn paper), Emerging case studies (suggestive pattern at one institution; generalizable findings; Mohamed 2025), Learning-science plausibility (predictions from cognitive science; demonstrated outcomes via this tool; retrieval-practice mapping). Caption: Place the claim in its bucket before citing it. Most overstated claims are bucket-confusion errors.] -->
 
 ---
 
-## Core concept 3 — Three currently-overstated claims
+## The methodologically strongest finding
 
-The chapter identifies and corrects three claims about NotebookLM that current evidence does not fully support:
+There is one finding that clears a higher evidentiary bar than the Mohamed study, and it is worth treating separately because it changes what can be said carefully.
 
-**Overstated: "NotebookLM improves learning outcomes."** Evidence shows engagement, workflow gains, and reported satisfaction. Outcome data on learning durability, transfer, or comprehension are limited to small studies without controls. A careful version of the claim: *NotebookLM-supported assignments, when designed for active engagement, can support workflow and engagement patterns consistent with durable learning. Direct causal evidence of learning-outcome improvement is currently limited.*
+Educational Psychology Review published a finding in 2025 reporting that AI-generated quiz questions and flashcards can match teacher-created materials for learning outcomes when used for self-assessment and repeated practice. This is closer to a controlled efficacy finding for AI-generated learning materials, and it has the specific property that makes it most useful: it names the mechanism. The AI-generated materials work when the learning mechanism is retrieval practice — when the student attempts to recall, checks their answer, and repeats. They do not appear to be categorically worse than teacher-created materials for this specific use.
 
-**Overstated: "Source-grounding eliminates hallucination."** Evidence shows source-grounding *reduces* hallucination — roughly 40% → 13% in the cited comparative study. It does not eliminate it. A careful version of the claim: *Source-grounding meaningfully reduces fabrication. Misinterpretation, oversimplification, and bad quiz-question generation remain — at lower rates than open-loop chatbots but at rates that require active verification.*
+What this establishes: the retrieval-practice mechanism operates when the material is AI-generated rather than human-generated. The learning event that matters is the retrieval attempt, and AI-generated prompts can trigger it as effectively as human-generated ones. This is the evidentiary basis for the Monash configuration described in Chapter 10 — and it is a meaningful finding.
 
-**Overstated: "NotebookLM is safer for students than other AI tools."** Evidence shows it is *more defensible on certain dimensions* (citation auditing, account governance for Workspace accounts). On others (general integrity questions, displacement of reading) it raises the same questions. A careful version: *NotebookLM is safer than open-loop chatbots on fabrication and on data governance when used through institutional accounts. It is no safer than any other AI tool on the questions of student substitution, equity, or institutional integrity climate — those depend on assignment design and policy.*
+What it does not establish: that AI-generated materials are better than teacher-created ones. That AI-generated open-ended tutoring (explanation mode, not retrieval mode) matches teacher-led tutoring. That the finding extends beyond self-assessment use to other learning contexts. The finding is specific to structured self-assessment with repeated practice. Using it to support claims about AI tutoring in general is a bucket-confusion error of the kind the framework is designed to catch.
 
-The chapter's job is not to undermine the tool. It is to articulate what NotebookLM does well so that educator claims can be made *honestly* and *durably* — and so they survive contact with administrators and parents who will fact-check.
-
----
-
-## Core concept 4 — The aging-risk problem
-
-The chapter must address: what does an honest capability assessment look like when the underlying tool is changing every few months?
-
-Concerns:
-- Feature additions (Deep Research, Workspace Studio automation, multilingual expansion) change the capability landscape between writing and publication.
-- Evidence base is developing (Purdue / UAB / UC Riverside Google research partnership, May 2026 announcement, expected formal outcome data later in 2026).
-- District and institutional policy responses are evolving.
-
-The chapter's principle: separate *stable cores* (RAG architecture, source-grounding, the irreducibly-human-judgment requirement) from *current-state details* (specific feature lists, quota numbers, subscription tiers). The honest assessment should be structured so the stable cores carry the argument and the current-state details are clearly time-stamped — meaning the assessment can be re-issued with the dated content updated without rewriting the core argument.
+<!-- → [CHART: Evidence confidence spectrum — horizontal axis from "lowest confidence" to "highest confidence," four points plotted: Learning-science plausibility / Conference papers / Emerging case studies (Mohamed 2025) / EPR 2025 controlled finding. Each point annotated with what kind of claim it supports. Caption: The EPR 2025 finding sits meaningfully higher than the Mohamed study, but still below multi-site controlled trials. Readers should see the gap between "what we have" and "what we'd need."] -->
 
 ---
 
-## Mid-chapter checkpoint
+## Three overstated claims
 
-Before continuing:
-- Can you place a NotebookLM claim into its evidence bucket without consulting the table?
-- Can you state one careful-version replacement for an overstated claim?
-- Can you distinguish stable-core from current-state content in a hypothetical capability assessment?
+The chapter names three claims that are currently circulating about NotebookLM and corrects each to the level of specificity the evidence supports. These are not strawmen — they are claims the author has encountered in faculty discussions, marketing materials, and institutional presentations.
 
----
+**"NotebookLM improves learning outcomes."**
 
-## Worked workflow — The one-page honest capability assessment
+The evidence shows engagement gains, workflow efficiency, and reported satisfaction. It does not yet show durable learning-outcome improvement in controlled conditions. The Mohamed study shows improvement in written submissions; it cannot attribute that improvement to NotebookLM rather than to the assignment redesign that accompanied it, the Hawthorne effect, or the instructor's increased attention to the subject during the study period.
 
-This is the book's terminal deliverable. Write it for your specific educational context.
+The careful version: NotebookLM-supported assignments, when designed for active engagement using the configurations described in this book, produce workflow and engagement patterns that cognitive science predicts should support durable learning. Direct causal evidence of learning-outcome improvement is currently limited to one small mixed-methods study without a control condition.
 
-**Section 1 — Context (2-3 sentences).** Who is being served, what subject, what mode (K-12 / higher-ed / professional development).
+**"Source-grounding eliminates hallucination."**
 
-**Section 2 — What NotebookLM does well in this context (1 paragraph).** Specific to your subject and mode. Cited to either learning-science findings, institutional exemplars, or both. Use careful-version claims.
+The evidence shows source-grounding reduces hallucination substantially — from roughly 40% in open-loop chatbots to roughly 13% in the comparative study cited in Chapter 1. It does not eliminate it. The residual 13% is misinterpretation, not fabrication — the model misreads the source, overgeneralizes a finding, or drops a qualification — and misinterpretation requires a different verification discipline than fabrication does.
 
-**Section 3 — What NotebookLM does not yet do well, or is not yet shown to do well (1 paragraph).** Honest gaps. Specific.
+The careful version: source-grounding meaningfully reduces fabrication by making claims traceable to a source. It does not eliminate misinterpretation, oversimplification, or weak quiz-question generation. The citation is an audit trail, not a guarantee. The verification step — clicking the citation, reading the passage, checking the framing — is still required.
 
-**Section 4 — What the evidence shows (1 paragraph).** Locate claims in the four-bucket framework. Name the buckets explicitly. State what evidence would be needed to support stronger claims.
+**"NotebookLM is safer for students than other AI tools."**
 
-**Section 5 — What is still uncertain (2-3 sentences).** Named gaps; named research that would resolve them. The Purdue / UAB / UCR partnership outputs are a near-term named answer.
+On certain dimensions, it is more defensible. The citation architecture makes fabrication auditable. Institutional Workspace for Education accounts have FERPA/COPPA compliance and training-data exclusions that personal accounts do not. These are real advantages.
 
-This deliverable replaces vague *"NotebookLM works for our students"* claims with a specific, defensible, evidence-grounded position. The position is what survives contact with skeptical administrators, fact-checking parents, and your own future self when you re-encounter the deployment in two years.
+On other dimensions, the safety question is the same as for any AI tool. The substitution problem — students using AI output instead of engaging with the material — is not solved by source-grounding. The equity problem — unequal access to the tool, unequal digital literacy, institutional deployment that benefits some students more than others — is not solved by source-grounding. The integrity climate problem — what happens to academic honesty norms when AI-generated work is routine — is not solved by source-grounding.
 
----
+The careful version: NotebookLM is more defensible than open-loop chatbots on fabrication and on data governance when used through institutional accounts. On substitution, equity, and integrity climate, it raises the same questions as any AI tool, and those questions are answered by assignment design and institutional policy, not by the tool's architecture.
 
-## What can go wrong
-
-- **The assessment collapses into pure enthusiasm.** *"NotebookLM has transformed our classroom. Students love it. Engagement is up. The future of learning is here."* Two semesters later, when outcomes don't show measurable change and a parent challenges, the educator has no language to defend a more measured position. Pure-enthusiasm framing structurally locks out nuance.
-
-- **The assessment collapses into pure skepticism.** *"The evidence is too thin to deploy responsibly."* Often false on its own terms — the thin evidence is enough to support specific careful deployments, just not enthusiastic claims. Both extremes fail.
-
-- **The assessment is too generic.** *"NotebookLM is a useful tool with limitations."* True; not useful. The specifics — which uses are supported, which are not, which evidence supports each call — are the work.
+<!-- → [TABLE: Three overstated claims with careful-version replacements — columns: Overstated claim / What the evidence actually shows / What evidence would be needed to support the stronger claim / Careful-version replacement. Rows: "Improves learning outcomes", "Eliminates hallucination", "Safer for students". Caption: The careful version is not weaker; it is defensible. Overstated claims collapse on contact with skeptical administrators or methodologically literate colleagues.] -->
 
 ---
 
-## Common misconceptions
+## The aging-risk problem
 
-> **"Thin evidence means don't deploy."**
-> Thin evidence means deploy carefully and honestly. The Purdue / UAB / UCR partnership exists because there isn't enough evidence; the way to contribute to it is to deploy in ways that can be observed and learned from.
+This chapter has an unusual property: it will be outdated faster than the others. The feature lists in Chapter 3 will change. The workflow descriptions in Chapters 4 and 10 will be affected by interface updates. But those changes are incremental — a new output type, a revised tier limit. This chapter will need substantive revision when the evidence base changes, and the evidence base is actively changing.
 
-> **"Enthusiasm is required to win institutional support."**
-> Honest framing wins institutional support that survives contact with reality. Chapter 13's brief depends on this.
+The Google research partnership announced in May 2026 — involving Purdue, UAB, and UC Riverside — is designed to produce the kind of outcome data that the Mohamed study lacks: controlled conditions, multiple institutions, rigorous causal attribution. If that research produces strong positive findings, the "thin evidence" framing of this chapter will need to be revised. If it produces null or mixed findings, the careful claims the chapter defends will be strengthened. Either way, the chapter's current framing is a snapshot of the evidence as it stood in mid-2026, and it should be clearly dated as such.
 
-> **"The book's verdict on NotebookLM is positive."**
-> The book's verdict is that NotebookLM is *useful within specific bounded uses, defensible when deployed with assessment redesign and equity attention, and currently undersupplied with rigorous outcome evidence.* That is more nuanced than positive or negative; that nuance is the point.
+The principle for writing a capability assessment that ages well: separate what the chapter calls the stable core from the current state. The stable core is the set of claims that hold regardless of what specific feature is in which tier, or which study was just published. Source-grounding reduces fabrication by making claims traceable to a source — that is a structural property of the RAG architecture, and it is stable. The specific fabrication-reduction number (40% → 13%) is a current-state detail — it comes from one comparative study, and future studies may revise it.
+
+An honest capability assessment built on stable-core claims can be re-issued when the evidence changes by updating the current-state details while leaving the core argument intact. An assessment built on current-state details cannot — it has to be rewritten from scratch when the features change or the evidence moves.
+
+<!-- → [INFOGRAPHIC: Stable core vs. current state — two-column layout. Left: "Stable Core" with checkmark: structural claims that hold across tool versions and studies (e.g., "source-grounding makes fabrication traceable"). Right: "Current State" with refresh icon: specific numbers and named studies that require re-verification at each reprint (e.g., "40% → 13% fabrication reduction"). Caption: Build your assessment on the left column. Annotate the right column with a date. When the evidence moves, update the right column without rewriting the left.] -->
+
+---
+
+## The one-page assessment
+
+The book's terminal deliverable is not a worked example — it is a template that forces the discipline the chapter has been building toward. Five sections. Total length: one page. Every sentence earns its place by being specific, evidence-grounded, and honest about what it doesn't know.
+
+**Context.** Two or three sentences: who is being served, what subject, what educational level. The specificity here is what makes the rest defensible — a capability assessment for "education" is not defensible because the claims that are true for one context are not true for all contexts.
+
+**What NotebookLM does well here.** One paragraph. Specific to the subject and mode. Each claim tied to either a learning-science finding (bucket 4) or a documented institutional exemplar that is genuinely analogous to the context (bucket 1). Use careful-version claims. The section's purpose is not to make the strongest possible case for the tool — it is to identify the uses where the evidence, however thin, points in the right direction.
+
+**What it does not yet do well, or is not yet shown to do well.** One paragraph. Named gaps. If the deployment context includes open-ended reasoning tasks, those are outside the bounded architecture's strength. If the students are from populations underrepresented in the existing exemplar literature (the exemplars are mostly research universities and suburban high schools), say so. If the subject has characteristics that make the source-grounding approach less useful (subjects where the authoritative source is the student's own original analysis rather than an assigned corpus), say that.
+
+**What the evidence shows.** One paragraph. Locate the central claims in their evidence buckets. Name the buckets. State what evidence would be needed to support the stronger claims — which is the single most important sentence in the assessment, because it converts "we don't know" from a gap into a research question.
+
+**What is still uncertain.** Two or three sentences. Named gaps. Named research that would resolve them. The Google partnership outputs are a near-term named answer for the learning-outcomes question. For context-specific questions — does this configuration work for this population — the named answer is: pilot it, measure it, report it.
+
+This document replaces the vague *"NotebookLM works for our students"* claim with a specific, evidence-grounded, revisable position. The position is what survives contact with skeptical administrators. It is what survives your own re-reading two years from now when the deployment has produced outcomes you didn't predict.
+
+<!-- → [INFOGRAPHIC: One-page honest capability assessment template — five labeled sections with sentence-count guidance: Context (2-3 sentences), What works here (1 paragraph, cite evidence bucket), What doesn't / isn't shown (1 paragraph, named gaps), What the evidence shows (1 paragraph, name the buckets), What is still uncertain (2-3 sentences, name the research). Annotation pointing to each section: what kind of claim goes here, what kind of claim does NOT go here. Caption: The template is a discipline, not a form. Every sentence should be specific enough to be falsified.] -->
+
+---
+
+## What this chapter established
+
+The evidence base for NotebookLM's educational impact is thin. The strongest single study is one 102-student mixed-methods case without a control condition. The strongest controlled finding establishes parity between AI-generated and teacher-created materials for self-assessment use — not superiority, and not extension to other use cases. Three claims currently circulating about the tool are overstated, each in a specific and correctable way. The four-bucket framework makes the correction discipline explicit and repeatable.
+
+This is not a negative verdict on the tool. The thin evidence is not evidence of ineffectiveness — it is evidence that the controlled studies haven't been done yet. The path from here is not to wait for the evidence before deploying, but to deploy in ways that are honest about what is and isn't established, design assessments that serve the uses the evidence does support, and contribute to the evidence base by observing and reporting what happens in your own context.
+
+The Purdue / UAB / UC Riverside partnership is the named next step for the field. This chapter's framing is explicitly held as revisable when that work is published.
+
+---
+
+## Key terms
+
+- **Four-bucket framework** — Institutional exemplars, conference and review papers, emerging case studies, learning-science plausibility. The structure for locating evidence claims before repeating them.
+- **Bucket-confusion error** — Citing evidence from a lower-confidence bucket as if it belonged in a higher one. The most common form of overclaiming.
+- **Thin evidence base** — Not absence of evidence, but evidence that is limited in methodological rigor, scope, or generalizability. The current state for NotebookLM learning-outcome claims.
+- **Stable core vs. current state** — The principle for writing capability assessments that age well. Stable-core claims hold across tool versions; current-state claims need re-verification at each reprint.
+- **Honest framing** — Stating claims at exactly the level of specificity the evidence supports. The chapter's structural alternative to enthusiasm or skepticism.
+
+---
+
+## Aging note
+
+**This chapter ages fastest of the substantive content.** The Mohamed 2025 study and the Educational Psychology Review 2025 finding are current best evidence; by late 2026 the Google research-partnership outputs should produce something more rigorous. The author commits to revising the "thin evidence" framing when that research is published, in either direction. Re-check the overstated/careful-version claim pairings against new evidence at every reprint. The four-bucket framework and the stable-core/current-state principle are stable; the specific evidence claims are explicitly time-stamped.
 
 ---
 
 ## Exercises
 
-1. *(Evaluate)* Take three claims about NotebookLM (from marketing materials, faculty colleagues, your own initial impressions). Locate each in the four-bucket framework. Identify which are overstated.
+### Warm-up
 
-2. *(Create)* Write the one-page honest capability assessment for NotebookLM in your specific educational context. This is the book's terminal deliverable.
+**1.** A colleague tells you: "I read that AI tools improve student engagement, so we should adopt NotebookLM." Using the four-bucket framework, identify which bucket this claim is likely drawn from. What additional information would you need to place it more precisely?
+*Tests: four-bucket framework, claim location. Difficulty: low.*
 
-3. *(Analyze)* Identify two stable-core claims and two current-state claims in the assessment you just wrote. Verify that the current-state claims are dated and revisable.
+**2.** Reread the three "overstated claims" in this chapter. For one of them, write the careful-version replacement in your own words — without looking back at the chapter's version. Then compare. What did you capture? What did you miss?
+*Tests: careful-version construction, honest framing. Difficulty: low.*
 
----
+**3.** The Mohamed 2025 study is described as the "strongest single piece of evidence" for NotebookLM's educational impact. List three specific things the study cannot establish and explain why each is beyond what its design can show.
+*Tests: evidence interpretation, limits of single-institution mixed-methods studies. Difficulty: low.*
 
-## What would change my mind
+### Application
 
-The Purdue / UAB / UC Riverside Google research partnership outputs are the named near-term answer. If those studies produce rigorous causal evidence of NotebookLM learning-outcome improvement (or absence of it), the chapter's "thin evidence" framing will need to be revised. The chapter commits to that revision in advance.
+**4.** You are writing a capability assessment for a community college developmental math course where students will use NotebookLM's quiz generation for self-testing. The institutional exemplars in this chapter come from research universities and suburban high schools. Write the "What it does not yet do well, or is not yet shown to do well" section of the one-page assessment template for this specific context. One paragraph. Cite the evidence gap precisely.
+*Tests: one-page assessment template, context-specific gap identification, bucket-confusion avoidance. Difficulty: medium.*
 
-## Still puzzling
+**5.** A department chair asks you to produce a two-sentence summary of what the research shows about NotebookLM for an accreditation document. Draft two versions: one that a careful reader would accept as honest, and one that overstates. Then annotate each — what makes the first defensible and the second not?
+*Tests: careful-version construction, honest framing under institutional pressure. Difficulty: medium.*
 
-- Whether the AI-in-education evidence base will mature to rigorous causal levels within 2-3 years, or whether the pace of tool change outruns the pace of evidence production.
-- Whether honest capability assessments are an institutionally valued skill or whether they will be ignored in favor of enthusiasm or skepticism marketing.
-- The right cadence for re-issuing the capability assessment as the tool evolves — every six months? annually? on major feature releases?
+**6.** The EPR 2025 finding establishes that AI-generated flashcards and quiz questions can match teacher-created materials for learning outcomes in self-assessment contexts. A colleague cites this finding to support adopting NotebookLM's open-ended tutoring features. Identify the bucket-confusion error and write the correction.
+*Tests: bucket-confusion identification, mechanism specificity. Difficulty: medium.*
 
----
+**7.** Apply the stable-core / current-state distinction to the following three claims. For each, say which category it belongs in and why: (a) source-grounding makes fabrication traceable to a source; (b) source-grounding reduces fabrication from roughly 40% to roughly 13%; (c) retrieval practice improves long-term retention.
+*Tests: stable core vs. current state, aging-risk principle. Difficulty: medium.*
 
-## Chapter summary
+### Synthesis
 
-You can now:
-- Apply the four-bucket evidence framework to any claim about NotebookLM.
-- Distinguish overstated claims from careful-version replacements.
-- Separate stable-core from current-state content in a capability assessment.
-- Write the one-page honest capability assessment for your specific context.
+**8.** Using the one-page assessment template, write a complete honest capability assessment for a specific context of your choosing: name the course, the student population, and the intended NotebookLM use. Every claim must be located in an evidence bucket. The "what the evidence shows" section must include the sentence naming what evidence would be needed to support the stronger claim.
+*Tests: full template application, bucket framework, honest framing, stable-core claims. Difficulty: high.*
 
-## Key terms
+**9.** This chapter argues that an honest capability assessment built on stable-core claims "can be re-issued when the evidence changes by updating the current-state details while leaving the core argument intact." Draft a revised version of the chapter's central assessment paragraph — the one beginning "The evidence base for NotebookLM's educational impact is thin" — as it might read if the Google research partnership produced strong positive findings. What changes? What stays the same? What does that tell you about which claims were stable-core and which were current-state?
+*Tests: stable core vs. current state, honest framing under new evidence, aging-risk principle. Difficulty: high.*
 
-- **Four-bucket framework** — Institutional exemplars, conference/review papers, emerging case studies, learning-science plausibility.
-- **Stable core vs. current state** — The chapter's principle for writing assessments that age well.
-- **Honest framing** — Stating evidence specifically and acknowledging gaps; the chapter's structural alternative to enthusiasm or skepticism marketing.
-- **Aging-risk problem** — The challenge of evaluating a tool that changes faster than the evidence about it can be produced.
+### Challenge
 
-## Bridge question — what's next, after the book
-
-The book ends here. **What is next?** What you make of NotebookLM in your specific context is up to you. The Appendix (Appendix A — The Fundamental Themes) is the upstream theory for the reader who wants the *why* behind the bounded-tool, assessment-redesign, and labor-separation arguments the chapters made operational.
-
-## Further reading
-
-- *Pantry research file*, "Evidence of Learning Outcomes" section — the synthesis behind the four buckets.
-- Mohamed, A. (2025) — Gulf University mixed-methods study. [verify full citation and DOI before publication]
-- Educational Psychology Review (2025) — AI-generated quiz/flashcard finding. [verify]
-- Mollick, *Co-Intelligence* (pantry library file) — Honest positioning of AI capability and limits.
-- Horvath, *The Digital Delusion* (pantry library file) — The skeptical lens; informs the "currently overstated" claims.
-- *Pantry library file* — Co-Intelligence and The Digital Delusion are the two book-length lenses to read against each other.
-- **Appendix A — The Fundamental Themes** (`97-fundamental-themes.md`) — The Frictional / Phase Gates / Humans+AI / Tier 1–7 taxonomy framework that the chapters' arguments sit inside.
-
-## Quick-start card
-
-> **The four-bucket evidence framework**
->
-> 1. Institutional exemplars — show workflow patterns, not causal effects.
-> 2. Conference/review papers — argumentative, not efficacy trials.
-> 3. Emerging case studies — suggestive, not generalizable.
-> 4. Learning-science plausibility — theoretical, not empirical.
->
-> Every claim about NotebookLM impact lives in one bucket. Locate it before repeating it.
-
-## Aging note
-
-**This chapter ages fastest of the substantive content** — the Mohamed 2025 study and the Educational Psychology Review 2025 finding are current best evidence; by late 2026 the Google research-partnership work should produce something stronger. Author should plan a revision cycle on this chapter ahead of every reprint. Re-check the current overstated/careful-version claim pairings against new evidence at each revision.
+**10.** The chapter's four-bucket framework is designed for evaluating evidence about a specific tool. Consider whether the same framework applies to evaluating evidence about a pedagogical practice — say, active learning or flipped classrooms. Where does the analogy hold? Where does it break down? What would need to change in the framework to handle pedagogical-practice evidence, and what does that tell you about what the framework is actually doing?
+*Tests: framework extension, limits of analogy, meta-level thinking about evidence standards. Difficulty: open-ended.*
 
 ---
 
-*This is the end of the book's main content. The next file (Appendix A — The Fundamental Themes) is the theoretical bridge to the broader Irreducibly Human / Frictional / Brutalist / Boondoggling project the book belongs to. Read it if you want the upstream argument; the book's twelve operational chapters work without it.*
+*This is the end of the book's main content. Appendix A — The Fundamental Themes is the theoretical upstream for readers who want the broader argument the chapters were built inside.*
