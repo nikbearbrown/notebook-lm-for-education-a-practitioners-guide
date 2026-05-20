@@ -24,8 +24,16 @@ Under a personal Gmail account, none of that is guaranteed. Google's consumer te
 
 The user-facing experience: identical. The data-governance reality: structurally different. The student cannot tell the difference. The parent cannot tell the difference. Without knowing to look, the teacher cannot tell the difference either.
 
-<!-- → [TABLE: Institutional Education account vs. personal Gmail account for NotebookLM use — Rows: Data used for model training, FERPA compliance, COPPA compliance, under-18 safety guardrails, Classroom LMS integration, school IT visibility. Two columns: Workspace for Education / Personal Gmail. Mark each row with Yes / No / Partial. Caption: "The user experience is identical. The governance layer underneath is not."] -->
+| | Workspace for Education | Personal Gmail |
+|---|---|---|
+| Data used for model training | No | Yes (subject to Google's standard terms unless opted out) |
+| FERPA compliance | Yes | No |
+| COPPA compliance | Yes (for under-13 with proper configuration) | No |
+| Under-18 safety guardrails | Specialized for minors | Standard content filters only |
+| Classroom LMS integration | Full integration with teacher dashboard | None — cannot integrate with school LMS |
+| School IT visibility | Yes — admin can audit usage and configure access | No — usage is private to the personal account holder |
 
+*The user experience is identical. The governance layer underneath is not.*
 This is why the personal-account workaround — having students use personal Gmail when the district has not enabled institutional access — is not a fallback. It is a governance shift that is invisible to almost everyone involved and that creates real exposure for real students. The solution to a closed institutional gate is not to route around it. The solution is to open the gate, which is Chapter 6's territory, or to make the case for opening it, which is Chapter 13's.
 
 ---
@@ -62,8 +70,14 @@ Neither of those outcomes is what the district intends. The first means the dist
 
 Surfacing that clearly, before the policy is set, is the equity analysis. The chapter's job is not to override district judgment. It is to ensure the judgment is made with visible consequences, not invisible ones.
 
-<!-- → [TABLE: Two unintended outcomes of a deliberate student-access restriction — Rows: Outcome 1 (students go without the tool), Outcome 2 (students route around to personal accounts). Columns: What happens, Who it affects most, Whether the district intended it, What the district loses. Caption: "The intended outcome — thoughtful delay — can produce either of these without anyone deciding to make it happen. The equity analysis makes the consequences visible before the policy is set."] -->
+| | Students go without the tool | Students route around to personal accounts |
+|---|---|---|
+| What happens | Affected students do not use NotebookLM at all | Affected students access NotebookLM at home via personal Gmail |
+| Who it affects most | Students whose families do not have a second-tier AI subscription or do not encourage workarounds | Students whose families enable the workaround, or who self-direct around the restriction |
+| Whether the district intended it | Often partially — districts know some students will route around but underestimate how many | Rarely fully — the personal-account workaround is the outcome most districts hope to prevent |
+| What the district loses | The pedagogical opportunity; equity for the affected students | The privacy governance the institutional account was designed to provide |
 
+*The intended outcome — thoughtful delay — can produce either of these without anyone deciding to make it happen. The equity analysis makes the consequences visible before the policy is set.*
 ---
 
 ## The language gap nobody named
@@ -92,8 +106,16 @@ For these cases, the data-sovereignty requirement — the requirement that data 
 
 Three alternatives exist in the current landscape that address sovereignty rather than compliance. Open Notebook is an open-source tool using retrieval-augmented generation to query local documents on institutional hardware, with local audio generation, no external server contact. Perplexica is an open-source search alternative running local models through Ollama and SearxNG, without logging. LM Studio installs and runs capable models directly on school-owned hardware.
 
-<!-- → [TABLE: NotebookLM vs. open-source alternatives for data-sovereignty-constrained deployments — Rows: Data processing location, Feature parity with NotebookLM, Audio generation, Classroom integration, Setup complexity, When to use it. Columns: NotebookLM (Workspace for Education), Open Notebook, Perplexica, LM Studio. Caption: "These are not general substitutes. They are the right tool when data sovereignty — not just compliance — is the binding requirement."] -->
+| | NotebookLM (Workspace for Education) | Open Notebook | Perplexica | LM Studio |
+|---|---|---|---|---|
+| Data processing location | Google servers (with Workspace governance) | Institutional hardware | Institutional hardware (via Ollama + SearxNG) | Institutional hardware (direct model run) |
+| Feature parity with NotebookLM | (baseline) | Most features (RAG, summaries, audio) | Search-focused; no document Q&A | Model-only; user supplies the RAG layer |
+| Audio generation | Native | Local TTS | No | No |
+| Classroom integration | Native | None | None | None |
+| Setup complexity | Low — admin enables toggles | Medium — server deployment | Medium — Ollama + SearxNG configuration | High — model selection, hardware sizing |
+| When to use it | Default for FERPA/COPPA contexts | Data must not leave institutional hardware | Local search with no logging is the binding requirement | Institution wants control over which model runs |
 
+*These are not general substitutes. They are the right tool when data sovereignty — not just compliance — is the binding requirement.*
 These alternatives are not feature-equivalent to NotebookLM. They are not better tools. They are the appropriate tools for the specific constraint of data sovereignty. Using them when compliance alone is the requirement adds complexity and reduces capability without a corresponding benefit. Using them when sovereignty is genuinely the requirement is not optional.
 
 The distinction matters for honest equity analysis: recommending open-source alternatives as a universal solution to privacy concerns conflates two different problems. Compliance and sovereignty are different requirements, and the right tool depends on which one is actually binding.

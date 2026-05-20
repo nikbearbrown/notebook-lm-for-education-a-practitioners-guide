@@ -32,8 +32,15 @@ If the assignment involves Classroom-integrated delivery — notebooks shared th
 
 And finally: the student must actually be *on* the correct OU. A student who transferred mid-year, or who was initially placed in a default OU, may be on a unit where the toggles are all off — while the rest of their class has access. From the teacher's perspective, everything works for most students and inexplicably fails for one. From the admin's perspective, it is a student who was never moved to the right unit.
 
-<!-- → [TABLE: The five enabling conditions for student NotebookLM access in Google Classroom — Column 1: Condition, Column 2: Who controls it, Column 3: Common failure mode. Rows: Google Workspace for Education account type; Gemini enabled for student OU; NotebookLM enabled for student OU; Gemini in Classroom enabled; Student on correct OU. Caption: "Any one closed gate produces the same result: the icon doesn't appear."] -->
+| Condition | Who controls it | Common failure mode |
+|---|---|---|
+| Google Workspace for Education account type | District IT / administrator | District uses personal Google accounts or a non-Education Workspace tier |
+| Gemini enabled for student organizational unit (OU) | District IT administrator | Enabled for staff OU, left off for student OU |
+| NotebookLM enabled for student OU | District IT administrator | Gemini enabled but NotebookLM specifically remains off |
+| Gemini in Classroom enabled | District IT administrator | NotebookLM works in browser but not via Classroom share |
+| Student assigned to correct OU | District IT / school administrator | Student transferred mid-year and remains on default OU where toggles haven't been flipped |
 
+*Any one closed gate produces the same result: the icon doesn't appear.*
 Five conditions. Any one missing and the student sees nothing. The relevant question before any lesson that depends on student access is: have I verified all five, for my students, from a test student account?
 
 ---
@@ -54,7 +61,8 @@ This chapter exists so that you know.
 
 If the icon is absent at step three, the diagnosis is one of the five conditions above. The most common: the admin enabled NotebookLM for staff but the student OU toggle was never touched. The email to the admin should be specific — not "NotebookLM doesn't work for students" but "the NotebookLM icon is absent in my test student account; I believe Gemini and NotebookLM need to be enabled for the [student OU name] organizational unit." Specificity converts a multi-day back-and-forth into a single round.
 
-<!-- → [IMAGE: Annotated screenshot or mockup of a sample admin email — Subject line, OU name, specific toggle names called out with callout labels. Caption: "The email that resolves in one round names the OU and the specific toggles. The email that takes three rounds says 'it doesn't work.'"] -->
+![Mockup of an effective admin request email naming the organizational unit by name and specifying the exact toggles to enable (Gemini, NotebookLM, Gemini in Classroom). Callouts highlight the OU name and the toggle list as the elements that resolve the request in one round.](../images/06-google-classroom-integration-fig-01.png)
+*Figure 6.1 — The admin email that resolves in one round*
 
 ---
 
@@ -82,8 +90,23 @@ Infographics — all ten visual styles — are restricted to 18+. Cinematic Vide
 
 The pedagogical structure this creates: for middle school and lower high school, NotebookLM functions as a teacher production tool whose outputs are distributed, not a student production tool. The teacher can generate an Infographic and share it. The student cannot generate one. The teacher can produce a Cinematic Video Overview and post it to Classroom. The student cannot produce one.
 
-<!-- → [TABLE: Feature availability by user category — Columns: Feature, Teacher (18+), Higher-ed student (18+), K–12 student (under 18). Rows: Audio Overview, Study Guide, Mind Map, Briefing Doc, Flashcards, Quiz, Learning Guide, Interactive Audio, Slide Deck, Infographics, Cinematic Video Overview, Independent notebook creation via Classroom. Mark each cell: Available / Not available. Caption: "The assignment design space for under-18 students is narrower. The active-engagement patterns that work are the ones that use teacher-generated artifacts as their substrate."] -->
+| Feature | Teacher (18+) | Higher-ed student (18+) | K–12 student (under 18) |
+|---|---|---|---|
+| Audio Overview | Available | Available | Available |
+| Study Guide | Available | Available | Available |
+| Mind Map | Available | Available | Available |
+| Briefing Doc | Available | Available | Available |
+| Flashcards | Available | Available | Available |
+| Quiz | Available | Available | Available |
+| Learning Guide | Available | Available | Available |
+| Interactive Audio | Available | Available | Available (with institutional account configuration) |
+| Slide Deck (generation) | Available | Available | Available |
+| Slide Deck (revision via feedback) | Available | Available | **Not available** |
+| Infographics | Available | Available | **Not available** |
+| Cinematic Video Overview | Available | Available | **Not available** |
+| Independent notebook creation via Classroom | Available | Available (April 2026+) | **Not available** |
 
+*The assignment design space for under-18 students is narrower. The active-engagement patterns that work are the ones that use teacher-generated artifacts as their substrate.*
 The design move that preserves active engagement within these constraints: generate the restricted artifact yourself, distribute it, and configure the assignment so that engagement with the artifact — not production of it — is the student's task. An error-hunt through a teacher-generated Infographic requires close reading and domain judgment. The student is not just consuming the Infographic; they are evaluating it. The cognitive demand is real even though the student did not generate the artifact.
 
 ---
@@ -146,8 +169,15 @@ For everyone in a Workspace for Education environment: the permission stack is v
 
 The lesson that depends on student access requires that the access actually exists, in the student account, before lesson day. Everything in this chapter is in service of that sentence.
 
-<!-- → [TABLE: Diagnostic decision table — Column 1: What the teacher observes, Column 2: Most likely cause, Column 3: Action. Rows: Icon absent for all students (admin hasn't enabled NotebookLM for student OU); Icon absent for one student (student on wrong OU); Icon present but notebook inaccessible (Gemini in Classroom not enabled); Feature absent for students (age-restricted feature — not fixable by admin); Access blocked by policy (deliberate district decision — Chapter 13). Caption: "The observation determines the response. Most failures resolve in one email. Some require a different chapter."] -->
+| What the teacher observes | Most likely cause | Action |
+|---|---|---|
+| Icon absent for all students | Admin hasn't enabled NotebookLM for the student OU | Email admin with specific OU name and request to enable Gemini + NotebookLM + Gemini in Classroom |
+| Icon absent for one student | Student on wrong OU | Ask admin to move student to the correct OU |
+| Icon present but notebook inaccessible | Gemini in Classroom not enabled | Email admin to enable Gemini in Classroom specifically |
+| Feature absent for students | Age-restricted feature (under-18) — not fixable by admin | Redesign the assignment to use a teacher-generated version of the artifact |
+| Access blocked by policy | Deliberate district decision (e.g., Rochester pattern) | Different chapter — see Chapter 13 for the administrator brief |
 
+*The observation determines the response. Most failures resolve in one email. Some require a different chapter.*
 ---
 
 ## Exercises

@@ -10,7 +10,8 @@ NotebookLM arrived this way. People tried it and immediately filed it under *AI 
 
 The distinguishing feature of NotebookLM is the boundary. The tool answers only from documents you give it, and it cites exactly which passage backed each claim. That is the feedback loop. Everything that follows in this book — every use case, every failure mode, every classroom design — is downstream of that one structural fact. I want to explain it properly, because if you understand why the boundary is there, you understand the tool. If you only know that the boundary exists, you just know a rule.
 
-<!-- → [DIAGRAM: Simple two-column contrast — left: open-loop chatbot (arrow from "training data" into model, arrow out to response, no feedback loop); right: RAG-based tool (arrow from "your documents" into retrieval, retrieved passages + question into model, arrow to response + citation links back to documents). Caption: The feedback loop that defines bounded AI.] -->
+![Two-column architecture diagram contrasting an open-loop chatbot (training data → model → response, no feedback) against a RAG-based bounded tool (your documents → retrieval → model → response with citation links back to documents).](../images/01-the-bounded-tool-fig-01.png)
+*Figure 1.1 — Open-loop chatbot vs. source-grounded tool*
 
 ---
 
@@ -34,7 +35,8 @@ When you ask NotebookLM a question, the first thing the system does is search yo
 
 This architectural pattern has a name: **Retrieval-Augmented Generation**, or RAG. It was described formally by Lewis and colleagues in 2020, and it has since become the standard approach for building AI systems that need to answer from specific documents rather than from general training data. NotebookLM is Google's consumer-facing implementation, running on a Gemini variant called **LearnLM** that has been fine-tuned for educational use cases.
 
-<!-- → [DIAGRAM: RAG pipeline in three steps — Step 1: user question enters retrieval layer, which searches uploaded documents; Step 2: top-matched passages + original question enter the language model; Step 3: model generates response with citation markers pointing back to source passages. Clean, sequential, no unnecessary detail.] -->
+![The RAG pipeline shown as three sequential steps: retrieve passages from your documents, augment the model's input with those passages plus the question, generate a response with citations linking back to source passages.](../images/01-the-bounded-tool-fig-02.png)
+*Figure 1.2 — The RAG pipeline, three steps*
 
 Three things change when you build on this architecture.
 
@@ -56,8 +58,14 @@ But I want to sit with the 13%, because this is where the chapter's argument get
 
 These are interpretation errors, not fabrication errors. The distinction matters because they require a different response from you. Fabrication errors are caught by checking whether the citation exists and links to something relevant. Interpretation errors are caught by reading the cited passage and asking whether the response accurately represents what it says. That second step requires more effort and more domain knowledge. There is no shortcut.
 
-<!-- → [TABLE: Two-column table — Fabrication errors vs. Interpretation errors. Rows: definition, what causes it, how source-grounding affects it, how the reader catches it. Caption: The two error types are different problems requiring different responses — source-grounding eliminates most of the first column; the second column remains the reader's responsibility.] -->
+| | Fabrication errors | Interpretation errors |
+|---|---|---|
+| **Definition** | The model produces text that is unsupported by any source — invented facts, hallucinated citations, made-up quotes. | The model's output traces to a real source passage, but misreads it: drops a qualifier, blurs a distinction, overgeneralizes a finding. |
+| **What causes it** | The model is generating from training-data patterns rather than retrieved evidence. | The model retrieved the right passage but compressed its meaning incorrectly. |
+| **How source-grounding affects it** | Source-grounding eliminates most of this category — the citation requirement makes pure invention structurally hard. | Source-grounding does not eliminate this — the citation exists; the interpretation of the citation is still the model's. |
+| **How the reader catches it** | Click the citation. If the cited passage does not exist or doesn't say what the response claims, the response invented it. | Click the citation. Read the passage carefully. Compare the model's phrasing against the source's qualifications and context. |
 
+*The two error types are different problems requiring different responses — source-grounding eliminates most of the first column; the second column remains the reader's responsibility.*
 The citation is an audit trail, not a guarantee. I will say this a few more times in this book, because every time I have seen NotebookLM used badly, it is because someone treated the citation as a credential — a small marker that meant *this is correct* — rather than as a link that meant *here is where you check*.
 
 ---
@@ -72,8 +80,15 @@ The inference is wrong, and here is why. The Audio Overview is a consumption art
 
 The tool did not produce the failure. The *assignment* did. And the assignment happened to use the consumption-mode output that NotebookLM offers, when the learning-mode outputs were equally available: quizzes, flashcards, the Learning Guide diagnostic that generates questions instead of answers. The boundary is still there in both modes. The difference is what the student does with the output.
 
-<!-- → [TABLE: Two-column comparison — Consumption artifacts (Audio Overview, Video Overview, summary) vs. Production artifacts (quiz, flashcards, Learning Guide diagnostic). Row headers: what the student receives, required cognitive activity, learning research prediction, when to assign. Caption: Both output types are available; the assignment design determines which you invoke.] -->
+| | Consumption artifacts | Production artifacts |
+|---|---|---|
+| **Examples** | Audio Overview, Video Overview, summary | Quiz, flashcards, Learning Guide diagnostic |
+| **What the student receives** | A finished artifact to read, listen to, or watch | A scaffold that requires the student to answer, recall, or perform |
+| **Required cognitive activity** | Attention and uptake | Retrieval and self-evaluation |
+| **Learning research prediction** | Engagement gain; retention depends on subsequent active practice | Retrieval-practice effect; directly supports durable learning (Karpicke & Roediger 2008) |
+| **When to assign** | Preview, accessibility on-ramp, optional supplementary support | Active practice, formative assessment, study companion |
 
+*Both output types are available; the assignment design determines which you invoke.*
 This is the thing about bounded tools that takes a moment to see. The restriction is not a limitation on what the tool can do. It is a clarification of what the tool is for. NotebookLM is for working with specific documents — understanding them, synthesizing them, being tested on them, getting scaffolded into their arguments. It is not for open-ended generation from anything the model knows. When you use it for the second purpose, you are using the wrong tool. When you use it for the first purpose and then hand students a passive artifact, you are using the right tool in the wrong assignment.
 
 Getting this right requires understanding the boundary — what it is, why it is there, what it produces. That is what this chapter has been doing.
@@ -94,8 +109,13 @@ It does not mean *the model cannot reach the web*. A feature called Deep Researc
 
 And it does not mean *bounded tools are worse*. Bounded means less of one thing — open-ended generation from everything the model was trained on — so that you get more of another thing — reliable, citable, auditable answers from your specific sources. Whether that trade is good depends entirely on what you need. "Understand and work with these specific documents" is a need. NotebookLM is built for it. "Generate a creative essay about anything" is a different need. NotebookLM is not built for that. Using the right tool means knowing what the tool was built to do.
 
-<!-- → [TABLE: Three-column table — What "bounded" means / What it does NOT mean / Why the distinction matters. Rows: answers from uploaded sources only; private/offline/no web access; a limitation. Each row clarifies the positive claim, corrects the misconception, and states the practical implication. Caption: Common misreadings of the bounded-tool claim, and the corrections.] -->
+| What "bounded" means | What it does NOT mean | Why the distinction matters |
+|---|---|---|
+| The model answers from your uploaded sources only, with citations linking each claim to a source passage. | The tool is private, offline, or unable to reach the web. | Bounded is about *answer-from*. Privacy is governed separately by account type (Chapter 11). Offline-ness is governed by the deployment surface, not the design. |
+| Output quality is capped by the quality of the sources you curate. | The bounded design is a limitation. | Curation is the high-leverage work; treating the boundary as a limitation rather than a feature inverts where the practitioner's effort should go. |
+| Deep Research mode (Nov 2025, paid tiers) can breach the boundary intentionally — and is off by default. | The tool can never search the web. | The boundary is the default, not the ceiling. Educators who want web-augmented synthesis can opt into it; the opt-in is the operational decision. |
 
+*Common misreadings of the bounded-tool claim, and the corrections.*
 ---
 
 ## The verification step

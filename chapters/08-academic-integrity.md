@@ -58,8 +58,13 @@ A policy that treats all of these the same, with one blanket statement about pro
 
 ## NotebookLM Specifically
 
-<!-- → [TABLE: NotebookLM use cases mapped to integrity risk — columns: use case, context where integrity is maintained, context where integrity is at risk, distinguishing factor] -->
-
+| Use case | Context where integrity is maintained | Context where integrity is at risk | Distinguishing factor |
+|---|---|---|---|
+| Generating a study guide | Student reads it as a scaffold for understanding the source before discussion | Student submits it as their own analysis | Whether the artifact is a study aid or a deliverable |
+| Generating flashcards | Student uses them for self-testing; takes them multiple times | Student submits AI-generated quiz answers as their own work | Whether the cognitive work happens in the student or in the deliverable |
+| Synthesis query across sources | Student verifies cells against original sources and uses verified findings in their own analysis | Student copies the synthesis into a paper without verification or transformation | Whether the student's contribution is the synthesis or only its retrieval |
+| Drafting an essay outline | Student uses the outline as a starting point and revises substantially | Student fills in an AI-generated outline and submits | The depth of the student's revision and the substance of the student's contribution to the argument |
+| Asking the AI to explain a concept | Student integrates the explanation with their own thinking | Student treats the explanation as their answer to the question | Whether the explanation is input to learning or output of it |
 Most AI integrity discussions happen at a level of generality that makes them difficult to apply. "AI use" covers a spectrum from a student asking a general-purpose chatbot to write their essay, to a student using a source-grounded tool to navigate a difficult primary document. Those are not the same action, they don't produce the same learning outcomes, and they don't raise the same integrity concerns.
 
 NotebookLM's source-grounding constraint is the fact that changes the integrity calculus. The tool generates outputs only from sources the user uploads. It cannot write a student's essay from thin air; it can only produce outputs grounded in what the student has given it. This means the tool's integrity risk is concentrated in specific use cases, not distributed uniformly.
@@ -76,8 +81,13 @@ A policy that applies this distinction — rather than either banning all Notebo
 
 ## Writing the Policy
 
-<!-- → [TABLE: Policy template structure — rows: statement of purpose, permitted uses, restricted uses, disclosure requirement, conversation clause — with example language for each] -->
-
+| Section | Example language |
+|---|---|
+| Statement of purpose | *"This course teaches you to construct arguments, evaluate evidence, and revise your own thinking. NotebookLM can support those activities. It can also substitute for them. This policy specifies which is which."* |
+| Permitted uses | *"You may use NotebookLM to: prepare study artifacts from assigned readings; verify citations; generate diagnostic questions for self-testing; surface contradictions or tensions across multiple sources."* |
+| Restricted uses | *"You may not: submit NotebookLM's analysis as your own writing; have NotebookLM generate your final essay text; use NotebookLM during in-class proctored work without explicit permission."* |
+| Disclosure requirement | *"Every submitted assessment must include a one-paragraph AI use disclosure: what tools you used, what outputs you generated, what you accepted, and what you revised. Disclosure itself is not an integrity violation; failing to disclose is."* |
+| Conversation clause | *"If your use of NotebookLM produces a pattern I find concerning (the four FSU red flags), I will reach out for a conversation. The conversation's purpose is to support your learning, not to discipline you. If, after conversation, the pattern continues, the course's integrity procedures apply."* |
 A NotebookLM use policy has five components. Not because five is the right number for any mystical reason, but because each component addresses a different failure mode.
 
 **Statement of purpose.** Why does academic integrity matter in this context? Not the legal boilerplate — the actual argument about learning and credentialing. This is the component that acts on belief rather than awareness. If this component is missing or generic, the policy is doing nothing the MDPI finding would predict to be effective.

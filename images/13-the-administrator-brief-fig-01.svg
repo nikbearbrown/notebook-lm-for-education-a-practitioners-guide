@@ -1,0 +1,29 @@
+<svg viewBox="0 0 700 480" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="480" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">The one-page administrator brief, six sections</text>
+<rect x="80" y="70" width="540" height="380" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+<text x="104" y="100" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="start">§1  Deployment scope</text>
+<text x="104" y="118" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">Who will use NotebookLM, where, for what learning goal. (2–3 sentences)</text>
+<line x1="104" y1="136" x2="596" y2="136" stroke="#c8c4c0" stroke-width="0.5"/>
+<text x="104" y="156" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="start">§2  Privacy</text>
+<text x="104" y="174" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">Account type. FERPA/COPPA compliance — quoted directly from Google's terms. Data flow. (1 paragraph)</text>
+<line x1="104" y1="192" x2="596" y2="192" stroke="#c8c4c0" stroke-width="0.5"/>
+<text x="104" y="212" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="start">§3  Learning</text>
+<text x="104" y="230" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">Assessment redesign plan. Specific assignments. Pedagogical rationale. (1 paragraph)</text>
+<line x1="104" y1="248" x2="596" y2="248" stroke="#c8c4c0" stroke-width="0.5"/>
+<text x="104" y="268" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="start">§4  Equity</text>
+<text x="104" y="286" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">Access tier per group. Identified gaps. Mitigation plan. Monitoring metric. (1 paragraph)</text>
+<line x1="104" y1="304" x2="596" y2="304" stroke="#c8c4c0" stroke-width="0.5"/>
+<text x="104" y="324" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="start">§5  Evidence and limits</text>
+<text x="104" y="342" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">Strong adoption evidence; thin outcome evidence. Honest framing. (2–3 sentences)</text>
+<line x1="104" y1="360" x2="596" y2="360" stroke="#c8c4c0" stroke-width="0.5"/>
+<text x="104" y="380" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="start">§6  The ask</text>
+<text x="104" y="398" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">What specifically the administrator approves, enables, or funds. (1 sentence)</text>
+<text x="350.0" y="467" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">One page. Six sections. The constraint is a feature, not a limitation.</text>
+</svg>

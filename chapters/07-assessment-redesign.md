@@ -34,8 +34,14 @@ The three-question audit makes this concrete:
 
 The audit's value is not its sophistication. It is its enforcement. Most assessments have never been audited this way. Running the audit on five assessments takes twenty minutes. The number that fail Question 2 is typically higher than expected.
 
-<!-- → [TABLE: Three-question audit applied to four common assessment types — columns: Assessment type / Learning goal stated as action / AI substitution possible? / Substitution is the goal? / Verdict. Rows: five-paragraph essay on primary source, take-home reading quiz, oral thesis defense, process-documented research draft. Caption: The audit forces the backward-design question that most assessments have never faced. Only assessments that fail Q2 without passing Q3 require redesign.] -->
+| Assessment | Learning goal (as student action) | AI substitution possible? | Substitution is the goal? | Verdict |
+|---|---|---|---|---|
+| Five-paragraph essay on primary source | Construct an argument with evidence from the source | Yes — NotebookLM can produce a passable essay in two minutes | No — the student's reasoning is what's being assessed | **Redesign required** |
+| Take-home reading quiz | Recognize key terms and recall facts | Yes — open-book recognition is the AI's strongest mode | Yes — if the goal is genuinely recognition, AI assistance doesn't undermine it | **Audit passes; no redesign needed** |
+| Oral thesis defense | Defend reasoning under live questioning | No — the AI cannot show up to defend an essay | No — the goal is the student's reasoning under pressure | **Audit passes; format is already redesign-equivalent** |
+| Process-documented research draft | Iterate, revise, and ground claims in source material | Substitution produces a worse artifact — finished text without revision history reveals absence of work | No — the goal is the process | **Audit passes; the documentation IS the redesign** |
 
+*The audit forces the backward-design question that most assessments have never faced. Only assessments that fail Q2 without passing Q3 require redesign.*
 ---
 
 ## Why banning doesn't work
@@ -66,8 +72,12 @@ When an assessment fails the audit — when a NotebookLM output can substitute f
 
 **Process documentation.** The student submits the iteration history — drafts, dead ends, revision decisions, prompts tried. Google Docs version history makes this verifiable. The grading rubric shifts from the polish of the final product to the quality of the reasoning visible in the process. A student who revised substantively and shows it in the document history has done the cognitive work. A student whose document went from blank to finished in four minutes has not.
 
-<!-- → [TABLE: Four redesign frameworks — columns: Framework / What the student produces / What AI cannot do / Instructor time cost / Best fit for. Rows: Source-verification, Oral defense, AI-critique, Process documentation. Caption: All four put work the AI cannot perform at the center of the assessment. Choose based on class size and learning goal.] -->
-
+| Framework | What the student produces | What AI cannot do | Instructor time cost | Best fit for |
+|---|---|---|---|---|
+| Source-verification | Critique of AI output identifying what is missing, oversimplified, or wrong | Identify what was omitted from itself | Standard grading — no extra | Reading-heavy courses; humanities; any context where source-text is the spine |
+| Oral defense | Verbal answers to instructor questions about reasoning, source choices, what they would change | Show up to the defense | High — 5 min × student count | Small seminars; capstone projects; high-stakes summative assessment |
+| AI-critique | Both an AI-generated artifact and a student deconstruction of its weaknesses | Critique itself with domain knowledge it doesn't have | Standard grading | Courses that already include AI literacy; advanced students |
+| Process documentation | Iteration history (drafts, revisions, decision notes) submitted alongside the final artifact | Simulate iterative process at scale | Light — Google Docs revision history is auto-captured | Writing-intensive courses; any context where the process is the learning |
 All four share a structural property: the AI can help with some of the work, but the work that demonstrates learning requires the student to be present and engaged. This is the correct relationship between AI and assessment. Not prohibition — design.
 
 ---
@@ -84,7 +94,8 @@ Feedback use: identify students who are struggling silently. A student who typed
 
 This reframe — from surveillance to support — is available in any Google Docs-based course right now, without new tools or new policies. It requires only the decision to use the information that way.
 
-<!-- → [DIAGRAM: Two interpretations of the same revision history data. Left (surveillance frame): blank → sudden complete document → flag for investigation. Right (support frame): blank → no iteration → deadline-day panic-typing → reach out with support question. Same data, different intervention. Caption: The version history doesn't change based on what you intend to do with it. The intervention does.] -->
+![Side-by-side comparison of the same Google Docs revision-history pattern (a blank document followed by a sudden large block of text on deadline day) interpreted under two frames: surveillance (flag for investigation) and support (reach out with help question).](../images/07-assessment-redesign-fig-01.png)
+*Figure 7.1 — Same data. Two interpretations.*
 
 ---
 
@@ -108,8 +119,13 @@ None of these is perfect. The oral defense doesn't scale to 200 students without
 
 The honest comparison is not against a perfect redesign. It is against the alternative: a surveillance regime that doesn't work, produces false accusations at disproportionate rates against specific student populations, loses instruction time, and measures compliance rather than learning.
 
-<!-- → [TABLE: Redesign decision matrix — columns: Class size / Time available per student / Primary learning goal / Recommended framework / Modification needed at scale. Rows covering small seminar, medium lecture, large lecture. Caption: The right redesign depends on context. The audit question is the same regardless of class size; the framework choice is not.] -->
+| Class size | Time available per student | Primary learning goal | Recommended framework | Modification needed at scale |
+|---|---|---|---|---|
+| Small seminar (≤25) | 5+ min per student | Reasoning, argument, judgment | Oral defense | None — runs at native scale |
+| Medium lecture (25–100) | 1–3 min per student | Synthesis, argument | Source-verification or AI-critique | TA-graded with sampled instructor review |
+| Large lecture (100+) | <1 min per student | Recognition, application | Process documentation + auto-checked quizzes | Revision-history sampling; randomized oral-defense calls for a subset |
 
+*The right redesign depends on context. The audit question is the same regardless of class size; the framework choice is not.*
 ---
 
 ## What this chapter established

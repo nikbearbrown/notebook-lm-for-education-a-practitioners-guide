@@ -38,7 +38,8 @@ A one-page document. Six sections. No more.
 
 The length discipline is not arbitrary. It is calibrated to how administrators read. An administrator presented with a white paper reads the executive summary and skims the rest. An administrator presented with one clean page reads the whole thing. If it runs to two pages, they read less of it, not more. The constraint is a feature of the format.
 
-<!-- → [IMAGE: Annotated one-page brief template — six clearly labeled sections with placeholder text indicating the required content and approximate length for each. Section labels: Deployment Scope, Privacy, Learning, Equity, Evidence and Limits, The Ask. Caption: "One page. Six sections. The constraint is a feature, not a limitation."] -->
+![One-page administrator brief template with six labeled sections (Deployment Scope, Privacy, Learning, Equity, Evidence and Limits, The Ask) and placeholder text indicating required content and approximate length for each.](../images/13-the-administrator-brief-fig-01.png)
+*Figure 13.1 — The one-page brief, six sections*
 
 **Section one: deployment scope.** Two to three sentences. Who will use NotebookLM, in what context, for what specific learning goal. Not "AI will enhance student learning" — that is a category, not a deployment. "Twenty-eight ninth-grade students will use teacher-created NotebookLM notebooks to generate evaluative short-answer responses in preparation for a structured Friday discussion on the causes of the French Revolution." Specific enough that the administrator knows exactly what is being approved.
 
@@ -64,8 +65,16 @@ Under a Workspace for Education account, Google does not use student data to tra
 
 Under a personal Gmail account, none of those protections are guaranteed. The brief must specify which account type students will use, and the answer must be the institutional account. If it cannot be the institutional account — if the district has not enabled NotebookLM for students, if the admin toggle is closed — the brief cannot honestly claim the privacy protections that justify deployment. The answer to "is student data safe?" depends on which account is actually in use, and that is a factual question with a verifiable answer.
 
-<!-- → [TABLE: Privacy protections under Workspace for Education vs. personal Gmail — Rows: Data used for model training, FERPA compliance, COPPA compliance for under-13, GDPR compliance, institutional IT visibility, under-18 content guardrails. Two columns with Yes/No/Conditional markings. Caption: "The brief's privacy section quotes the institutional account row directly from Google's published terms. It does not paraphrase."] -->
+| | Workspace for Education | Personal Gmail |
+|---|---|---|
+| Data used for model training | No | Yes (per Google's standard terms unless explicitly opted out) |
+| FERPA compliance | Yes | No |
+| COPPA compliance (under-13) | Yes (with proper configuration) | No |
+| GDPR compliance (EU contexts) | Yes (per Workspace for Education terms) | Conditional |
+| Institutional IT visibility | Yes | No |
+| Under-18 content guardrails | Specialized for minors | Standard filters only |
 
+*The brief's privacy section quotes the institutional account row directly from Google's published terms. It does not paraphrase.*
 The brief should not say "NotebookLM is private and secure" without specifying which account type is in use. That framing is technically accurate for the institutional account and dangerously misleading for the personal account. The administrator reading the brief will not know which applies unless the brief says so.
 
 ---
@@ -92,8 +101,14 @@ Honest disclosure of access gaps is stronger than papered-over claims. Not becau
 
 The equity section of the brief names three things: who has full access, who has constrained access and why, and what the plan is. "Full access" means all three gates open — admin toggle enabled, age eligibility satisfied, subscription tier sufficient for the assignment as designed. "Constrained access" means any one of those gates is partially or fully closed for a subset of students. The mitigation plan names the alternative assignment or instructor-mediated access available to those students. The monitoring plan names the metric — query completion rate, assignment completion rate, explicit check-in with affected students — that will tell you whether the mitigation is working.
 
-<!-- → [TABLE: Equity section template for the one-page brief — Rows: Students with full access (count and criteria), Students with constrained access (count, which gate, reason), Mitigation plan, Monitoring metric. Caption: "Naming the gap and the plan is stronger than claiming no gap exists. The administrator who knows the constraint can help address it."] -->
+| Section | What goes here |
+|---|---|
+| Students with full access | Count + criteria (e.g., "All ~340 students in grades 9–12 with district-issued accounts on the student OU") |
+| Students with constrained access | Count + which gate + reason (e.g., "~80 students whose Chromebooks are home-shared; cannot create individual notebooks; constraint is hardware/account-sharing, not toggle") |
+| Mitigation plan | Specific action (e.g., "Teacher-generated notebooks made available via Classroom for shared-device students; check-out laptop available for students who request one") |
+| Monitoring metric | Specific measurement (e.g., "Monthly usage report from Google Workspace admin console; classroom-level survey at end of semester asking whether tool access was sufficient") |
 
+*Naming the gap and the plan is stronger than claiming no gap exists. The administrator who knows the constraint can help address it.*
 The subscription-tier question deserves explicit attention because it is the place where "free" most misleads. If the assignment requires more than 50 daily queries and the institutional account is on the free tier, some students will hit the limit during the assignment. That is a constraint. The brief names it, describes the staggering plan or the institutional licensing conversation, and gives the administrator the information needed to act. An administrator cannot solve a problem they have not been told about.
 
 ---

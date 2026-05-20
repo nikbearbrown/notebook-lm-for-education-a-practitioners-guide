@@ -1,0 +1,44 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Where the bottleneck moves</text>
+<text x="180" y="72" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Pre-tool (3 hours)</text>
+<text x="520" y="72" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Post-tool (45 minutes)</text>
+<rect x="100" y="100" width="160" height="60" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="180" y="120" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Teacher knowledge</text>
+<text x="180" y="138" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">what your class needs</text>
+<line x1="180" y1="162" x2="180" y2="185" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="100" y="187" width="160" height="60" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="180" y="207" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Production work</text>
+<text x="180" y="225" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">3 hours of writing,</text>
+<text x="180" y="237" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">editing, formatting</text>
+<line x1="180" y1="249" x2="180" y2="272" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="100" y="274" width="160" height="60" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="180" y="294" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">One artifact</text>
+<text x="180" y="312" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">undifferentiated;</text>
+<text x="180" y="324" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">same for every student</text>
+<rect x="440" y="100" width="160" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="117" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Teacher knowledge</text>
+<text x="520" y="132" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">what your class needs</text>
+<line x1="520" y1="151" x2="520" y2="164" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="440" y="165" width="160" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="182" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Note-to-Source loop</text>
+<text x="520" y="197" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">5 min: pedagogical</text>
+<text x="520" y="208" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">framing enters corpus</text>
+<line x1="520" y1="216" x2="520" y2="229" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="440" y="230" width="160" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="247" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Model production</text>
+<text x="520" y="262" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">30 min: 4 artifacts</text>
+<text x="520" y="273" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">generated</text>
+<line x1="520" y1="281" x2="520" y2="294" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="440" y="295" width="160" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="312" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Teacher review</text>
+<text x="520" y="327" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">10 min: cuts and</text>
+<text x="520" y="338" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">targeted edits</text>
+<text x="350.0" y="395" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">The bottleneck moves from production to review. The judgment step is preserved in both.</text>
+</svg>

@@ -44,8 +44,14 @@ Every claim about NotebookLM's educational impact can be located in one of four 
 
 The framework's use: before citing a claim about NotebookLM, place it in its bucket and ask whether you are citing it as if it belonged in a higher-confidence bucket. Most enthusiasm-mode claims do exactly this — they cite an institutional exemplar as if it were a controlled study, or cite learning-science plausibility as if it were demonstrated outcome data.
 
-<!-- → [TABLE: Four-bucket evidence framework — columns: Bucket / What it shows / What it does not show / Example from this chapter. Rows: Institutional exemplars (workflow/engagement patterns at specific institutions; causal effects or generalizability; Monash, UW-Milwaukee, NYU), Conference/review papers (theoretical arguments for why tool should work; efficacy; 2025 AACE eLearn paper), Emerging case studies (suggestive pattern at one institution; generalizable findings; Mohamed 2025), Learning-science plausibility (predictions from cognitive science; demonstrated outcomes via this tool; retrieval-practice mapping). Caption: Place the claim in its bucket before citing it. Most overstated claims are bucket-confusion errors.] -->
+| Bucket | What it shows | What it does *not* show | Example from this chapter |
+|---|---|---|---|
+| Institutional exemplars | Workflow and engagement patterns at specific institutions | Causal effects on learning; generalizability beyond the institution | Monash self-testing; UW-Milwaukee Math 94 audio; NYU formative feedback loop |
+| Conference / review papers | Theoretical arguments for why the tool *should* work | Empirical efficacy under controlled conditions | 2025 AACE eLearn critical overview paper |
+| Emerging case studies | A suggestive pattern at one institution under mixed-methods study | Generalizable findings; causal attribution; comparison against control | Mohamed (2025) — 102 students, five courses at Gulf University |
+| Learning-science plausibility | Predictions from cognitive science that the tool's features instantiate | Demonstrated learning outcomes specifically via this tool | Retrieval-practice (Karpicke & Roediger 2008) mapping to flashcards/Learning Guide; Educational Psychology Review 2025 finding on AI-generated quiz/flashcard parity |
 
+*Place the claim in its bucket before citing it. Most overstated claims are bucket-confusion errors.*
 ---
 
 ## The methodologically strongest finding
@@ -86,8 +92,13 @@ On other dimensions, the safety question is the same as for any AI tool. The sub
 
 The careful version: NotebookLM is more defensible than open-loop chatbots on fabrication and on data governance when used through institutional accounts. On substitution, equity, and integrity climate, it raises the same questions as any AI tool, and those questions are answered by assignment design and institutional policy, not by the tool's architecture.
 
-<!-- → [TABLE: Three overstated claims with careful-version replacements — columns: Overstated claim / What the evidence actually shows / What evidence would be needed to support the stronger claim / Careful-version replacement. Rows: "Improves learning outcomes", "Eliminates hallucination", "Safer for students". Caption: The careful version is not weaker; it is defensible. Overstated claims collapse on contact with skeptical administrators or methodologically literate colleagues.] -->
+| Overstated claim | What the evidence actually shows | What evidence would be needed to support the stronger claim | Careful-version replacement |
+|---|---|---|---|
+| "NotebookLM improves learning outcomes" | Engagement and reported satisfaction at scale; one mixed-methods study (Mohamed 2025) at one institution shows reported comprehension and analytical-rigor gains; Educational Psychology Review 2025 supports AI-quiz parity for self-testing | Controlled multi-institution efficacy trial with comparison condition and durable-learning outcome measures | "NotebookLM-supported assignments, when designed for active engagement, can support workflow and engagement patterns consistent with durable learning. Direct causal evidence of learning-outcome improvement is currently limited; the Google research-partnership program (Purdue, UAB, UC Riverside) is expected to produce stronger evidence later in 2026." |
+| "Source-grounding eliminates hallucination" | Hallucination rate reduced ~40% → ~13% in one comparative study against general-purpose chatbots | A study showing the residual 13% can be driven to zero via the source-grounding mechanism itself (not via prompt engineering or instructor review) | "Source-grounding meaningfully reduces fabrication. Misinterpretation, oversimplification, and bad quiz-question generation remain — at lower rates than open-loop chatbots but at rates that require active verification by the educator." |
+| "NotebookLM is safer for students than other AI tools" | More defensible on citation auditing and on Workspace-for-Education governance; not measurably safer on student-substitution risk or assignment-design integrity questions | Comparison studies of integrity outcomes across tools under controlled conditions | "NotebookLM is safer than open-loop chatbots on fabrication and on data governance when used through institutional accounts. It is no safer than any other AI tool on student substitution, equity, or institutional integrity climate — those depend on assignment design and policy." |
 
+*The careful version is not weaker; it is defensible. Overstated claims collapse on contact with skeptical administrators or methodologically literate colleagues.*
 ---
 
 ## The aging-risk problem

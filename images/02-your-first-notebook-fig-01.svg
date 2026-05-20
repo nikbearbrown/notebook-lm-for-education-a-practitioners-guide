@@ -1,0 +1,43 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">The Sources panel: listing is not ingestion</text>
+<rect x="100" y="70" width="500" height="280" fill="#fdfcfb" stroke="#1a1714" stroke-width="1"/>
+<rect x="100" y="70" width="180" height="280" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="115" y="90" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="start">Sources</text>
+<line x1="115" y1="102" x2="265" y2="102" stroke="#c8c4c0" stroke-width="0.5"/>
+<rect x="118" y="109" width="8" height="8" fill="#1a1714" stroke="#1a1714" stroke-width="1"/>
+<text x="132" y="117" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">textbook-ch4.pdf</text>
+<text x="132" y="129" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">added</text>
+<line x1="115" y1="140" x2="265" y2="140" stroke="#c8c4c0" stroke-width="0.5"/>
+<rect x="118" y="147" width="8" height="8" fill="#1a1714" stroke="#1a1714" stroke-width="1"/>
+<text x="132" y="155" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">scope-and-sequence.docx</text>
+<text x="132" y="167" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">added</text>
+<line x1="115" y1="178" x2="265" y2="178" stroke="#c8c4c0" stroke-width="0.5"/>
+<rect x="118" y="185" width="8" height="8" fill="#1a1714" stroke="#1a1714" stroke-width="1"/>
+<text x="132" y="193" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">intro-video.mp4</text>
+<text x="132" y="205" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">added</text>
+<line x1="115" y1="216" x2="265" y2="216" stroke="#c8c4c0" stroke-width="0.5"/>
+<rect x="118" y="223" width="8" height="8" fill="#1a1714" stroke="#1a1714" stroke-width="1"/>
+<text x="132" y="231" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">scanned-chapter.pdf</text>
+<text x="132" y="243" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">added</text>
+<text x="295" y="95" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="start">User probe:</text>
+<text x="295" y="113" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">"Summarize the figure on page 47</text>
+<text x="295" y="127" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">of the scanned chapter."</text>
+<line x1="295" y1="145" x2="580" y2="145" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="295" y="175" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="start">Model response:</text>
+<text x="295" y="195" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">Generic-sounding paragraph</text>
+<text x="295" y="209" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">with no specific reference</text>
+<text x="295" y="223" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">to page 47, no citation to</text>
+<text x="295" y="237" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start">the scanned source.</text>
+<text x="295" y="270" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="start">⚠ Silent ingestion failure</text>
+<text x="295" y="287" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">The OCR layer was empty.</text>
+<text x="295" y="301" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">The model answered from</text>
+<text x="295" y="315" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="start" font-style="italic">the other three sources.</text>
+<text x="350.0" y="380" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">Listing does not equal successful ingestion. The status label is identical.</text>
+</svg>

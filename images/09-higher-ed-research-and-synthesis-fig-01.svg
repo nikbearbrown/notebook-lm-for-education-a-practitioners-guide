@@ -1,0 +1,32 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">The Note-to-Source research workflow</text>
+<rect x="262.5" y="92.0" width="175" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="350.0" y="110" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">1. Upload sources</text>
+<text x="350.0" y="126" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">15–30+ papers loaded</text>
+<text x="350.0" y="137" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">as a corpus</text>
+<rect x="462.5" y="192.0" width="175" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="550.0" y="210" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">2. Synthesis query</text>
+<text x="550.0" y="226" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">cross-corpus question:</text>
+<text x="550.0" y="237" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">'where do these disagree?'</text>
+<rect x="262.5" y="292.0" width="175" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="350.0" y="310" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">3. Researcher synthesis</text>
+<text x="350.0" y="326" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">pin Note → write your own</text>
+<text x="350.0" y="337" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">interpretive synthesis</text>
+<rect x="62.5" y="192.0" width="175" height="56" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="150.0" y="210" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">4. Promote + outline</text>
+<text x="150.0" y="226" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">outline grounded against</text>
+<text x="150.0" y="237" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">Note + sources</text>
+<line x1="381.30495168499704" y1="135.65247584249852" x2="518.695048315003" y2="204.34752415750148" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="518.695048315003" y1="235.65247584249852" x2="381.30495168499704" y2="304.3475241575015" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="318.69504831500296" y1="304.3475241575015" x2="181.30495168499706" y2="235.65247584249852" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="181.30495168499706" y1="204.34752415750148" x2="318.69504831500296" y2="135.65247584249852" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="220.0" y="370" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start" font-style="italic">← researcher's contribution enters</text>
+<text x="350.0" y="388" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">The model holds the corpus; the researcher supplies the interpretation.</text>
+</svg>

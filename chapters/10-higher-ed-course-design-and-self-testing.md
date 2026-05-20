@@ -40,8 +40,12 @@ There is a timing detail here that matters and that most deployments miss. Learn
 
 ## The Configuration That Produces This
 
-<!-- → [TABLE: Learning Guide configuration options — columns: configuration approach, default student behavior, what changes with explicit prompt, pedagogical effect] -->
-
+| Configuration approach | Default student behavior | What changes with explicit prompt | Pedagogical effect |
+|---|---|---|---|
+| No configuration (default invocation) | Student asks the tool to explain; tool delivers an explanation | — | Tutoring-by-explanation; minimal retrieval practice; comprehension feeling but limited durable learning |
+| Quiz-me-on-X prompt | Tool generates diagnostic questions one at a time | Student answers before tool evaluates | Retrieval practice; durable learning per Karpicke & Roediger 2008 |
+| Test-then-explain prompt | Tool tests first; only after student attempts does it explain | Forced retrieval as encoding event | Strongest learning effect — failed retrievals still strengthen subsequent learning (the "desirable difficulty" finding) |
+| Discipline-specific configuration via teacher Note | Tool's diagnostic questions are tuned to the course's framing, level, and prior knowledge | Teacher's pedagogical content knowledge enters the corpus | Question quality and contextual relevance rise; tool becomes course-specific rather than generic |
 The Monash model requires explicit configuration, and that configuration has to be taught to students. Students who are handed a notebook without instructions will do what comes naturally: they will ask the tool to explain things. The tool will oblige. The retrieval event will not occur. The deployment will look fine and produce less than it could.
 
 The configuration is not complicated. It is a matter of what the student types.
@@ -70,8 +74,13 @@ The workflow was this. Collect the feedback data — surveys, confusion patterns
 
 What is happening here is different from content generation for students. NotebookLM is functioning as a *teaching analytics instrument* — the input is student data, the output is insight and response that the *teacher* then acts on. The tool is not in the student-facing workflow at all. It is in the faculty workflow, processing information about students to improve the course while it is running.
 
-<!-- → [TABLE: Two higher-ed deployment archetypes — columns: UW-Milwaukee accessibility model, Monash self-testing model, NYU feedback loop — rows: who interacts with the tool, what the input is, what the output is, who acts on the output, design principle] -->
-
+| | UW-Milwaukee accessibility | Monash self-testing | NYU feedback loop |
+|---|---|---|---|
+| Who interacts with the tool | Individual student (optional) | Individual student (required) | Instructor |
+| What the input is | Course readings (instructor-uploaded) | Course readings (instructor-uploaded) | Student feedback data + assessment results |
+| What the output is | Audio Overview as supplementary on-ramp | Diagnostic questions for self-testing | Identified concepts students struggle with + targeted formative activities |
+| Who acts on the output | Student (uses it to engage with the material) | Student (answers, receives feedback) | Instructor (designs targeted intervention) |
+| Design principle | Accessibility + optionality | Retrieval-practice integration | Teaching-analytics from student data |
 This matters because it reveals a deployment pattern that works even for faculty who are uncertain about putting AI tools directly in students' hands. The question *"is NotebookLM appropriate for student use in my course?"* is separate from *"can I use NotebookLM to improve how I teach this course?"* The NYU case answers the second question affirmatively without touching the first.
 
 The limitation worth noting: the NYU feedback-loop pattern benefits from data volume. A large lecture generates enough feedback signal that the analysis produces genuinely useful patterns. In a seminar of twelve students, you may already know where everyone is stuck, and the analysis step adds overhead without insight. The tool generalizes to the problem of knowing where a crowd is confused; it does not generalize to the problem of knowing where a specific student is confused, which remains a human judgment.

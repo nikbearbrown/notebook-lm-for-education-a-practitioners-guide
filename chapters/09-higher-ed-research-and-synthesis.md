@@ -28,8 +28,14 @@ What this query requires: holding five papers' methodology sections in working m
 
 The distinction matters for understanding what you are buying with the tool. You are not buying a judgment machine. You are buying working memory extension — a way to operate on a corpus at the level of the whole rather than paper by paper. The judgment is still yours. The synthesis question, the verification, the interpretation of what the contradictions mean — those are still yours. What the tool supplies is the scaffold on which your judgment can operate at a scale that would otherwise be intractable.
 
-<!-- → [TABLE: Single-source use vs. cross-corpus use — Row 1: what the query asks, Row 2: what the model holds in memory, Row 3: what the researcher supplies, Row 4: approximate time savings. Two columns: Single source / Cross-corpus. Caption: "The leverage is not in any single operation. It is in operating on the corpus as a whole."] -->
+| | Single source | Cross-corpus |
+|---|---|---|
+| **What the query asks** | "Summarize this paper" or "What does this paper say about X?" | "Across these N papers, where do the methodologies disagree? Where does the field converge?" |
+| **What the model holds in memory** | One source's contents | N sources held simultaneously, with the structural relationships among them queryable |
+| **What the researcher supplies** | Reading time; basic verification of summary | Curation (which papers belong); structural questions; verification of each synthesis claim; interpretive judgment about what the synthesis means |
+| **Approximate time savings** | Modest (5–20%) vs. careful reading alone | Substantial (week-scale to afternoon-scale) for tasks involving structural cross-reference |
 
+*The leverage is not in any single operation. It is in operating on the corpus as a whole.*
 ---
 
 ## The graduate student and her forty papers
@@ -64,7 +70,8 @@ She promotes the Note to source. Generates an outline. The outline surfaces whic
 
 Now here is the point worth dwelling on. The Note is what the model cannot produce. It captures the interpretive synthesis that requires having read the papers carefully, noticed the contradiction, and formed a theoretical argument about what resolves it. That is the scholar's work. The outline — the structure, the coverage mapping, the citation tracking — is what the model *can* produce against that synthesis.
 
-<!-- → [DIAGRAM: The Note-to-Source loop as a research workflow — four stages in a cycle: (1) Upload sources, (2) Generate synthesis query in chat, (3) Pin response as Note, then write your own interpretive synthesis and pin it, (4) Promote Note to source → Generate outline grounded against Note + sources. Annotate stage 3 with "This is where the researcher's contribution enters." Caption: "The loop is a labor split made into a workflow: the model holds the corpus; the researcher supplies the interpretation."] -->
+![The Note-to-Source loop adapted for research: upload sources → cross-corpus synthesis query → researcher writes interpretive synthesis as Note → promote Note to source and generate outline. The researcher's contribution enters at stage 3.](../images/09-higher-ed-research-and-synthesis-fig-01.png)
+*Figure 9.1 — The Note-to-Source research workflow*
 
 The loop makes the labor split explicit. It forces you to articulate what is yours — your synthesis, your theoretical argument, your interpretive claim — and inserts it into the corpus so that subsequent outputs are grounded against it. Researchers who skip this step and use the model's synthesis as their own are not just committing a kind of academic-integrity error. They are giving away the work that cannot be delegated and delegating only the work that can. They have the ratio backwards.
 
@@ -82,8 +89,15 @@ The chapter needs to be explicit about this, because the fluency of the model's 
 
 **Citation context.** Whether a paper is foundational, actively contested, or quietly superseded depends on the field's narrative arc, which is not recoverable from citation counts alone. A paper cited twelve hundred times may be cited because everyone must cite it before arguing against it. The model can tell you the paper was cited twelve hundred times. It cannot reliably tell you what the field thinks of it now.
 
-<!-- → [TABLE: Research tasks by whether the tool can perform them — Column 1: Task. Column 2: Tool can perform? Column 3: What the researcher must supply. Rows: Extracting sample sizes across 20 papers (Yes / Verification); Identifying contradictions in methodology (Partially / Domain judgment about whether the contradiction is real or terminological); Assessing whether a finding is significant (No / Theoretical framework); Critiquing study design (No / Methodological expertise); Determining a paper's current standing in the field (No / Citation context and field knowledge). Caption: "The tool accelerates extraction and scaffold-building. It cannot perform the judgment that makes those outputs meaningful."] -->
+| Research task | Tool can perform? | What the researcher must supply |
+|---|---|---|
+| Extract sample sizes across 20 papers into a markdown table | Yes | Verification — check each extracted value against the source |
+| Identify methodological contradictions across studies | Partially | Domain judgment about whether the contradiction is real or terminological |
+| Assess whether a finding is statistically significant *and* substantively important | No | Theoretical framework that distinguishes the two |
+| Critique a study's design (sampling bias, confounds, generalizability limits) | No | Methodological expertise the model doesn't have |
+| Determine a paper's current standing in the field (foundational / contested / superseded) | No | Citation context, field narrative arc, knowledge of who has revised whom |
 
+*The tool accelerates extraction and scaffold-building. It cannot perform the judgment that makes those outputs meaningful.*
 These limitations are not arguments against using the tool. They are arguments for knowing precisely where your work begins. The researcher who has internalized this boundary uses the tool well. The researcher who has not will mistake fluent extraction for expert judgment and will be wrong in ways that are hard to detect from the output alone.
 
 ---

@@ -1,0 +1,31 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">The Note-to-Source feedback loop</text>
+<rect x="265.0" y="95.0" width="170" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="350.0" y="112" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Teacher writes Note</text>
+<text x="350.0" y="128" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">observation about class</text>
+<text x="350.0" y="139" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">(misconception, analogy, need)</text>
+<rect x="465.0" y="195.0" width="170" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="550.0" y="212" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Promote to Source</text>
+<text x="550.0" y="228" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">Note becomes part of the</text>
+<text x="550.0" y="239" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">corpus the model answers from</text>
+<rect x="265.0" y="295.0" width="170" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="350.0" y="312" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Generate outputs</text>
+<text x="350.0" y="328" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">all subsequent outputs grounded</text>
+<text x="350.0" y="339" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">in the Note + the original sources</text>
+<rect x="65.0" y="195.0" width="170" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="150.0" y="212" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Teacher observes what worked</text>
+<text x="150.0" y="228" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">what landed, what didn't —</text>
+<text x="150.0" y="239" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">updates the Note for next time</text>
+<line x1="376.8328157299975" y1="133.41640786499875" x2="523.1671842700025" y2="206.58359213500125" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="523.1671842700025" y1="233.41640786499875" x2="376.8328157299975" y2="306.58359213500125" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="323.1671842700025" y1="306.58359213500125" x2="176.8328157299975" y2="233.41640786499875" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<line x1="176.8328157299975" y1="206.58359213500125" x2="323.1671842700025" y2="133.41640786499875" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="350.0" y="388" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">Each cycle makes the tool more specific to your class. Without the Note, every query starts from scratch.</text>
+</svg>

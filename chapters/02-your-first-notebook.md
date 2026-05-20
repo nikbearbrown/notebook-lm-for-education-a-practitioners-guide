@@ -20,14 +20,20 @@ Thirty minutes. Three source types. Three outputs. One verification discipline. 
 
 ## Why the Sources Panel Lies to You (and Doesn't Know It)
 
-<!-- → [IMAGE: Screenshot of the NotebookLM Sources panel showing a file listed as "added" with a subtle visual indicator or lack thereof — caption should note that listing does not equal successful ingestion] -->
+![Mockup of the NotebookLM Sources panel showing four sources listed as 'added,' with one (a scanned chapter) producing a silent ingestion failure when probed — the model answers from other sources without flagging the missing extraction.](../images/02-your-first-notebook-fig-01.png)
+*Figure 2.1 — The Sources panel: listing is not ingestion*
 
 Let me be precise about what I mean. The Sources panel doesn't lie because NotebookLM is dishonest. It lies because the *listing of a file* and the *extraction of its text* are two separate operations, and the interface only shows you the first one.
 
 When you upload a PDF, NotebookLM accepts the file, records that it exists, and runs it through an extraction pipeline. That pipeline pulls out the words. But if the PDF is a photographed page — pixels arranged to look like text, not actual text characters — the pipeline finds nothing to pull. Or it finds fragments. Or it finds garbled output that looks like words and isn't. The file is still listed. The notebook still answers questions. It answers from whatever other sources it has.
 
-<!-- → [TABLE: Five silent ingestion failure types — columns: source type, failure mode, what the user sees, how to detect it] -->
-
+| Source type | Failure mode | What the user sees | How to detect it |
+|---|---|---|---|
+| Heavily-formatted PDF (academic two-column, complex tables, embedded equations) | Text-extraction layer drops content silently | Source listed as "added"; uploaded successfully | Ask the model a question about specific content in the source. If the answer is empty or generic, the text didn't extract. |
+| Scanned document without OCR text layer | Model extracts no usable text or garbled fragments | Source listed; no error | Same as above — content-specific probe question. Garbled output is also a tell. |
+| Audio file over the per-file size limit | Transcription truncates at the cutoff; remainder is invisible | Source shows as ingested at full duration | Ask about content from the back half of the audio. If responses only cover the early portion, the audio truncated. |
+| YouTube video without captions, or with low-quality auto-captions | Transcript text misrenders technical terms, names, foreign-language passages | Source listed; transcript appears to exist | Ask about a specific technical term you know is in the video. If the model uses a wrong-but-phonetically-similar word, the auto-caption failed. |
+| Google Doc with live sync | Recent edits don't re-index immediately; model answers from older version | Source listed; sync indicator may not be visible | Ask about a recent edit. If the model doesn't see it, sync hasn't refreshed. |
 There are five patterns worth knowing:
 
 **Scanned PDFs without an OCR text layer.** This is what caught the teacher. A page photographed and saved as PDF contains no character data — it's an image. The extraction pipeline has nothing to work with. You get a listing in the Sources panel and nothing else.
@@ -58,8 +64,17 @@ The full list as of writing: Audio Overview (standard and Interactive), Video Ov
 
 Think about three axes. The first is *structure*: how much the output organizes information versus presents it. A Study Guide is highly structured — headings, key terms, organized sections. An Audio Overview is loosely structured — conversational, flowing, designed for listening. The second axis is *register*: is this production-facing or consumption-facing? A flashcard set is a tool a student produces an answer against. An audio overview is something a student consumes. The third axis is *verifiability*: does the output make it easy or hard to check each claim against the source?
 
-<!-- → [TABLE: Output types mapped against structure, register, verifiability axes — three columns, multiple rows, helps reader choose appropriate output for their use case] -->
+| Output type | Structure | Register | Verifiability |
+|---|---|---|---|
+| Audio Overview | Conversational dialogue, two-host podcast format | Informal, accessible | Citation-grounded but harder to spot-check while listening |
+| Video Overview | Narrated sequence with diagrams and quotes | Mixed informal/instructional | Citations visible on screen; pausable |
+| Study Guide | Outlined hierarchy with key terms, essay prompts, sample quizzes | Instructional, structured | Direct citation per section; easy to audit |
+| Flashcards | Discrete Q&A pairs | Test-prep concise | Each card cites source passage; click-through verification |
+| Quiz | Multiple choice or short answer with reveal | Assessment | Answer key cites source; verify question framing against passage |
+| Mind Map | Interactive nodes with clickable branches | Conceptual | Citations on node hover; structure choices need teacher review |
+| Briefing Doc | Structured prose handout | Professional / academic | Inline citations; the most readily verifiable text output |
 
+*Choose by what the student should be doing — and by what you can audit before distribution.*
 This chapter uses three outputs because each one sits differently on those axes and makes the verification problem show up differently.
 
 The **Study Guide** is structured and production-facing and — crucially — it cites heavily. Every section, every key term, every practice question carries citations you can click. This makes the Study Guide the easiest output to verify and therefore the right place to start building the verification habit.
@@ -100,8 +115,14 @@ The verification discipline is not a bureaucratic step. It is *the* reason a hum
 
 ## The Thirty-Minute Walkthrough
 
-<!-- → [TABLE: Walkthrough timeline — columns: time window, action, what to check, what failure looks like] -->
+| Time window | Action | What to check | What failure looks like |
+|---|---|---|---|
+| Minutes 0–5 | Upload three sources (PDF, Google Doc, YouTube URL) | Each source's ingestion status; ask one specific-content probe per source | Source listed but probe returns generic or wrong answer → silent ingestion failure |
+| Minutes 5–10 | Generate Study Guide | Click three citations; confirm passage exists, supports claim, omits nothing critical | Citation jumps to wrong passage, or passage exists but is qualified more than the response suggests |
+| Minutes 10–20 | Generate Audio Overview (10 min target) | Listen while reading source; note one specific omission | Audio omits a section you would expect a student to need; reframes a qualified finding as definitive |
+| Minutes 20–30 | Generate Flashcard set | Take the flashcards; note one debatable card | "Correct" answer is technically defensible but tests the wrong thing, or is ambiguous |
 
+*Output of the walkthrough: a list of at least three identified errors — one per output type. That list is the deliverable, not the artifacts.*
 Here is what you do.
 
 **Minutes 0 to 5: Upload three sources.**

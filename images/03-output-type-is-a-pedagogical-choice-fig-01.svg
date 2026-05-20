@@ -1,0 +1,25 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">The Note-to-Source loop</text>
+<path d="M 400.0,118 A 120,120 0 0 1 395.2627944162883,247.0" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M 415.2627944162883,287.0 A 120,120 0 0 1 284.7372055837117,287.0" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+<path d="M 304.7372055837117,247.0 A 120,120 0 0 1 300.0,118" stroke="#1a1714" stroke-width="1.5" fill="none" marker-end="url(#arrow)"/>
+<rect x="280.0" y="82.0" width="140" height="36" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="350.0" y="98" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Generate in chat</text>
+<text x="350.0" y="113" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">the response surfaces a synthesis</text>
+<rect x="375.2627944162883" y="247.0" width="140" height="36" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="445.2627944162883" y="263.0" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Pin as Note</text>
+<text x="445.2627944162883" y="278.0" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">the response is preserved as a sticky</text>
+<rect x="184.73720558371173" y="247.0" width="140" height="36" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="254.73720558371173" y="263.0" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Promote to Source</text>
+<text x="254.73720558371173" y="278.0" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">the Note is added to the source set</text>
+<text x="154.73720558371173" y="305.0" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start" font-style="italic">← teacher's pedagogical</text>
+<text x="154.73720558371173" y="319.0" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="start" font-style="italic">    framing enters here</text>
+<text x="350.0" y="388" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">Subsequent outputs are grounded in the teacher's framing as well as the original sources.</text>
+</svg>

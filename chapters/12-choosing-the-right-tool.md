@@ -20,7 +20,8 @@ This single constraint — bounded versus open-loop — is the most important va
 
 For educational tasks where the point is *understand these specific sources*, the bounded constraint is the feature you need. For tasks where the point is *reason about material that isn't in a defined corpus*, the bounded constraint is in your way. The failure mode of using a bounded tool for the second kind of task is the same as using a bounded tool with an empty source set: the tool tells you it can't find anything relevant, or worse, it finds something tangentially related in your sources and produces an answer that looks grounded and isn't.
 
-<!-- → [DIAGRAM: Bounded vs. open-loop architecture contrast. Left: NotebookLM — arrow from "your uploaded sources" into retrieval layer, retrieved passages + question into model, response with citation links back to sources. Right: open-loop tools (ChatGPT, Copilot, Perplexity) — arrow from "training data / live web / M365 environment" into model, response with or without citations depending on tool. Caption: The fundamental split. Everything downstream in the tool-selection decision follows from which architecture fits the task.] -->
+![Architecture-level contrast between NotebookLM (bounded — your uploaded sources → retrieval → model → response with citations back to documents) and open-loop tools (ChatGPT, Copilot, Perplexity — training data / live web / M365 surface → model → response, citation behavior varies).](../images/12-choosing-the-right-tool-fig-01.png)
+*Figure 12.1 — Bounded vs. open-loop architecture*
 
 ---
 
@@ -38,7 +39,8 @@ Four questions, in order. Each one narrows the candidate set. By the fourth, usu
 
 By the fourth question, the decision is usually clear. What remains is workflow fit — which tool is already integrated into the LMS, which accounts students already have, which interface the teacher is comfortable with. These are legitimate factors, but they are tiebreakers, not primary criteria. Using a worse tool because it's already integrated produces consistently worse outputs. The integration friction of a better tool is a one-time cost.
 
-<!-- → [DIAGRAM: Four-question decision tree. Q1: learning goal as verb → branches. Q2: source set defined and uploadable? Yes → bounded tool likely; No → open-loop tool required. Q3: citation required? Yes → NotebookLM or Perplexity; No → all four remain. Q4: privacy constraint? Yes → check governance regime of remaining candidates; No → choose by workflow fit. Caption: The framework is a narrowing structure, not a lookup table. By Q4, the decision is usually one or two tools. Workflow fit breaks the tie.] -->
+![The four-question tool selection framework as a narrowing decision tree: Q1 learning goal as verb, Q2 source set defined and uploadable (No → open-loop), Q3 citation required (Yes → NotebookLM or Perplexity), Q4 privacy constraint, terminating in NotebookLM under Workspace for Education.](../images/12-choosing-the-right-tool-fig-02.png)
+*Figure 12.2 — The four-question framework*
 
 ---
 
@@ -54,8 +56,14 @@ The comparison table that most tool-comparison articles produce lists features s
 
 **Perplexity** is built for web-sourced research discovery. The task it fits best is the one that neither NotebookLM nor ChatGPT handles well: finding current, cited information from the live web. *What are the most recent studies on retrieval practice in adult learners? What happened with AI policy in education in the last six months?* Perplexity searches, synthesizes, and returns answers with citations to actual web sources. Its weakness is depth: it is better for framing and discovery than for extended tutoring or synthesis of a complex source set. In educational workflows, the natural sequence is Perplexity to find which sources to read, then NotebookLM to work with them after you have.
 
-<!-- → [TABLE: Four-tool fit matrix — columns: Tool / Best-fit task type / Architecture constraint / Citation discipline / Privacy note / Clear wrong-fit task. Rows: NotebookLM (defined corpus synthesis), ChatGPT (open-ended reasoning and tutoring), Copilot (M365-integrated workflow tasks), Perplexity (live-web discovery with citations). Caption: This is a fit-finder, not a ranking. Different tasks produce different winners. The "clear wrong-fit task" column is what the framework is for.] -->
+| Tool | Best-fit task type | Architecture constraint | Citation discipline | Privacy note | Clear wrong-fit task |
+|---|---|---|---|---|---|
+| NotebookLM | Defined-corpus synthesis — "understand these assigned sources" | Bounded to uploaded sources unless Deep Research invoked | Inline citation per claim, source-passage links | FERPA/COPPA via Workspace for Education | Open-ended brainstorming or reasoning about material not yet uploaded |
+| ChatGPT (and ChatGPT Edu) | Open-ended reasoning, tutoring, code, custom GPTs, multimodal tasks | Trained on broad data; flexible across tasks | None by default — citations require explicit prompting and are unverifiable | ChatGPT Edu offers institutional terms; default ChatGPT does not | Synthesizing a specific assigned reading packet with audit-trail requirements |
+| Microsoft Copilot | M365-integrated tasks — Word, PowerPoint, Teams, OneNote, Outlook workflows | Deep into Microsoft surface; less flexible outside it | Citations available in Copilot Chat with web grounding | Enterprise / Education tier governance via M365 admin | Tasks outside M365 where the integration is the point of the choice |
+| Perplexity AI | Live-web discovery with citations — "find current sources on X" | Searches live web; less "your-corpus-as-notebook" than NotebookLM | Strong — citations are central to the product | Less education-specific governance; verify before deployment | Working with a curated, pre-uploaded source set that the tool should stay inside |
 
+*This is a fit-finder, not a ranking. Different tasks produce different winners. The "clear wrong-fit task" column is what the framework is for.*
 ---
 
 ## Three tasks, three tools
@@ -94,8 +102,12 @@ The reverse: a teacher commits to ChatGPT for everything, including tasks where 
 
 Both monocultures have the same root: using a tool without identifying the constraint it optimizes for and checking whether that constraint is the one the task needs.
 
-<!-- → [TABLE: Two monoculture failure patterns — columns: Monoculture / Task it fails on / What the failure looks like / Which framework question catches it. Rows: NotebookLM for everything (fails on open-ended reasoning and discovery tasks; output looks grounded but sources are wrong; Q2 catches it — source set undefined); ChatGPT for everything (fails on defined-corpus citation tasks; output is fluent but unattributed to assigned sources; Q2 and Q3 catch it). Caption: Both failures produce outputs that look plausible. The framework makes the mismatch visible before deployment, not after.] -->
+| Monoculture | Task it fails on | What the failure looks like | Which framework question catches it |
+|---|---|---|---|
+| NotebookLM for everything | Open-ended reasoning, tutoring on material not pre-uploaded, code generation | Output is grounded but the sources it grounds in are the wrong sources for the task — the model answers from the small uploaded set when a much larger world of knowledge is relevant | Q2 — *Is the source set defined and uploadable?* No → bounded tool is wrong choice |
+| ChatGPT for everything | Defined-corpus tasks requiring citation discipline; FERPA-protected contexts | Output is fluent but unattributed to assigned sources; uses training-data approximations where the assigned source has the actual answer | Q3 (citation required?) and Q4 (privacy constraint?) — both fail |
 
+*Both failures produce outputs that look plausible. The framework makes the mismatch visible before deployment, not after.*
 ---
 
 ## What this chapter established

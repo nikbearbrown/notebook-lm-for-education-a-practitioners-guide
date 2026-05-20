@@ -28,7 +28,8 @@ Review time is not optional finishing. It is the step where your knowledge of yo
 
 This is the answer to the bottleneck question. The tool moves the production bottleneck. It does not touch the judgment bottleneck, because the judgment bottleneck is not a bottleneck — it is the work. Production without judgment is faster *and worse*. Production with judgment, when production is no longer the constraint, is faster *and better*. That is what the 45-minute workflow is designed to produce.
 
-<!-- → [DIAGRAM: Two-column comparison of the pre-tool and post-tool preparation process. Left: Teacher knowledge → (3 hours production) → one undifferentiated artifact. Right: Teacher knowledge → (Note-to-Source loop) → model → (45 min including review) → differentiated artifacts. Arrow labels show where teacher judgment enters each process. Caption: The bottleneck moves from production to review; the judgment step is preserved in both.] -->
+![Two-column workflow comparison: pre-tool preparation produces one undifferentiated artifact after 3 hours; post-tool preparation produces differentiated artifacts in 45 minutes via a Note-to-Source loop with explicit review steps.](../images/04-the-k12-teacher-fig-01.png)
+*Figure 4.1 — Where the bottleneck moves*
 
 ---
 
@@ -50,8 +51,15 @@ The specificity matters for the same reason that specificity always matters in r
 
 **Formative Assessment.** Generate ten questions mapped to Bloom's levels. Review every question. Cut the 20% that are ambiguous, poorly framed, or that test something you haven't taught yet. This cut is not optional. An unreviewed quiz that goes out with a bad question produces a classroom problem — students who answered the question correctly according to one reasonable reading of it, students who answered it correctly according to a different reasonable reading, and a grade dispute that costs fifteen minutes of class time and twenty minutes after school. The review takes three minutes. The dispute takes thirty-five. The math is not subtle.
 
-<!-- → [TABLE: Five-step workflow with columns: Step / Time / What you do / What the model does / What breaks without this step. Rows: Upload, Briefing Doc, Audio Overview, Slide Deck, Formative Assessment. Caption: The 45-minute figure is wall time including review. Each "what breaks" entry names the specific downstream failure the step prevents.] -->
+| Step | Time | What you do | What the model does | What breaks without this step |
+|---|---|---|---|---|
+| Upload | 5 min | Add textbook chapter, district scope-and-sequence, state standards; verify ingestion with a content-probe question per source | Indexes the three sources, displays "added" status | Silent ingestion failure on a key source produces downstream outputs grounded in only two of three references — invisible from the chat interface |
+| Briefing Doc | 5 min | Verify three citations against textbook; regenerate with a targeted prompt if a key section is missed | Generates structured student handout from the three sources | Doc omits a section you teach explicitly; you discover it during lecture, not before |
+| Audio Overview | 10 min | Listen at 1.5× while reading the chapter; note one omission for verbal lecture; assign as preview, not replacement | Generates 10–12 minute two-host audio at specified reading level | Audio uses an analogy that contradicts your standard framing; students arrive Monday with the wrong mental model |
+| Slide Deck | 10 min | Edit 3–4 most consequential slides (opener, diagnostic, closing synthesis); export to PPTX | Generates 12-slide deck with auto-layout and content | Generic openers and bulleted closings; the slides that carry the lecture's weight get the least attention |
+| Formative Assessment | 15 min | Review every question; cut the 20% that are ambiguous, off-topic, or pedagogically weak | Generates 10-question Bloom's-mapped assessment | Three weak questions ship to students; afternoon spent regrading and re-teaching the misframed concept |
 
+*The 45-minute figure is wall time including review. Each "what breaks" entry names the specific downstream failure the step prevents.*
 ---
 
 ## Tiered scaffolds
@@ -71,8 +79,13 @@ The on-level version is easy and mostly reliable. The extension version is usual
 
 The check is specific: take the vocabulary-supported version and ask, for each learning objective, whether the version gives the student enough to demonstrate that objective. If the objective is *"explain how ATP stores and releases energy,"* does version 3 contain a sentence the student could use to construct that explanation? If it doesn't, the simplification went too far. Add the sentence back.
 
-<!-- → [TABLE: Three-tier scaffold comparison — columns: Version / Reader target / Vocabulary handling / Cognitive demand / Where errors typically appear. Rows: Extension, On-level, Vocabulary-supported. Caption: Review effort is not evenly distributed — the vocabulary-supported version needs the most scrutiny because simplification can remove load-bearing content.] -->
+| Version | Reader target | Vocabulary handling | Cognitive demand | Where errors typically appear |
+|---|---|---|---|---|
+| Extension | Advanced readers | Additional context and technical vocabulary introduced beyond textbook | Bloom's Apply / Analyze comprehension questions | Rare; the model can extend confidently because it has more source content to draw on |
+| On-level | The textbook's intended grade level | Textbook's own vocabulary preserved | Same as textbook | Minimal — this version is closest to the source |
+| Vocabulary-supported | Developing readers | Inline glossary box for technical terms; sentence length capped (e.g., under 15 words avg); technical terms introduced one at a time | Reduced; some Apply-tier questions converted to Understand | Most common: simplification removes load-bearing content — the connecting argument disappears with the technical phrasing. **This version needs the most review.** |
 
+*Review effort is not evenly distributed — the vocabulary-supported version needs the most scrutiny because simplification can remove load-bearing content.*
 ---
 
 ## The Note-to-Source loop
@@ -91,7 +104,8 @@ The distinction from a general-purpose chatbot matters here. You can paste simil
 
 Over a semester, this accumulates. Each new unit you add a Note for. Each time you find that a framing worked or didn't, you update the Note. By February, the notebook for this class contains a compact model of how *this class* processes the material. That is something a general-purpose AI tool cannot build for you, because a general-purpose AI tool does not have a persistent, citable source set that you curate.
 
-<!-- → [DIAGRAM: Note-to-Source loop — teacher writes observation about class (misconception, analogy, student need), promotes to source, subsequent model outputs are grounded in that observation. Show the feedback cycle: output → teacher observes what worked → Note updated → next output incorporates updated Note. Caption: The loop makes the tool more specific to your class over time. Without it, every query starts from scratch.] -->
+![The Note-to-Source feedback loop as a four-stage cycle: teacher writes a Note about class observations → promote to source → generate outputs grounded in the Note → teacher observes what worked → updates the Note → cycle continues.](../images/04-the-k12-teacher-fig-02.png)
+*Figure 4.2 — The Note-to-Source feedback loop*
 
 ---
 
@@ -105,8 +119,12 @@ The vocabulary-supported scaffold case is subtler. The teacher produces version 
 
 Both failures have the same structure: the review step was skipped or shortened, and the error propagated forward. The honest accounting of the 45-minute workflow is that the review steps are not a small fraction of it. They are roughly fifteen of the forty-five minutes. Remove them and you have thirty minutes that produces faster-distributed mistakes.
 
-<!-- → [TABLE: Error propagation by failure mode — columns: Where review was skipped / Error type / When the error surfaces / Cost to correct. Rows: Formative assessment (ambiguous question surfaces day-of, costs afternoon regrading); Vocabulary scaffold (over-simplification surfaces on unit assessment three weeks later, costs reteaching during review). Caption: The later an error surfaces, the more it costs — the review step is cheap precisely because it catches errors before they propagate.] -->
+| Where review was skipped | Error type | When the error surfaces | Cost to correct |
+|---|---|---|---|
+| Formative assessment | Ambiguous question with two defensible answers | Day-of, during in-class assessment | One afternoon regrading + re-explaining the misframed concept to the whole class |
+| Vocabulary-supported scaffold | Over-simplification removes load-bearing content | Unit assessment, three weeks later | Days of re-teaching during review; some students don't recover the concept before the unit ends |
 
+*The later an error surfaces, the more it costs — the review step is cheap precisely because it catches errors before they propagate.*
 ---
 
 ## The Sunday night in full

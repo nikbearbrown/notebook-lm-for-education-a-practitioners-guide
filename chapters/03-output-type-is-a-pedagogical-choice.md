@@ -22,8 +22,21 @@ If the answer is "nothing — they listened, or watched, or read" — the output
 
 If the answer is "answers, judgments, identifications, corrections" — the output sits at the production end. The student had to perform. Performing is different from consuming, in the same way that describing a proof is different from writing one. You can describe a proof someone else showed you. You can only write one if you understood it.
 
-<!-- → [TABLE: Passive/active spectrum table — Output type in column 1, default position (Consumption / Mid / Production) in column 2, what the student does in column 3. Rows: Audio Overview standard, Video Overview, Cinematic Video, Study Guide, Mind Map, Briefing Doc, Slide Deck, Flashcards, Quiz, Interactive Audio, Learning Guide. The reader should see at a glance that consumption-heavy outputs cluster at the top and production-heavy ones cluster at the bottom.] -->
+| Output type | Default position | What the student does |
+|---|---|---|
+| Audio Overview (standard) | Consumption | Listens |
+| Video Overview | Consumption | Watches |
+| Cinematic Video | Consumption | Watches |
+| Study Guide | Mid | Reads and organizes |
+| Mind Map | Mid | Reads and connects |
+| Briefing Doc | Mid | Reads and evaluates |
+| Slide Deck | Mid (consumption if shown; production if built) | Varies by deployment |
+| Flashcards | Production | Recalls under spaced repetition |
+| Quiz | Production | Answers and self-evaluates |
+| Interactive Audio | Production-leaning | Listens *and* asks |
+| Learning Guide | Production | Answers diagnostic questions |
 
+*A useful sanity check: imagine the student finishing the activity. **What did they produce?** If "nothing — they consumed it," the output is on the left side of the spectrum and the surrounding assignment has to add the production work.*
 The table is useful for a quick scan, but it is not the point. The point is the question underneath the table: *What are you trying to get the student to do?* The output type is how you answer that question with the tool. If you never ask the question, you have not made an instructional decision — you have made an aesthetic one, which is a much smaller thing.
 
 ---
@@ -78,8 +91,13 @@ Briefing Doc: Better. The student reads a structured summary that surfaces the k
 
 Short-answer evaluative Quiz: Closest. If the quiz is designed with questions like "Which cause do you find most decisive, and what is the specific evidence from the primary sources that supports that position?" — the student has to commit. They have to form a judgment and articulate it, in writing, before Friday. They arrive to class having already done the evaluation work. The discussion becomes refinement and exchange, not first contact with the question.
 
-<!-- → [TABLE: Three-column comparison of output choices for the French Revolution worked case — rows: Audio Overview, Briefing Doc, Short-answer evaluative Quiz. Columns: What the student does, Bloom's tier reached, Gap between this output and the Friday discussion goal. Caption: "The goal determines the right choice. The same source, three outputs, three different gaps."] -->
+| Output | What the student does | Bloom's tier reached | Gap from the Friday discussion goal |
+|---|---|---|---|
+| Audio Overview | Listens to a 10-minute summary of the causes | Understand | Large — the student receives a framing; they have not weighed evidence or constructed a position |
+| Briefing Doc | Reads a structured outline of causes, evidence, and historiographical context | Understand → Analyze | Medium — the evidence is surfaced; the evaluation is not yet performed |
+| Short-answer evaluative Quiz | Weighs causes against specific evidence; defends rankings in their own words before Friday | Evaluate | Small — the cognitive work the discussion requires is already started |
 
+*The goal determines the right choice. The same source, three outputs, three different gaps.*
 One-sentence rationale: *I am generating a short-answer evaluative Quiz so that students must form and defend a position before Friday's discussion, rather than arriving with unrehearsed intuitions.*
 
 That sentence is the design. If the quiz comes back with questions that only ask for recall — "Name three causes of the French Revolution" — the design tells you what is wrong with it: those questions do not require evaluation. You revise the quiz; you do not revise the rationale.
@@ -102,7 +120,8 @@ What the model has now: that definition *plus* three years of a teacher's knowle
 
 The technical term for what she inserted is *pedagogical content knowledge* — the understanding not just of a subject but of how a particular subject lands with a particular group of learners. It is what makes an expert chemistry professor a worse high school chemistry teacher than someone with half the domain knowledge and twice the classroom experience. Pedagogical content knowledge is not in the textbook. It is not in the research paper. It lives in the teacher. The Note-to-Source loop is the mechanism for making that knowledge operational inside the tool.
 
-<!-- → [DIAGRAM: The Note-to-Source loop as a simple three-step cycle — Generate in chat → Pin as Note → Promote to Source → (arrow back to) Generate in chat, now grounded against source + annotation. Caption should name what's happening at each step and note that the teacher's pedagogical framing enters the corpus at the Promote step.] -->
+![The Note-to-Source loop as a three-step cycle: Generate in chat → Pin as Note → Promote to Source → back to Generate, with the teacher's pedagogical framing entering the corpus at the Promote step.](../images/03-output-type-is-a-pedagogical-choice-fig-01.png)
+*Figure 3.1 — The Note-to-Source loop*
 
 ---
 

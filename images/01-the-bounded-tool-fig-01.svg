@@ -1,0 +1,37 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Open-loop chatbot vs. source-grounded tool</text>
+<text x="180" y="70" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Left — open-loop chatbot</text>
+<text x="520" y="70" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Right — RAG-based tool</text>
+<rect x="120" y="95" width="120" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="180" y="125" font-size="11" font-weight="normal" fill="#1a1714" text-anchor="middle">training data</text>
+<line x1="180" y1="145" x2="180" y2="175" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="120" y="175" width="120" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="180" y="205" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">model</text>
+<line x1="180" y1="225" x2="180" y2="255" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="120" y="255" width="120" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="180" y="280" font-size="11" font-weight="normal" fill="#1a1714" text-anchor="middle">response</text>
+<text x="180" y="297" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="middle">(no citation)</text>
+<text x="180" y="335" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">no feedback to source</text>
+<rect x="460" y="95" width="120" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="125" font-size="11" font-weight="normal" fill="#1a1714" text-anchor="middle">your documents</text>
+<line x1="520" y1="145" x2="520" y2="175" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="460" y="175" width="120" height="30" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="195" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">retrieval</text>
+<line x1="520" y1="205" x2="520" y2="230" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="460" y="230" width="120" height="30" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="250" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">model</text>
+<line x1="520" y1="260" x2="520" y2="285" stroke="#1a1714" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="460" y="285" width="120" height="50" fill="#f5f2ee" stroke="#1a1714" stroke-width="1"/>
+<text x="520" y="305" font-size="11" font-weight="normal" fill="#1a1714" text-anchor="middle">response + citations</text>
+<path d="M 580,310 Q 660,310 660,150 Q 660,120 595,120" stroke="#1a1714" stroke-width="1" fill="none" stroke-dasharray="3 2" marker-end="url(#arrow)"/>
+<text x="670" y="230" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">citation</text>
+<text x="670" y="244" font-size="10" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">loop</text>
+<text x="350.0" y="388" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">The feedback loop that defines bounded AI.</text>
+</svg>

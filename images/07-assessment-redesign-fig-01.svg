@@ -1,0 +1,51 @@
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, 'Times New Roman', serif"><defs>
+  <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <polygon points="0 0, 8 3, 0 6" fill="#1a1714"/>
+  </marker>
+  <marker id="arrowL" markerWidth="8" markerHeight="6" refX="1" refY="3" orient="auto">
+    <polygon points="8 0, 0 3, 8 6" fill="#1a1714"/>
+  </marker>
+</defs><rect x="0" y="0" width="700" height="420" fill="#fdfcfb"/>
+<text x="350.0" y="36" font-size="13" font-weight="bold" fill="#1a1714" text-anchor="middle">Same data. Two interpretations.</text>
+<text x="180" y="70" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Surveillance frame</text>
+<text x="520" y="70" font-size="12" font-weight="bold" fill="#1a1714" text-anchor="middle">Support frame</text>
+<line x1="70" y1="200" x2="290" y2="200" stroke="#8a8480" stroke-width="0.75"/>
+<line x1="70" y1="195" x2="70" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="70" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Mon</text>
+<line x1="125" y1="195" x2="125" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="125" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Tue</text>
+<line x1="180" y1="195" x2="180" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="180" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Wed</text>
+<line x1="235" y1="195" x2="235" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="235" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Thu</text>
+<line x1="290" y1="195" x2="290" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="290" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Fri</text>
+<rect x="227" y="135" width="16" height="60" fill="#1a1714"/>
+<text x="180" y="120" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">(big block of text appears Thursday)</text>
+<text x="85" y="170" font-size="9" font-weight="normal" fill="#8a8480" text-anchor="start" font-style="italic">no edits</text>
+<text x="210" y="170" font-size="9" font-weight="normal" fill="#8a8480" text-anchor="start" font-style="italic">deadline</text>
+<line x1="410" y1="200" x2="630" y2="200" stroke="#8a8480" stroke-width="0.75"/>
+<line x1="410" y1="195" x2="410" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="410" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Mon</text>
+<line x1="465" y1="195" x2="465" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="465" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Tue</text>
+<line x1="520" y1="195" x2="520" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="520" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Wed</text>
+<line x1="575" y1="195" x2="575" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="575" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Thu</text>
+<line x1="630" y1="195" x2="630" y2="205" stroke="#4a4540" stroke-width="0.75"/>
+<text x="630" y="220" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle">Fri</text>
+<rect x="567" y="135" width="16" height="60" fill="#1a1714"/>
+<text x="520" y="120" font-size="9" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">(big block of text appears Thursday)</text>
+<text x="425" y="170" font-size="9" font-weight="normal" fill="#8a8480" text-anchor="start" font-style="italic">no edits</text>
+<text x="550" y="170" font-size="9" font-weight="normal" fill="#8a8480" text-anchor="start" font-style="italic">deadline</text>
+<text x="180" y="260" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Interpretation:</text>
+<text x="180" y="278" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="middle">→ flag for investigation</text>
+<text x="180" y="295" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="middle">→ check for AI use</text>
+<text x="180" y="312" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="middle">→ initiate integrity process</text>
+<text x="520" y="260" font-size="11" font-weight="bold" fill="#1a1714" text-anchor="middle">Interpretation:</text>
+<text x="520" y="278" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="middle">→ deadline-day panic-typing</text>
+<text x="520" y="295" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="middle">→ student may be struggling silently</text>
+<text x="520" y="312" font-size="10" font-weight="normal" fill="#1a1714" text-anchor="middle">→ reach out with support question</text>
+<text x="350.0" y="388" font-size="11" font-weight="normal" fill="#4a4540" text-anchor="middle" font-style="italic">The version history doesn't change. The intervention does.</text>
+</svg>

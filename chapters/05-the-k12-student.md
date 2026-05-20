@@ -36,8 +36,12 @@ The failure is in the assignment design, not in the student. Students optimize f
 
 ## What Makes an Assignment Shortcut-Resistant
 
-<!-- → [TABLE: Four engagement patterns — columns: pattern name, what the student produces, why the shortcut produces a worse artifact, example prompt] -->
-
+| Pattern | What the student produces | Why the shortcut produces a worse artifact | Example prompt |
+|---|---|---|---|
+| Source-check | A two-column critique — AI's summary vs. the student's corrections and additions | Empty corrections column reveals the student didn't read the source | *"Compare NotebookLM's summary of chapter 4 against the chapter itself. Identify three places where the summary omitted, oversimplified, or misframed. Cite the source paragraph for each correction."* |
+| Argument-extension | The AI's claim + the student's counter-argument with new evidence the AI did not produce | The AI cannot extend its own claim with evidence it didn't see; copying the AI's output gives the student nothing to extend from | *"Use NotebookLM to state the source's main claim and its three strongest supporting points. Then write your own counter-argument using one piece of evidence from a different chapter or your own reasoning."* |
+| Socratic dialogue (Interactive Mode) | Student-authored reasoning produced in response to AI diagnostic questions | The mode forces the student to answer; passive listening produces no submittable artifact | *"Use Interactive Mode. Ask the AI to test you on chapter 4 with three diagnostic questions. Answer each in your own words. Submit your three answers."* |
+| Error-hunt | A rewritten quiz question with explanation of why the AI's version was bad | Finding a bad question requires understanding the material well enough to judge | *"Have NotebookLM generate a 10-question quiz on chapter 4. Take the quiz. Identify the one question you think is worst (ambiguous, too easy, or testing the wrong thing). Rewrite it and explain in one sentence why your version is better."* |
 There are four design patterns that recur across published faculty guidance — from Florida State, from UIC, from Monash — and across the research on what produces genuine learning outcomes when AI tools are in the workflow.
 
 **Source-check.** The student compares NotebookLM's output against the original source and identifies what is missing, oversimplified, or wrong. The artifact is not a summary — it is a critique. The student cannot complete the assignment without reading the original closely enough to evaluate the tool's performance. The shortcut path — generating a critique using NotebookLM again — produces an empty artifact, because the model's critique of its own output is nearly always charitable. The student who reads produces something the student who doesn't cannot fake.
@@ -88,8 +92,12 @@ One more constraint worth knowing: as of writing, Interactive Mode for students 
 
 ## The Redesign in Practice
 
-<!-- → [TABLE: Original assignment vs. three redesigned versions — columns: version name, assignment text, what the student must produce, why the shortcut fails] -->
-
+| Version | Assignment text | What the student must produce | Why the shortcut fails |
+|---|---|---|---|
+| Original (passive-substitution) | *"Read chapter 5. Write a one-page summary of its main argument."* | A one-page summary | NotebookLM can produce a passable summary in two minutes; the student's name is the only thing distinguishing the AI's output from theirs |
+| Source-check redesign | *"Read chapter 5. Then have NotebookLM generate a summary. Submit two columns: NotebookLM's summary on the left; your corrections and additions on the right. Identify at least three omissions, oversimplifications, or misframings."* | A two-column critique with three specific corrections | A student who skipped the reading cannot identify what was omitted because they don't know what was there |
+| Argument-extension redesign | *"Have NotebookLM extract chapter 5's central claim and its three strongest supporting points. Write a one-page counter-argument using one piece of evidence the AI did not produce — from elsewhere in the book, lecture notes, or your own reasoning."* | A one-page counter-argument grounded in evidence the AI didn't see | The AI cannot extend its own claim with material outside the source; copying the AI's output gives the student nothing to argue against |
+| Process-documentation redesign | *"Write a one-page summary in Google Docs with revision history enabled. Submit the document; the revision timeline should show iterative work — outline, drafts, revisions — not a single block of finished text. Optionally include a one-sentence note disclosing AI use."* | A document plus its iteration history | A document that goes from blank to finished in four minutes reveals the absence of work even when the final text is competent |
 Take a real assignment. *"Read chapter 5. Write a one-page summary of its main argument. Due Monday."*
 
 The goal is genuine: the teacher wants students to understand chapter 5's argument. The problem is structural: NotebookLM produces a Study Guide of chapter 5 in forty seconds. Lightly edited, it is a one-page summary of the main argument. The student who shortcut and the student who read both submit on Monday.
