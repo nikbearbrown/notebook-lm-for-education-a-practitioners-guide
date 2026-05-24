@@ -64,7 +64,8 @@ What this establishes: the retrieval-practice mechanism operates when the materi
 
 What it does not establish: that AI-generated materials are better than teacher-created ones. That AI-generated open-ended tutoring (explanation mode, not retrieval mode) matches teacher-led tutoring. That the finding extends beyond self-assessment use to other learning contexts. The finding is specific to structured self-assessment with repeated practice. Using it to support claims about AI tutoring in general is a bucket-confusion error of the kind the framework is designed to catch.
 
-<!-- → [CHART: Evidence confidence spectrum — horizontal axis from "lowest confidence" to "highest confidence," four points plotted: Learning-science plausibility / Conference papers / Emerging case studies (Mohamed 2025) / EPR 2025 controlled finding. Each point annotated with what kind of claim it supports. Caption: The EPR 2025 finding sits meaningfully higher than the Mohamed study, but still below multi-site controlled trials. Readers should see the gap between "what we have" and "what we'd need."] -->
+![Evidence confidence spectrum ](images/14-honest-capability-assessment-fig-01.png)
+*Figure 14.1 — Evidence confidence spectrum *
 
 ---
 
@@ -111,7 +112,8 @@ The principle for writing a capability assessment that ages well: separate what 
 
 An honest capability assessment built on stable-core claims can be re-issued when the evidence changes by updating the current-state details while leaving the core argument intact. An assessment built on current-state details cannot — it has to be rewritten from scratch when the features change or the evidence moves.
 
-<!-- → [INFOGRAPHIC: Stable core vs. current state — two-column layout. Left: "Stable Core" with checkmark: structural claims that hold across tool versions and studies (e.g., "source-grounding makes fabrication traceable"). Right: "Current State" with refresh icon: specific numbers and named studies that require re-verification at each reprint (e.g., "40% → 13% fabrication reduction"). Caption: Build your assessment on the left column. Annotate the right column with a date. When the evidence moves, update the right column without rewriting the left.] -->
+![Stable core vs](images/14-honest-capability-assessment-fig-02.png)
+*Figure 14.2 — Stable core vs*
 
 ---
 
@@ -131,7 +133,8 @@ The book's terminal deliverable is not a worked example — it is a template tha
 
 This document replaces the vague *"NotebookLM works for our students"* claim with a specific, evidence-grounded, revisable position. The position is what survives contact with skeptical administrators. It is what survives your own re-reading two years from now when the deployment has produced outcomes you didn't predict.
 
-<!-- → [INFOGRAPHIC: One-page honest capability assessment template — five labeled sections with sentence-count guidance: Context (2-3 sentences), What works here (1 paragraph, cite evidence bucket), What doesn't / isn't shown (1 paragraph, named gaps), What the evidence shows (1 paragraph, name the buckets), What is still uncertain (2-3 sentences, name the research). Annotation pointing to each section: what kind of claim goes here, what kind of claim does NOT go here. Caption: The template is a discipline, not a form. Every sentence should be specific enough to be falsified.] -->
+![One-page honest capability assessment template ](images/14-honest-capability-assessment-fig-03.png)
+*Figure 14.3 — One-page honest capability assessment template *
 
 ---
 
@@ -204,3 +207,37 @@ The Purdue / UAB / UC Riverside partnership is the named next step for the field
 ---
 
 *This is the end of the book's main content. Appendix A — The Fundamental Themes is the theoretical upstream for readers who want the broader argument the chapters were built inside.*
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 14.1 — Evidence confidence spectrum 
+
+Create a standalone D3 v7 HTML file for Figure Evidence confidence spectrum . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Evidence confidence spectrum — horizontal axis from "lowest confidence" to "highest confidence," four points plotted: Learning-science plausibility / Conference papers / Emerging case studies (Mohamed 2025) / EPR 2025 controlled finding. Each point annotated with what kind of claim it supports. Caption: The EPR 2025 finding sits meaningfully higher than the Mohamed study, but still below multi-site controlled trials. Readers should see the gap between "what we have" and "what we'd need.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/14-honest-capability-assessment-fig-01.html`
+
+---
+
+### Figure 14.2 — Stable core vs
+
+Create a standalone D3 v7 HTML file for Figure Stable core vs. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Stable core vs. current state — two-column layout. Left: "Stable Core" with checkmark: structural claims that hold across tool versions and studies (e.g., "source-grounding makes fabrication traceable"). Right: "Current State" with refresh icon: specific numbers and named studies that require re-verification at each reprint (e.g., "40% → 13% fabrication reduction"). Caption: Build your assessment on the left column. Annotate the right column with a date. When the evidence moves, update the right column without rewriting the left.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/14-honest-capability-assessment-fig-02.html`
+
+---
+
+### Figure 14.3 — One-page honest capability assessment template 
+
+Create a standalone D3 v7 HTML file for Figure One-page honest capability assessment template . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: One-page honest capability assessment template — five labeled sections with sentence-count guidance: Context (2-3 sentences), What works here (1 paragraph, cite evidence bucket), What doesn't / isn't shown (1 paragraph, named gaps), What the evidence shows (1 paragraph, name the buckets), What is still uncertain (2-3 sentences, name the research). Annotation pointing to each section: what kind of claim goes here, what kind of claim does NOT go here. Caption: The template is a discipline, not a form. Every sentence should be specific enough to be falsified.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/14-honest-capability-assessment-fig-03.html`

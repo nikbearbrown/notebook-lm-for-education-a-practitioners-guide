@@ -14,7 +14,7 @@
 
 # Notebook LM for Education A Practitioner's Guide — Outline
 
-**Author:** Nik Bear Brown
+**Author:** Humanitarians AI
 
 ---
 

@@ -47,7 +47,8 @@ There is a taxonomy most educators know by name and fewer use operationally. Blo
 
 Remembering means the student can reproduce something when prompted. Understanding means they can explain it in their own words. Application means they can use it in a new situation. Analysis means they can take it apart and see how the pieces relate. Evaluation means they can judge it — defend a claim about whether it is sound, well-designed, or true. Creation means they can build something new with it.
 
-<!-- → [INFOGRAPHIC: Bloom's revised taxonomy as a vertical staircase — six steps ascending from Remember at the base to Create at the top. Label each step with the tier name plus 2–3 example action verbs (Remember: recall, identify; Understand: explain, paraphrase; Apply: use, execute; Analyze: differentiate, compare; Evaluate: defend, judge; Create: design, construct). Color gradient cool-to-warm bottom-to-top. Caption: "Higher tiers require the student to do more, not just know more."] -->
+![Higher tiers require the student to do more, not just know more.](images/03-output-type-is-a-pedagogical-choice-fig-01.png)
+*Figure 3.1 — Bloom's revised taxonomy as a vertical staircase *
 
 Here is what this taxonomy is for, in the context of choosing output types: *different tiers require different output structures to practice*.
 
@@ -71,7 +72,8 @@ Before generating any output, there is a decision sequence that takes about sixt
 
 **Four: Write one sentence that finishes this prompt: "I am generating ___ so that students will ___ before ___."** If you cannot finish that sentence, you do not have a design. You have a format preference. The sentence forces you to articulate the instructional purpose before you see the output — which means you have a standard against which to evaluate the output when it arrives.
 
-<!-- → [INFOGRAPHIC: The four-question decision loop as a flowchart — Goal → Bloom's tier → Output type → One-sentence rationale — with example answers filled in for a single worked case (French Revolution / defend / evaluation / short-answer Quiz). The visual should make the sequence feel repeatable, not academic.] -->
+![The four-question decision loop as a flowchart ](images/03-output-type-is-a-pedagogical-choice-fig-02.png)
+*Figure 3.2 — The four-question decision loop as a flowchart *
 
 The fourth question is the hardest, and the most important. It is also the one most frequently skipped. You skip it when you open the menu, see Audio Overview at the top, and generate it because it is there. That is not a decision — that is menu position determining instruction.
 
@@ -137,7 +139,8 @@ This is not an argument against Audio Overview. It is an argument for knowing wh
 
 The Interactive Mode version of Audio Overview is more interesting. Standard Audio Overview: the student listens. Interactive Mode: the student can pause the hosts and ask questions; the hosts answer from the grounded source material and resume. This single structural change moves the output from consumption to dialogue. The student who asks a question has to formulate a question, which requires knowing what they do not understand — which is itself a metacognitive act that passive listening does not produce.
 
-<!-- → [CHART: Horizontal spectrum bar — left end labeled "Consumption (student receives)" to right end labeled "Production (student performs)." Plot two points: Audio Overview standard (left-of-center) and Interactive Mode Audio Overview (right-of-center). Annotate the gap between them with "Interactive Mode shifts position." Keep it conceptual — this is a positional illustration, not a measurement of effect size.] -->
+![Horizontal spectrum bar ](images/03-output-type-is-a-pedagogical-choice-fig-03.png)
+*Figure 3.3 — Horizontal spectrum bar *
 
 No published study has measured the effect of Interactive Mode Audio Overview on learning outcomes. The reasoning from first principles suggests it is substantially higher-leverage than the passive version. The classroom evidence, when it arrives, will settle whether the reasoning is right.
 
@@ -205,3 +208,37 @@ You have the framework for choosing output types. The next question is what a fu
 ## Aging note
 
 Output types evolve quickly. Cinematic Video, Lecture Format, and other in-roadmap outputs will need explicit Bloom's placement when they ship. The four-question framework is stable. Update the passive-active table when the output list changes; leave the framework alone.
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 3.1 — Bloom's revised taxonomy as a vertical staircase 
+
+Create a standalone D3 v7 HTML file for Figure Bloom's revised taxonomy as a vertical staircase . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Bloom's revised taxonomy as a vertical staircase — six steps ascending from Remember at the base to Create at the top. Label each step with the tier name plus 2–3 example action verbs (Remember: recall, identify; Understand: explain, paraphrase; Apply: use, execute; Analyze: differentiate, compare; Evaluate: defend, judge; Create: design, construct). Color gradient cool-to-warm bottom-to-top. Caption: "Higher tiers require the student to do more, not just know more.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-output-type-is-a-pedagogical-choice-fig-01.html`
+
+---
+
+### Figure 3.2 — The four-question decision loop as a flowchart 
+
+Create a standalone D3 v7 HTML file for Figure The four-question decision loop as a flowchart . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: The four-question decision loop as a flowchart — Goal → Bloom's tier → Output type → One-sentence rationale — with example answers filled in for a single worked case (French Revolution / defend / evaluation / short-answer Quiz). The visual should make the sequence feel repeatable, not academic.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-output-type-is-a-pedagogical-choice-fig-02.html`
+
+---
+
+### Figure 3.3 — Horizontal spectrum bar 
+
+Create a standalone D3 v7 HTML file for Figure Horizontal spectrum bar . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Horizontal spectrum bar — left end labeled "Consumption (student receives)" to right end labeled "Production (student performs)." Plot two points: Audio Overview standard (left-of-center) and Interactive Mode Audio Overview (right-of-center). Annotate the gap between them with "Interactive Mode shifts position." Keep it conceptual — this is a positional illustration, not a measurement of effect size.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/03-output-type-is-a-pedagogical-choice-fig-03.html`

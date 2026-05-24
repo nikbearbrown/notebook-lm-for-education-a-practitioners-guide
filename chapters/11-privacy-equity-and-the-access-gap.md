@@ -50,7 +50,8 @@ The gates are independent. Having the first open does not open the second. Havin
 
 **Subscription tier.** The student's account has sufficient quota for the assignment. The free tier allows 100 notebooks and 50 daily queries. For a class of 28 students each querying a notebook during a single class period, 50 daily queries is the binding constraint. Google AI Pro for Education lifts those limits substantially, but it costs money — and the question of who pays, at what tier, and whether that cost is borne uniformly across students or differentially is an equity question that the word *free* obscures entirely.
 
-<!-- → [INFOGRAPHIC: The three gates as a sequential funnel — Gate 1: Admin toggle (Is NotebookLM enabled for the student OU?), Gate 2: Age restriction (Is the student old enough for this feature?), Gate 3: Subscription tier (Is the quota sufficient for this assignment?). Show that all three must be open for the student to reach the tool. Annotate each gate with who controls it: IT admin / Google platform policy / institutional licensing. Caption: "Any one closed gate produces the same result: the tool does not work as designed."] -->
+![Any one closed gate produces the same result: the tool does not work as designed.](images/11-privacy-equity-and-the-access-gap-fig-01.png)
+*Figure 11.1 — The three gates as a sequential funnel *
 
 The three-gate framework is the operational translation of "equitable access." Equal nominal access — everyone in the class is told they can use the tool — is not the same as equal effective access — everyone in the class can actually use the tool for the assignment as designed. The difference between those two states is the three gates. A deployment equity assessment asks: for my specific students, in my specific institution, are all three gates open?
 
@@ -183,3 +184,21 @@ The word *free* is accurate about price. It says nothing about access. Access is
 9. *(Evaluate — the ELL gap)* The chapter argues that using Audio Overview as the primary accessibility scaffold for ELL students whose languages are not yet supported is a design error. A colleague disagrees: "Even in English, the audio is more accessible than the text for students still developing academic English proficiency." Evaluate this counterargument using the chapter's framework. Under what conditions is the colleague right? Under what conditions is the chapter's warning still applicable?
 
 10. *(Create — the case for opening the gate)* You teach in a district with a Rochester-style restriction. Using the chapter's framework — visible consequences of the restriction, compliance regime, equity implications, and the two unintended outcomes — write the one-paragraph argument you would bring to your administrator to begin the conversation about opening student access. Do not argue that restrictions are wrong. Argue that the decision should be made with its full consequences visible.
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 11.1 — The three gates as a sequential funnel 
+
+Create a standalone D3 v7 HTML file for Figure The three gates as a sequential funnel . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: The three gates as a sequential funnel — Gate 1: Admin toggle (Is NotebookLM enabled for the student OU?), Gate 2: Age restriction (Is the student old enough for this feature?), Gate 3: Subscription tier (Is the quota sufficient for this assignment?). Show that all three must be open for the student to reach the tool. Annotate each gate with who controls it: IT admin / Google platform policy / institutional licensing. Caption: "Any one closed gate produces the same result: the tool does not work as designed.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/11-privacy-equity-and-the-access-gap-fig-01.html`

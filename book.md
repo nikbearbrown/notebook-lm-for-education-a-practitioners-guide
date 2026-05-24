@@ -12,7 +12,7 @@
 
 # Notebook LM for Education A Practitioner's Guide
 
-**Author:** Nik Bear Brown
+**Author:** Humanitarians AI
 
 ---
 

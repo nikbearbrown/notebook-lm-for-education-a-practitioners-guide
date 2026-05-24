@@ -3,7 +3,7 @@
 
 **Working title:** NotebookLM for Education: A Practitioner's Guide
 **Series:** Practitioner Guides for the AI Classroom
-**Author:** Nik Bear Brown · ni.brown@neu.edu · Bear Brown & Company
+**Author:** Humanitarians AI · ni.brown@neu.edu · Bear Brown & Company
 **Document:** Full TOC Draft — compiled from all phase outputs
 **Version:** 1.0
 **Status:** Pre-proposal

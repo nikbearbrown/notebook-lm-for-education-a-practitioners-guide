@@ -20,7 +20,8 @@ This chapter works backward from those markers. What design makes each one more 
 
 ## Why Policy Doesn't Work the Way We Think It Does
 
-<!-- → [CHART: Bar chart or scatterplot visualization of MDPI 2025 finding — ethical beliefs vs. policy awareness as predictors of AI use behavior — student sample n=401] -->
+![Bar chart or scatterplot visualization of MDPI 2025](images/08-academic-integrity-fig-01.png)
+*Figure 8.1 — Bar chart or scatterplot visualization of MDPI 2025*
 
 In 2025, a study published in MDPI tested two variables against AI use behavior in writing assessments across 401 students at major U.S. universities. The variables were: students' *awareness* of their institution's AI policy, and students' *ethical beliefs* about whether AI use in academic work was wrong.
 
@@ -38,7 +39,8 @@ The policy that has a chance of working is one that treats the student as someon
 
 ## What Academic Integrity Actually Protects
 
-<!-- → [INFOGRAPHIC: Diagram showing the three parties in an academic integrity framework — student, institution, future context — and what each loses when integrity fails] -->
+![Diagram showing the three parties in an academic](images/08-academic-integrity-fig-02.png)
+*Figure 8.2 — Diagram showing the three parties in an academic*
 
 Let me be precise about what we are protecting, because the precision changes the policy.
 
@@ -106,7 +108,8 @@ These five components together form a policy that can survive a student asking "
 
 ## The Conversation You Are Actually Designing For
 
-<!-- → [INFOGRAPHIC: Decision tree for handling a suspected integrity violation — branching from "observable behavior" through conversation, assessment, and outcome paths] -->
+![Decision tree for handling a suspected integrity violation](images/08-academic-integrity-fig-03.png)
+*Figure 8.3 — Decision tree for handling a suspected integrity violation*
 
 Most integrity policies are written for the enforcement scenario — what happens after a violation is documented. The better design question is: what conversation do I want to be able to have with a student *before* a violation is documented?
 
@@ -120,7 +123,8 @@ The policy that enables this conversation is one that has been *explained* to st
 
 ## What the Detection Tools Get Wrong
 
-<!-- → [CHART: Liang et al. 2023 finding — false positive rates for AI detection tools across native vs. non-native English writers — visualize the disparity] -->
+![Liang et al](images/08-academic-integrity-fig-04.png)
+*Figure 8.4 — Liang et al*
 
 AI detection tools deserve a specific note, because their use is spreading and their reliability is poor in ways that matter for equity.
 
@@ -171,3 +175,45 @@ You have the policy. Chapter 9 asks what happens when the policy meets an instit
 ---
 
 *The MDPI 2025 finding is current as of writing; replication studies are likely through 2026–2027. The Liang et al. 2023 detection-tool bias finding is documented; the technical landscape for detection tools is changing faster than the equity concern. Re-verify specific tool recommendations before each deployment.*
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 8.1 — Bar chart or scatterplot visualization of MDPI 2025
+
+Create a standalone D3 v7 HTML file for Figure Bar chart or scatterplot visualization of MDPI 2025. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Bar chart or scatterplot visualization of MDPI 2025 finding — ethical beliefs vs. policy awareness as predictors of AI use behavior — student sample n=401. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-academic-integrity-fig-01.html`
+
+---
+
+### Figure 8.2 — Diagram showing the three parties in an academic
+
+Create a standalone D3 v7 HTML file for Figure Diagram showing the three parties in an academic. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Diagram showing the three parties in an academic integrity framework — student, institution, future context — and what each loses when integrity fails. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-academic-integrity-fig-02.html`
+
+---
+
+### Figure 8.3 — Decision tree for handling a suspected integrity violation
+
+Create a standalone D3 v7 HTML file for Figure Decision tree for handling a suspected integrity violation. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Decision tree for handling a suspected integrity violation — branching from "observable behavior" through conversation, assessment, and outcome paths. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-academic-integrity-fig-03.html`
+
+---
+
+### Figure 8.4 — Liang et al
+
+Create a standalone D3 v7 HTML file for Figure Liang et al. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Liang et al. 2023 finding — false positive rates for AI detection tools across native vs. non-native English writers — visualize the disparity. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/08-academic-integrity-fig-04.html`

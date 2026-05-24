@@ -22,7 +22,8 @@ A faculty member who doesn't know which principle they are deploying will end up
 
 ## Why Retrieval Practice Is the Right Frame for Learning Guide
 
-<!-- → [CHART: Learning curve comparison — retrieval practice vs. re-reading/re-listening — data from Karpicke & Roediger 2008, showing durable retention gap over time] -->
+![Learning curve comparison ](images/10-higher-ed-course-design-and-self-testing-fig-01.png)
+*Figure 10.1 — Learning curve comparison *
 
 The pedagogical foundation for the Monash model is decades old and unusually solid. Karpicke and Roediger, writing in *Science* in 2008, showed that retrieval practice — being asked to recall information from memory, rather than re-reading or re-listening — produces dramatically more durable learning. The finding has replicated. It holds across subjects, ages, and content types with enough consistency to call it one of the most reliable results in educational psychology.
 
@@ -32,7 +33,8 @@ This is why the default tutoring pattern — student asks a question, tool provi
 
 The Monash configuration inverts this. Instead of the student asking *"explain X,"* the student invokes Learning Guide with *"test me on chapter 4."* The tool generates diagnostic questions one at a time. The student attempts each one. The tool evaluates and provides feedback only after the student has tried. The discomfort is the point. The effort of trying and being wrong before seeing the correct framing is exactly what produces learning that sticks.
 
-<!-- → [INFOGRAPHIC: Side-by-side diagram — default tutoring pattern (student asks → tool explains) vs. Monash retrieval pattern (tool asks → student attempts → tool evaluates) — annotated with where the learning-producing event occurs in each] -->
+![Diagram ](images/10-higher-ed-course-design-and-self-testing-fig-02.png)
+*Figure 10.2 — Diagram *
 
 There is a timing detail here that matters and that most deployments miss. Learning Guide is most powerful during *initial learning* — as the encoding event, the first time the student works through the material. Most faculty deploy self-testing tools as review, after the fact, as a check that learning happened. That is less than half the leverage. Used before the student has consolidated the material, the tool is forcing the retrieval attempt that produces the encoding. Used after, it is measuring what the encoding produced. Both have value; the first has more.
 
@@ -64,7 +66,8 @@ Second, the teacher should generate the question set themselves before deploying
 
 ## The NYU Feedback Loop
 
-<!-- → [INFOGRAPHIC: NYU feedback-loop workflow — data collection → NotebookLM analysis → formative activity generation → LMS deployment → cycle back to data collection] -->
+![NYU feedback-loop workflow ](images/10-higher-ed-course-design-and-self-testing-fig-03.png)
+*Figure 10.3 — NYU feedback-loop workflow *
 
 At NYU's October 2025 Teaching and Learning with Generative AI symposium, an instructor showed a use case that looks nothing like either the UW-Milwaukee or Monash models, but is worth understanding because it demonstrates the bounded-tool framework applied in a direction most faculty don't consider.
 
@@ -89,7 +92,8 @@ The limitation worth noting: the NYU feedback-loop pattern benefits from data vo
 
 ## What Changed in April 2026
 
-<!-- → [INFOGRAPHIC: Timeline of NotebookLM access expansion — K-12 supervised model, 18+ personal notebook creation, institutional Workspace configuration] -->
+![Timeline of NotebookLM access expansion ](images/10-higher-ed-course-design-and-self-testing-fig-04.png)
+*Figure 10.4 — Timeline of NotebookLM access expansion *
 
 A higher-education-specific operational fact: as of April 2026, students aged 18 and older can create personal class notebooks grounded in educator-provided Classroom materials. This is the operational unlock the Monash model was waiting for at scale.
 
@@ -154,3 +158,45 @@ Both the K–12 and higher-education deployment paths converge here. Chapter 11 
 ---
 
 *Learning Guide's configuration interface and specific feature set are evolving. The retrieval-practice mechanism it leverages is not — the Karpicke and Roediger finding has been stable for nearly two decades. Re-verify the specific UI configuration steps before each reprint; the underlying argument can be re-issued unchanged.*
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 10.1 — Learning curve comparison 
+
+Create a standalone D3 v7 HTML file for Figure Learning curve comparison . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Learning curve comparison — retrieval practice vs. re-reading/re-listening — data from Karpicke & Roediger 2008, showing durable retention gap over time. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-higher-ed-course-design-and-self-testing-fig-01.html`
+
+---
+
+### Figure 10.2 — Diagram 
+
+Create a standalone D3 v7 HTML file for Figure Diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side diagram — default tutoring pattern (student asks → tool explains) vs. Monash retrieval pattern (tool asks → student attempts → tool evaluates) — annotated with where the learning-producing event occurs in each. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-higher-ed-course-design-and-self-testing-fig-02.html`
+
+---
+
+### Figure 10.3 — NYU feedback-loop workflow 
+
+Create a standalone D3 v7 HTML file for Figure NYU feedback-loop workflow . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: NYU feedback-loop workflow — data collection → NotebookLM analysis → formative activity generation → LMS deployment → cycle back to data collection. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-higher-ed-course-design-and-self-testing-fig-03.html`
+
+---
+
+### Figure 10.4 — Timeline of NotebookLM access expansion 
+
+Create a standalone D3 v7 HTML file for Figure Timeline of NotebookLM access expansion . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Timeline of NotebookLM access expansion — K-12 supervised model, 18+ personal notebook creation, institutional Workspace configuration. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/10-higher-ed-course-design-and-self-testing-fig-04.html`

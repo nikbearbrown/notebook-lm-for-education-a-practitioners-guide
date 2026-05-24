@@ -1,6 +1,6 @@
 # NotebookLM for Education: A Practitioner's Guide
 
-**Author:** Nik Bear Brown
+**Author:** Humanitarians AI
 **Publisher:** Bear Brown, LLC
 **Series:** Practitioner Guides for the AI Classroom
 **Status:** First-edition draft, May 2026

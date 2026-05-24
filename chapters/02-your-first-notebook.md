@@ -56,7 +56,8 @@ This is the first habit the chapter is building. Not trust. Verification.
 
 ## What the Studio Panel Actually Produces
 
-<!-- → [INFOGRAPHIC: Visual map of all NotebookLM Studio output types grouped by format category — Audio, Video, Document, Study, Data — with brief annotation of what each is for] -->
+![Visual map of all NotebookLM Studio output types](images/02-your-first-notebook-fig-01.png)
+*Figure 2.1 — Visual map of all NotebookLM Studio output types*
 
 Once you have sources you've verified, you can generate outputs. The Studio panel is where this happens — the right-hand pane that offers a menu of artifact types.
 
@@ -89,7 +90,8 @@ Three outputs. Three different relationships to verifiability. One discipline th
 
 ## The Verification Stack
 
-<!-- → [INFOGRAPHIC: Three-step verification stack as a visual checklist — Step 1: Does the passage exist? Step 2: Does it support the claim? Step 3: Is anything omitted that changes the meaning?] -->
+![Three-step verification stack as a visual checklist ](images/02-your-first-notebook-fig-02.png)
+*Figure 2.2 — Three-step verification stack as a visual checklist *
 
 Here is the thing about citations. They answer a narrow question: *where did this come from?* They do not answer the question you actually care about: *is this right?*
 
@@ -147,7 +149,8 @@ At the end of thirty minutes you have a list: at least three identified errors, 
 
 ## What These Failures Have in Common
 
-<!-- → [INFOGRAPHIC: Diagram showing the three failure types from the walkthrough mapped to the verification stack — visual connection between omission/mischaracterization/ingestion failure and which check in the stack catches each] -->
+![Diagram showing the three failure types from the](images/02-your-first-notebook-fig-03.png)
+*Figure 2.3 — Diagram showing the three failure types from the*
 
 Every failure in the walkthrough traces back to the same structure. The model had information. It generated output. The output was shaped by what was available, what was emphasized, and what got compressed. You were not there for that process. The output looks like a finished product. It reads like something that knows what it's talking about. And you, with domain expertise, are the only thing in the loop that can tell whether it does.
 
@@ -202,3 +205,37 @@ The walkthrough established that you can generate outputs and verify them. Chapt
 ---
 
 *Specific output names — Cinematic Video, Interactive Audio, Lecture Format if launched — and the Studio panel layout are evolving. The verification discipline is not. Re-verify the output list against the current interface before each reprint; leave the three-step stack alone.*
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 2.1 — Visual map of all NotebookLM Studio output types
+
+Create a standalone D3 v7 HTML file for Figure Visual map of all NotebookLM Studio output types. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Visual map of all NotebookLM Studio output types grouped by format category — Audio, Video, Document, Study, Data — with brief annotation of what each is for. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/02-your-first-notebook-fig-01.html`
+
+---
+
+### Figure 2.2 — Three-step verification stack as a visual checklist 
+
+Create a standalone D3 v7 HTML file for Figure Three-step verification stack as a visual checklist . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-step verification stack as a visual checklist — Step 1: Does the passage exist? Step 2: Does it support the claim? Step 3: Is anything omitted that changes the meaning?. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/02-your-first-notebook-fig-02.html`
+
+---
+
+### Figure 2.3 — Diagram showing the three failure types from the
+
+Create a standalone D3 v7 HTML file for Figure Diagram showing the three failure types from the. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Diagram showing the three failure types from the walkthrough mapped to the verification stack — visual connection between omission/mischaracterization/ingestion failure and which check in the stack catches each. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/02-your-first-notebook-fig-03.html`

@@ -53,7 +53,8 @@ The length discipline is not arbitrary. It is calibrated to how administrators r
 
 **Section six: the ask.** One sentence. What specifically the administrator is being asked to approve, enable, or fund. "I am requesting approval to proceed with the deployment described above in my third-period class beginning the week of November 10." Concrete. Bounded. Actionable.
 
-<!-- → [INFOGRAPHIC: The six sections as a visual layout of an actual one-page brief — showing proportional space allocation for each section so the reader sees what "one paragraph" looks like in physical terms relative to the page. Annotate which sections answer which administrator question (sections 2/3/4 map to privacy/learning/equity). Caption: "Sections two, three, and four are each one paragraph. The whole document fits on one page. Length discipline is the brief's most-violated rule."] -->
+![Sections two, three, and four are each one paragraph. The whole document fits on one page. Length discipline is the brief's most-violated rule.](images/13-the-administrator-brief-fig-01.png)
+*Figure 13.1 — The six sections as a visual layout of*
 
 ---
 
@@ -180,3 +181,21 @@ The brief is a professional communication, not a sales pitch. The difference is 
 9. *(Evaluate — the fourth question)* The chapter argues that administrators will always ask the same three questions. Identify one question that is specific to your institution, community, or student population that the standard three do not cover — a question an adversarial administrator or an engaged parent in your context would ask that is not privacy, learning outcomes, or equity. Write the section of the brief that addresses it, using the chapter's structural principles: honest framing, direct evidence citation where available, and explicit acknowledgment of what is not yet known.
 
 10. *(Create — the re-briefing question)* The chapter's "Still puzzling" section raises the question of re-briefing cadence: once at adoption, or annually as the tool and evidence evolve? Write a one-paragraph argument for the position you find more defensible, using the chapter's institutional-trust framework. Then write one sentence identifying the specific condition under which you would switch to the other position.
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 13.1 — The six sections as a visual layout of
+
+Create a standalone D3 v7 HTML file for Figure The six sections as a visual layout of. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: The six sections as a visual layout of an actual one-page brief — showing proportional space allocation for each section so the reader sees what "one paragraph" looks like in physical terms relative to the page. Annotate which sections answer which administrator question (sections 2/3/4 map to privacy/learning/equity). Caption: "Sections two, three, and four are each one paragraph. The whole document fits on one page. Length discipline is the brief's most-violated rule.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/13-the-administrator-brief-fig-01.html`

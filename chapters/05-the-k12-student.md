@@ -18,7 +18,8 @@ The corrective is not better students. It is better assignment design.
 
 ## The Variable That Actually Controls This
 
-<!-- → [INFOGRAPHIC: Spectrum diagram — passive substitution on one end, active engagement on the other, with example assignment types placed along it] -->
+![Spectrum diagram ](images/05-the-k12-student-fig-01.png)
+*Figure 5.1 — Spectrum diagram *
 
 Let me state the central claim precisely, because the precision matters.
 
@@ -60,7 +61,8 @@ This is the design principle. Not: catch students who shortcut. Design: make sho
 
 ## Why Policy Doesn't Solve This
 
-<!-- → [CHART: Conceptual diagram showing the relationship between policy stringency, policy awareness, ethical beliefs, and actual behavior — based on the MDPI 2025 finding that ethical beliefs predict behavior more than policy awareness] -->
+![Conceptual diagram showing the relationship between policy stringency,](images/05-the-k12-student-fig-02.png)
+*Figure 5.2 — Conceptual diagram showing the relationship between policy stringency,*
 
 A 2025 study in MDPI found that students' ethical beliefs about AI use — not their awareness of their institution's AI policy — predicted whether they used AI inappropriately. Students who knew the policy but didn't believe the behavior was wrong used AI in ways the policy prohibited. Students who believed the behavior was wrong were more likely to comply even when policies were ambiguous.
 
@@ -72,7 +74,8 @@ The chapter's bet is that you should spend your design energy where the leverage
 
 ## How Interactive Mode Changes the Equation
 
-<!-- → [INFOGRAPHIC: Side-by-side comparison — standard Audio Overview (passive flow, no interaction) vs. Interactive Mode (pause points, student questions, grounded responses) — annotated with what the student does in each] -->
+![Comparison ](images/05-the-k12-student-fig-03.png)
+*Figure 5.3 — Comparison *
 
 Standard Audio Overview is a podcast. You listen. The audio ends. You either engaged or you didn't, and the assignment can't tell.
 
@@ -165,3 +168,37 @@ You now have assignment designs that structurally require engagement. Chapter 6 
 ---
 
 *Interactive Mode age eligibility and Classroom-integration restrictions on student notebook creation are evolving. Chapter 6 details the current administrative landscape. The four engagement patterns are stable. Re-verify platform-specific constraints before each deployment; leave the design logic alone.*
+
+## Prompts
+
+Use these prompts with Claude to generate interactive D3 v7 versions of the
+figures in this chapter. Each produces a standalone HTML file you can open
+in a browser and modify freely.
+
+**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
+your Claude project context before using these prompts. They define the stack,
+naming conventions, color system, and typography the figures use.
+
+---
+
+### Figure 5.1 — Spectrum diagram 
+
+Create a standalone D3 v7 HTML file for Figure Spectrum diagram . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Spectrum diagram — passive substitution on one end, active engagement on the other, with example assignment types placed along it. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/05-the-k12-student-fig-01.html`
+
+---
+
+### Figure 5.2 — Conceptual diagram showing the relationship between policy stringency,
+
+Create a standalone D3 v7 HTML file for Figure Conceptual diagram showing the relationship between policy stringency,. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Conceptual diagram showing the relationship between policy stringency, policy awareness, ethical beliefs, and actual behavior — based on the MDPI 2025 finding that ethical beliefs predict behavior more than policy awareness. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/05-the-k12-student-fig-02.html`
+
+---
+
+### Figure 5.3 — Comparison 
+
+Create a standalone D3 v7 HTML file for Figure Comparison . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Side-by-side comparison — standard Audio Overview (passive flow, no interaction) vs. Interactive Mode (pause points, student questions, grounded responses) — annotated with what the student does in each. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
+
+> Reference implementation: `d3/05-the-k12-student-fig-03.html`
