@@ -196,21 +196,3 @@ Chapter 5 is about what happens when the materials reach students — how assign
 ## Aging note
 
 Workspace Studio automation (launched May 2026) may shift scope-and-sequence auditing from per-teacher to per-district workflows. The specific output types available in NotebookLM and the Studio panel layout will evolve. Re-verify before reprint. The structural argument — production work delegated, judgment work preserved, review time mandatory — is stable and does not depend on any specific interface feature.
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 4.1 — Horizontal timeline from 9:14 PM to 10:00 PM
-
-Create a standalone D3 v7 HTML file for Figure Horizontal timeline from 9:14 PM to 10:00 PM. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Horizontal timeline from 9:14 PM to 10:00 PM divided into five labeled blocks — Upload (5 min, output: 3 sources confirmed ingested), Briefing Doc (5 min, output: doc with aerobic/anaerobic section added), Audio Overview (10 min, output: 12-min audio + lecture note on dam vs. battery analogy), Slide Deck (10 min, output: 12 slides, 3 edited), Formative Assessment (15 min, output: 7 of 10 questions after cut). Each block shows generation time vs. review time as a split. Caption: The 45 minutes is not 45 minutes of generation — review accounts for roughly one third of each block.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/
-
-> Reference implementation: `d3/04-the-k12-teacher-fig-01.html`

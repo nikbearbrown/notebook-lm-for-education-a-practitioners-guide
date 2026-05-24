@@ -180,21 +180,3 @@ Chapter 8 is about writing the academic integrity policy that the redesigned ass
 ## Aging note
 
 AI-detection tool reliability claims will continue to evolve. The pattern since 2022 — new tool launches, bias studies follow, modifications or withdrawal — has been consistent. Re-verify the Liang et al. citation and look for high-*N* evidence before reprint. The structural argument is stable: designing assessments around the assumption that detection works is fragile design, and the fragility is a property of the detection problem, not of any particular tool.
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 7.1 — Timeline of AI detection tool reliability 2022–2025 
-
-Create a standalone D3 v7 HTML file for Figure Timeline of AI detection tool reliability 2022–2025 . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Timeline of AI detection tool reliability 2022–2025 — horizontal axis: date; vertical axis: confidence in tool accuracy (qualitative). Key events marked: GPTZero launch (Jan 2023), Liang et al. bias study in Patterns (Jul 2023), OpenAI classifier withdrawal (Jul 2023), Turnitin AI detection launch and subsequent accuracy disputes (2023–2024), continued bias findings (2024–2025). Trend line slopes downward. Caption: Each cycle follows the same pattern — launch, bias finding, modification or withdrawal. The trajectory of evidence has been toward less confidence, not more.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/
-
-> Reference implementation: `d3/07-assessment-redesign-fig-01.html`

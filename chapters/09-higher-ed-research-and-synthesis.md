@@ -193,29 +193,3 @@ The tool works when it is extension of the researcher's capability, not a substi
 9. *(Create — full workflow)* Execute the complete seven-step literature review workflow from the chapter on a current research task with at least fifteen sources. Document the time spent at each step. At the end, write a one-paragraph assessment of where the acceleration was real, where it was not, and what you would do differently in a second iteration.
 
 10. *(Evaluate — the irreducible boundary)* The chapter argues that domain judgment, significance assessment, methodological critique, and citation context cannot be performed by the tool. Choose one of these four and argue the strongest possible case that a sufficiently capable future model *could* perform it. Then identify the one thing about the nature of that capability that your argument cannot fully account for.
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 9.1 — Simple two-bar comparison 
-
-Create a standalone D3 v7 HTML file for Figure Simple two-bar comparison . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Simple two-bar comparison — "Hand-built synthesis matrix: 15–20 hours" vs. "NotebookLM extraction + verification: 3–4 hours." Annotate the difference with "Time saved is in extraction. Verification and interpretation remain." Caption: "The acceleration is real and bounded. The verification step is not optional — it is what makes the acceleration trustworthy.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/09-higher-ed-research-and-synthesis-fig-01.html`
-
----
-
-### Figure 9.2 — Seven-step literature review workflow as a numbered visual
-
-Create a standalone D3 v7 HTML file for Figure Seven-step literature review workflow as a numbered visual. Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Seven-step literature review workflow as a numbered visual sequence — (1) Curate 15+ sources, (2) Upload and verify ingestion, (3) Generate synthesis matrix query, (4) Verify every cell, (5) Write synthesis Note and pin it, (6) Promote Note to source and generate outline, (7) Re-read contested papers, refine Note, regenerate outline. Annotate steps 1 and 4–5 as "researcher-owned." Caption: "The acceleration is in steps 2–3 and 6. The judgment is in steps 1, 4, 5, and 7.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/09-higher-ed-research-and-synthesis-fig-02.html`

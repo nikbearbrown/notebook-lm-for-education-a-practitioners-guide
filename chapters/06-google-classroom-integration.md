@@ -211,29 +211,3 @@ The lesson that depends on student access requires that the access actually exis
 9. *(Evaluate — the cost-benefit of restriction)* Rochester Community Schools restricts student NotebookLM access entirely. Using only the framework the chapter provides — what is being protected, what is being given up, who bears the cost — write a one-paragraph analysis of whether their policy is defensible. Then identify the one piece of evidence, if it existed, that would most change your analysis.
 
 10. *(Create — the administrator brief outline)* You teach in a district where student access is currently blocked by policy. Using Chapter 13 as the eventual destination, outline the three components an administrator brief would need to address to make the case for opening access: the integrity-design plan, the equity assessment, and the pedagogical rationale. For each component, write one sentence describing what the strongest version of that argument would claim.
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 6.1 — Five-step verification checklist as a visual sequence 
-
-Create a standalone D3 v7 HTML file for Figure Five-step verification checklist as a visual sequence . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Five-step verification checklist as a visual sequence — Step 1: Log in as test student. Step 2: Open Classroom. Step 3: Look for NotebookLM icon. Step 4: Click into teacher-created notebook. Step 5: Run a query and confirm citations. Style: clean numbered steps, each with a one-line description. Caption: "Run this the week before the lesson. Not the night before.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/06-google-classroom-integration-fig-01.html`
-
----
-
-### Figure 6.2 — Timeline of NotebookLM Classroom rollout phases 
-
-Create a standalone D3 v7 HTML file for Figure Timeline of NotebookLM Classroom rollout phases . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Timeline of NotebookLM Classroom rollout phases — September 2025 and April 2026 marked on a horizontal timeline. For each phase: what became available, who it applies to (all ages / 18+ only). Annotate the gap between phases with "K–12 students remain on the September 2025 model." Caption: "Which phase applies to your students determines what your assignments can ask them to do.". Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/06-google-classroom-integration-fig-02.html`

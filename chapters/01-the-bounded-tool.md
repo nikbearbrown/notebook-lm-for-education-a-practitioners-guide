@@ -170,21 +170,3 @@ Chapter 2 walks you through building your first notebook. The concept is clear n
 ## Aging note
 
 Specific feature names (Deep Research, Interactive Mode), tier limits (50 / 300 sources, daily query caps), and ingestion limits (500,000 words / 200 MB) are current as of May 2026 and subject to change. The structural arguments — source-grounding, citation discipline, the RAG architecture — are stable across versions. Re-verify numbers before reprinting. Re-verify the principles only if Google fundamentally restructures the tool's architecture.
-
-## Prompts
-
-Use these prompts with Claude to generate interactive D3 v7 versions of the
-figures in this chapter. Each produces a standalone HTML file you can open
-in a browser and modify freely.
-
-**Prerequisites:** Load `brutalist/CLAUDE.md` and `brutalist/DESIGN.md` into
-your Claude project context before using these prompts. They define the stack,
-naming conventions, color system, and typography the figures use.
-
----
-
-### Figure 1.1 — Three-step horizontal sequence 
-
-Create a standalone D3 v7 HTML file for Figure Three-step horizontal sequence . Use the CDN https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js, inline CSS, ResizeObserver redraw, SVG role="img", aria-labelledby, title, and desc. Build the figure from this structural brief: Three-step horizontal sequence — (1) Response arrives with citation marker → (2) Click citation: source pane jumps to passage → (3) Read passage: confirm, qualify, or flag the claim. Each step labeled with the action, the cost in time, and the outcome. Caption: The verification loop takes under a minute. The habit is the hard part, not the mechanics.. Use the described data shape and labels; when exact values are not supplied, use plausible illustrative values that preserve the relationships in the brief. Use a zero baseline for bars or areas, direct labels where possible, and annotations named in the brief. Use only DESIGN.md color variables and the required serif/mono font split.
-
-> Reference implementation: `d3/01-the-bounded-tool-fig-01.html`
