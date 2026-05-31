@@ -1,5 +1,12 @@
 # Chapter 4 — The K–12 Teacher: From Curriculum to Classroom
 
+
+## TL;DR
+
+- Where the production bottleneck was, and what happens when it moves.
+- The chapter moves through What the tool is actually doing in a K-12 context, The five-step sequence, Tiered scaffolds, The Note-to-Source loop, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Where the production bottleneck was, and what happens when it moves.*
 
 ---

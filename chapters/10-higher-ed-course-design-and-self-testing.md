@@ -1,5 +1,12 @@
 # Chapter 10 — Higher Education: Course Design and the Self-Testing Model
 
+
+## TL;DR
+
+- The Monash model — configure NotebookLM to quiz the learner, not explain to them — is the highest-leverage use case for undergraduate course integration.
+- The chapter moves through Why Retrieval Practice Is the Right Frame for Learning Guide, The Configuration That Produces This, The NYU Feedback Loop, What Changed in April 2026, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The Monash model — configure NotebookLM to quiz the learner, not explain to them — is the highest-leverage use case for undergraduate course integration.*
 
 ---

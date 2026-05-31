@@ -1,5 +1,12 @@
 # Chapter 1 — The Bounded Tool
 
+
+## TL;DR
+
+- What the restriction is actually doing.
+- The chapter moves through What a general chatbot is actually doing, What NotebookLM is actually doing, The numbers behind the claim, Why the boundary is the feature, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *What the restriction is actually doing.*
 
 ---

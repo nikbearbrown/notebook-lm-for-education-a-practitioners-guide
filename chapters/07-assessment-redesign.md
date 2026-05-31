@@ -1,5 +1,12 @@
 # Chapter 7 — Assessment Redesign: The Part You Can't Skip
 
+
+## TL;DR
+
+- Why the detection question is the wrong question, and what the right one produces.
+- The chapter moves through What the audit reveals, Why banning doesn't work, The four redesign frameworks, Google Docs version history as a window into process, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Why the detection question is the wrong question, and what the right one produces.*
 
 ---

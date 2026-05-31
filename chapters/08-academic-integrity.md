@@ -1,5 +1,12 @@
 # Chapter 8 — Academic Integrity: The Honest Conversation
 
+
+## TL;DR
+
+- An AI use policy that says "don't" without saying "because" will not survive the first conversation with a student who asks why.
+- The chapter moves through Why Policy Doesn't Work the Way We Think It Does, What Academic Integrity Actually Protects, NotebookLM Specifically, Writing the Policy, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *An AI use policy that says "don't" without saying "because" will not survive the first conversation with a student who asks why.*
 
 ---

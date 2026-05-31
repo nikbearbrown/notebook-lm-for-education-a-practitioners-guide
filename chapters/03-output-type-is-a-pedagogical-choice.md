@@ -1,5 +1,12 @@
 # Chapter 3 — Output Type Is a Pedagogical Choice
 
+
+## TL;DR
+
+- Here is a question that sounds administrative but is actually about the nature of learning: when you open NotebookLM and look at the list of things it can generate, what are you actually choosing between?
+- The chapter moves through The thing the menu doesn't tell you, What "cognitive demand" actually means, The four questions, A worked case, slowly, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Audio Overview is not the default. Every output type encodes an assumption about how learning happens.*
 
 ---

@@ -1,5 +1,12 @@
 # Chapter 13 — The Administrator Brief: How to Defend Your Deployment
 
+
+## TL;DR
+
+- Administrators will ask three questions.
+- The chapter moves through Why the questions are always the same three, The structure of the answer, Answering the first question: is student data safe?, Answering the second question: will students stop learning?, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Administrators will ask three questions. This chapter gives you the answers.*
 
 ---

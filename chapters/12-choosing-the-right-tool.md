@@ -1,5 +1,12 @@
 # Chapter 12 — Choosing the Right Tool: NotebookLM, ChatGPT, Copilot, Perplexity
 
+
+## TL;DR
+
+- Why "use AI" is not a decision, and what a decision actually looks like.
+- The chapter moves through The constraint that matters most, The four-question framework, What each tool is actually built for, Three tasks, three tools, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Why "use AI" is not a decision, and what a decision actually looks like.*
 
 ---

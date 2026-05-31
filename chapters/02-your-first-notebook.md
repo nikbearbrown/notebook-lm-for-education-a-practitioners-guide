@@ -1,5 +1,12 @@
 # Chapter 2 — Your First Notebook: Thirty Minutes to Output
 
+
+## TL;DR
+
+- The notebook said it had the chapter.
+- The chapter moves through Why the Sources Panel Lies to You (and Doesn't Know It), What the Studio Panel Actually Produces, The Verification Stack, The Thirty-Minute Walkthrough, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The notebook said it had the chapter. It did not have the chapter. Nobody warned her.*
 
 ---

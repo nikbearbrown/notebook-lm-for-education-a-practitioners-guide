@@ -1,5 +1,12 @@
 # Chapter 11 — Privacy, Equity, and the Access Gap
 
+
+## TL;DR
+
+- Free does not mean equitably available.
+- The chapter moves through Two accounts that look identical, The three gates, Rochester and the deliberate closed gate, The language gap nobody named, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *Free does not mean equitably available. The institutional account, the admin toggle, and the district policy all stand between the tool and the student.*
 
 ---

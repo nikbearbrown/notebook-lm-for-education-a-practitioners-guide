@@ -1,5 +1,12 @@
 # Chapter 14 — Honest Capability Assessment: What the Evidence Shows
 
+
+## TL;DR
+
+- How to say what you actually know, and nothing more.
+- The chapter moves through The strongest available evidence, The four-bucket framework, The methodologically strongest finding, Three overstated claims, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *How to say what you actually know, and nothing more.*
 
 ---

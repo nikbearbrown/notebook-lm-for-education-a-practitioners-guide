@@ -1,5 +1,12 @@
 # Chapter 5 — The K–12 Student: Active Use vs. the Shortcut
 
+
+## TL;DR
+
+- The question is not whether students will use NotebookLM.
+- The chapter moves through The Variable That Actually Controls This, What Makes an Assignment Shortcut-Resistant, Why Policy Doesn't Solve This, How Interactive Mode Changes the Equation, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The question is not whether students will use NotebookLM. It is whether you design the activity so that using it well requires engaging with the material.*
 
 ---

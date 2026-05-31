@@ -1,5 +1,12 @@
 # Chapter 6 — Google Classroom Integration: Setup, Permissions, and Pedagogy
 
+
+## TL;DR
+
+- The Classroom integration is where the pedagogy and the admin meet.
+- The chapter moves through The permission stack, Why verification requires a student account, The phased rollout and what it means for K–12, Age-restricted features, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *The Classroom integration is where the pedagogy and the admin meet. Both have to work.*
 
 ---

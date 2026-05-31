@@ -1,5 +1,12 @@
 # Chapter 9 — Higher Education: Research, Literature, and the Synthesis Problem
 
+
+## TL;DR
+
+- For graduate students and faculty, NotebookLM is most valuable when the reading load is high, the sources are curated, and the goal is synthesis across sources — not generation from thin air.
+- The chapter moves through What the tool is actually for, The graduate student and her forty papers, The Note-to-Source loop as a research workflow, What the tool cannot do, and related ideas.
+- Read it for the main argument, the vocabulary it introduces, and the practical judgment it asks you to develop.
+
 *For graduate students and faculty, NotebookLM is most valuable when the reading load is high, the sources are curated, and the goal is synthesis across sources — not generation from thin air.*
 
 ---
